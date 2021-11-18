@@ -82,6 +82,7 @@ String sid = (String) session.getAttribute("sid");
 				<ul class="service">
 					<c:choose>
 						<c:when test="${empty sid}">
+						<li><a href="${pageContext.request.contextPath}/manager/login/manager_login.jsp">admin</a></li>
 							<li><a
 									href="${pageContext.request.contextPath}/member/login/login.jsp">Login</a></li>
 							<li><a
