@@ -7,7 +7,6 @@
 <title>notice result</title>
 </head>
 <body>
-<!-- asdf -->
 	<%
 	request.setCharacterEncoding("utf-8");
 	
@@ -57,8 +56,8 @@
 		 PreparedStatement pstmt4 = con.prepareStatement(jsql4);
 
 		 pstmt4.executeUpdate();
-		
-	%>
+		 %>
+	
 	<div align="center">
 		<font color="blue" size='6'><b>[등록된 공지 정보]</b></font>
 		<p>
