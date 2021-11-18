@@ -7,6 +7,7 @@
 <title>notice result</title>
 </head>
 <body>
+<!-- asdf -->
 	<%
 	request.setCharacterEncoding("utf-8");
 	
