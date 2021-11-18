@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
-<link rel="stylesheet" href="../css/tickets_style.css">
+<link rel="stylesheet" href="../../css/tickets_style.css">
 
 
 <!--<body> -> header.jsp에 있음-->
