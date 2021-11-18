@@ -40,16 +40,16 @@ try {
 %>
 <tbody>
    <tr>           
-  	  <td align="center"><a href=manager_member_detail?p_id=<%=p_id%>"><img src="../../img/product/<%=p_id%>.jpg" width="100" height="100" border=0></a></td>
- 	  <td> <a href="manager_member_detail?p_id=<%=p_id%>"><%=p_id%></a></td>
+  	  <td align="center"><a href="manager_product_detail.jsp?p_id=<%=p_id%>"><img src="../../img/product/<%=p_id%>.jpg" width="100" height="100" border=0></a></td>
+ 	  <td> <a href="manager_product_detail.jsp?p_id=<%=p_id%>"><%=p_id%></a></td>
       <td><%=p_name%></td>
 	  <td><%=p_price%></td>
 	  <td><%=p_stock%></td>
 	  <td><%=p_category%></td>	
 	  <td><%=p_option%></td>
  	  <td><%=p_description%></td> 
-	  <td align=center><a href="manager_member_update.jsp?p_id=<%=p_id%>">Yes</a></td>
-  	  <td align=center><a href="manager_member_delete.jsp?p_id=<%=p_id%>">Yes</a></td>
+	  <td align=center><a href="manager_product_update.jsp?p_id=<%=p_id%>">Yes</a></td>
+  	  <td align=center><a href="manager_product_delete_result.jsp?p_id=<%=p_id%>">Yes</a></td>
   </tr>
 </tbody>
 <%

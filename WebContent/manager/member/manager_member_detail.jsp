@@ -6,7 +6,6 @@
 
 
 
-</body>
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";

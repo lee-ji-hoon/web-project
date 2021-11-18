@@ -23,7 +23,7 @@
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
         <input name="id" class="form-control" placeholder="Id 입력" type="text" required/>
-        <a href="javascript:checkID()"> 
+        <a href="javascript:checkID2()"> 
         	<button class="btn btn-small btn-primary"type="button">아이디 중복확인</button>
        	</a>
     </div> <!--아이디 form-group// -->
