@@ -1,15 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ include file="../../layout/header_manager.jsp" %>
-<html>
-	<head>
-	<title>회원 가입 결과 </title>
-	</head>
-<body>
-
-
-
+    pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %>
+<%@ include file="../../layout/header_manager.jsp"%>
+<link rel="stylesheet" type="text/css"
+	href="../../css/style-table.css?v=123">
 <%
 	request.setCharacterEncoding("utf-8");
 
@@ -44,35 +38,39 @@ try {
 	 Class.forName("org.gjt.mm.mysql.Driver"); 
  	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 
-	 String jsql = "INSERT INTO member (m_id, m_password, m_name, m_date, m_gender, m_email, m_phone, m_joomin, m_address, m_solar) values(?,?,?,?,?,?,?,?,?,?)";
+	 String jsql = "UPDATE member set m_password=?, m_name=?, m_date=?, m_gender=?, m_email=?, m_phone=?, m_joomin=?, m_address=?, m_solar=? where m_id=?";
 
 	 PreparedStatement pstmt  = con.prepareStatement(jsql);
-	 pstmt.setString(1,id);
-	 pstmt.setString(2,password);
-	 pstmt.setString(3,name);
-	 pstmt.setString(4,birth);
-	 pstmt.setString(5,sex);
-	 pstmt.setString(6,email);
-	 pstmt.setString(7,phone);
-	 pstmt.setString(8,joomin);
-	 pstmt.setString(9,address);
-	 pstmt.setString(10,solar);
+	 pstmt.setString(1,password);
+	 pstmt.setString(2,name);
+	 pstmt.setString(3,birth);
+	 pstmt.setString(4,sex);
+	 pstmt.setString(5,email);
+	 pstmt.setString(6,phone);
+	 pstmt.setString(7,joomin);
+	 pstmt.setString(8,address);
+	 pstmt.setString(9,solar);
+	 pstmt.setString(10,id);
 	 
 	 pstmt.executeUpdate();
-  } catch(Exception e) { 
-		out.println(e);
-}
+	 
+	 String jsql2 = "select * from member where m_id=?";
+	 PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	 pstmt2.setString(1,id);
+
+	 ResultSet rs = pstmt2.executeQuery();
+	 rs.next();
+
 %>
+<center>
+	<font  size='6'>
+		<b>[회원 상세정보 조회] </b>
+	</font>
 
-<br><br><br>
-    <h3> 축하합니다.  다음과 같이 회원 가입되었습니다! </h3><p>
-	<br><br>
-	<font color="blue" size='6'><b>[회원 가입 내역]</b></font><p>
-
-	<table border=1 cellpadding=5   style="font-size:10pt;font-family:맑은 고딕">
+	<table border=1 cellpadding=5   style="font-size:10pt;font-family:맑은 고딕" class="detail">
 	<tr>
-		<td width=100>ID</td>
-		<td width=200><%=id%></td>
+		<td>ID</td>
+		<td><%=id%></td>
 	</tr>
 	<tr>
 		<td>비밀번호</td>
@@ -98,6 +96,10 @@ try {
 		<td><%=phone%></td>
 	</tr>
 	<tr>
+		<td>이메일</td>
+		<td><%=email%></td>
+	</tr>
+	<tr>
 		<td>성별</td>
 		<td><%=sex%></td>
 	</tr>
@@ -108,7 +110,13 @@ try {
 	</table>
 	<p>
 <br>
- <a href="login.jsp" style="font-size:10pt;font-family:맑은 고딕" >로그인</a>
-<%@ include file="../../layout/footer.jsp"%>
+ <a href="manager_member_select.jsp" style="font-size:10pt;font-family:맑은 고딕" >전체회원보기</a>
+ </center>
+ <%} catch(Exception e) { 
+		out.println(e);
+}
+%>
+
 </body>
+<%@ include file="../../layout/footer.jsp"%>
 </html>

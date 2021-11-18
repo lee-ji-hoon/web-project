@@ -38,7 +38,7 @@ try {
 
 <center>
 	<font  size='6'>
-		<b>[회원 상세정보 조회] </b>
+		<b>[회원정보삭제]</b>
 	</font>
 	<p>
 		<table border="2" cellpadding="10"
@@ -87,10 +87,8 @@ try {
     </table>
 	<p>
 
-<a href="manager_member_update.jsp?id=<%=id%>"
-			style="font-size:10pt;font-family:맑은 고딕">수정</a>&nbsp;&nbsp;
-<a href="manager_member_delete.jsp?id=<%=id%>"
-			style="font-size:10pt;font-family:맑은 고딕">삭제</a>
+<a href="manager_member_delete_result.jsp?id=<%=id%>"
+			style="font-size:10pt;font-family:맑은 고딕">삭제</a>&nbsp;&nbsp;
 
 </center>
 
@@ -100,4 +98,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-		</html>
+</html>

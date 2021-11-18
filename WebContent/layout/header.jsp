@@ -17,9 +17,11 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<script src="../js/gnb.jsv=1"></script>
+<script src="../js/tab-ex-1.js=v=1"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/gnb.js"></script>
-<script src="${pageContext.request.contextPath}/js/tab-ex-1.js"></script>
+<script src="${pageContext.request.contextPath}/js/gnb.js?v=1"></script>
+<script src="${pageContext.request.contextPath}/js/tab-ex-1.js?v=1"></script>
 <title>aqua_projcet</title>
 
 
