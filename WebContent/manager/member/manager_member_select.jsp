@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="../../layout/header_manager.jsp"%>
-<link rel="stylesheet" type="text/css" href="../../css/style-table.css?v=1">
+<link rel="stylesheet" type="text/css" href="../../css/style-table.css?v=123">
 <%
 try {
  	 String DB_URL="jdbc:mysql://localhost:3306/aqua_project"; 
@@ -51,8 +51,8 @@ try {
  	  <td><%=joomin%></td> 
  	  <td><%=solar%></td> 
  	  <td><%=address%></td> 
-	  <td align=center><a href="manager_member_update.jsp?p_id=<%=id%>">Yes</a></td>
-  	  <td align=center><a href="manager_member_delete.jsp?p_id=<%=id%>">Yes</a></td>
+	  <td align=center><a href="manager_member_update.jsp?id=<%=id%>">수정</a></td>
+  	  <td align=center><a href="manager_member_delete.jsp?id=<%=id%>">삭제</a></td>
   </tr>
 </tbody>
 <%

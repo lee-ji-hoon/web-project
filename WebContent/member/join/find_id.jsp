@@ -6,6 +6,8 @@
 <html>
 
 <%
+
+
 try {
 	request.setCharacterEncoding("UTF-8");
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
