@@ -20,7 +20,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/gnb.js"></script>
 <script src="${pageContext.request.contextPath}/js/tab-ex-1.js"></script>
-<title>aqua_projcet</title>
 
 
 <meta charset="UTF-8">
@@ -62,10 +61,19 @@
 
 
 
-<title>aqua_project</title>
+
 <%
 String manager_id = (String) session.getAttribute("manager_id");
 %>
+<c:choose>
+	<c:when test="${empty manager_id}">
+		<title>aqua</title>
+	</c:when>
+	<c:otherwise>
+		<title><%=manager_id %>님 환영합니다</title>
+	</c:otherwise>
+</c:choose>
+
 </head>
 
 <body>
@@ -114,9 +122,15 @@ String manager_id = (String) session.getAttribute("manager_id");
 								<span class="kor">상품 및 티켓</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="#">상품 추가</a></li>
-								<li><a href="#">티켓 추가</a></li>
-								<li><a href="#">상품/티켓 전체 조회/수정/삭제</a></li>
+								<li><a
+										href="${pageContext.request.contextPath}/manager/product/manager_product_insert.jsp">상품
+										추가</a></li>
+								<li><a
+										href="${pageContext.request.contextPath}/manager/product/manager_ticket_insert.jsp">티켓
+										추가</a></li>
+								<li><a
+										href="${pageContext.request.contextPath}/manager/product/manager_product_ticket_select.jsp">상품/티켓
+										전체 조회/수정/삭제</a></li>
 							</ul></li>
 						<li><a href="#">
 								<span class="eng">order</span>

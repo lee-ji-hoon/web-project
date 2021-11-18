@@ -17,7 +17,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/gnb.js?v=1"></script>
 <script src="${pageContext.request.contextPath}/js/tab-ex-1.js?v=1"></script>
-<title>aqua_projcet</title>
 
 
 <meta charset="UTF-8">
@@ -58,10 +57,17 @@
 
 
 
-<title>aqua_project</title>
 <%
 String sid = (String) session.getAttribute("sid");
 %>
+<c:choose>
+	<c:when test="${empty sid}">
+		<title>aqua</title>
+	</c:when>
+	<c:otherwise>
+		<title><%=sid %>님 환영합니다</title>
+	</c:otherwise>
+</c:choose>
 </head>
 
 <body>
