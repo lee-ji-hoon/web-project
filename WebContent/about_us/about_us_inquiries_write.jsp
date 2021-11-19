@@ -10,9 +10,6 @@
 	Date nowTime = new Date();
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 %>
-
-
-
 	<div align="center">
 		<form method="post" action="about_us_inquiries_write_result.jsp">
 			<table border = "0">
