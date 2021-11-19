@@ -33,11 +33,20 @@ try {
 			String ord_bank = rs.getString("ord_bank");
 			String ord_card_no = rs.getString("ord_card_no");
 			String ord_card_pass = rs.getString("ord_card_pass");
+			String ord_state = rs.getString("ord_state");
 		%>
+	
 	<table border="2" cellpadding="10"
 		style="font-size: 10pt; font-family: 맑은 고딕">
-		주문번호: <%=ord_no %>
-		<thead><tr><th colspan="13" style="font-size:16px"><font color="blue">[<%=m_id%>회원님의 주문정보입니다]</font></th></tr> </thead>
+		주문번호:
+		<%=ord_no%>
+		<thead>
+			<tr>
+				<th colspan="13" style="font-size: 16px"><font color="blue">
+						[<%=m_id%>회원님의 주문정보입니다]
+					</font></th>
+			</tr>
+		</thead>
 		<thead>
 			<tr>
 				<th>주문자 아이디</th>
@@ -50,13 +59,13 @@ try {
 				<th>결제 은행</th>
 				<th>결제 카드</th>
 				<th>카드 비밀번호</th>
+				<th><b>[배송상태]</b></th>
 				<th><b>[수정]</b></th>
-				<th><b>[삭제]</b></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<th><a href="manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a></th>
+				<th><a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a></th>
 				<td><%=ord_no%></td>
 				<td><%=ord_date%></td>
 				<td><%=ord_receiver%></td>
@@ -66,32 +75,47 @@ try {
 				<td><%=ord_bank%></td>
 				<td><%=ord_card_no%></td>
 				<td><%=ord_card_pass%></td>
+				<%
+				if(ord_state.equals("입금확인중")){
+				%>	
+					<td><font color="red"><%=ord_state%></font></td>
+				<%
+					}else{
+				%>
+					<td><%=ord_state%></td>
+				<%} 
+				%>
 				<td align=center>
-					<a href="manager_member_update.jsp?id=<%=m_id%>">수정</a>
-				</td>
-				<td align=center>
-					<a href="manager_member_delete.jsp?id=<%=m_id%>">삭제</a>
+					<a href="manager_order_update.jsp?ord_no=<%=ord_no%>">수정</a>
 				</td>
 			</tr>
 		</tbody>
-	<%
-	String jsql2 = "select * from order_product where ord_no = ?";
-	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-	pstmt2.setInt(1, ord_no);
-	ResultSet rs2 = pstmt2.executeQuery();
-	%>
-	<thead><tr><td colspan="13">&nbsp</td></tr> </thead>
-	<thead><tr><th colspan="13" style="font-size:16px"><font color="blue">[<%=m_id%>회원님의 주문목록입니다]</font></th></tr> </thead>
-	<p>
-
+		<%
+		String jsql2 = "select * from order_product where ord_no = ?";
+		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+		pstmt2.setInt(1, ord_no);
+		ResultSet rs2 = pstmt2.executeQuery();
+		%>
 		<thead>
 			<tr>
-				<th colspan=3>이미지</th>
-				<th colspan=3>상품아이디</th>
-				<th colspan=3>주문번호</th>
+				<td colspan="13">&nbsp</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th colspan="13" style="font-size: 16px"><font color="blue">
+						[<%=m_id%>회원님의 주문목록입니다]</font></th>
+			</tr>
+		</thead>
+		<p>
+		<thead>
+			<tr>
+				<th colspan=3>상품 이미지</th>
+				<th colspan=3>상품 아이디</th>
+				<th colspan=3>주문 번호</th>
 				<th colspan=3>수량</th>
-				
-				
+
+
 			</tr>
 		</thead>
 		<%
@@ -103,12 +127,13 @@ try {
 		<tbody>
 			<tr>
 				<td colspan=3 align="center">
-					<a href="manager_product_detail.jsp?p_id=<%=p_id%>">
+					<a href="../product/manager_product_detail.jsp?p_id=<%=p_id%>">
 						<img src="../../img/product/<%=p_id%>.jpg" width="100"
 							height="100" border=0>
 					</a>
 				</td>
-				<th colspan=3><a href="manager_member_detail.jsp?id=<%=p_id%>"><%=p_id%></a></th>
+				<th colspan=3><a
+						href="../product/manager_product_detail.jsp?p_id=<%=p_id%>"><%=p_id%></a></th>
 				<td colspan=3><%=ord_no%></td>
 				<td colspan=3><%=ord_qty%></td>
 			</tr>
