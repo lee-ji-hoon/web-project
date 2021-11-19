@@ -2,13 +2,10 @@
 <!DOCTYPE html>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<html>
-<head>
-<meta charset="UTF-8">
+<%@ include file="../../layout/header.jsp"%>
 <link rel = "stylesheet" href = "../css/about_us_style.css">
-<title>aqua | QnA</title>
-</head>
-<body>
+
+<!--<body> -> header.jsp에 있음-->
 <%
 	Date nowTime = new Date();
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
@@ -71,5 +68,6 @@
 				<input type="submit" value="문의등록">
 		</form>
 	</div>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

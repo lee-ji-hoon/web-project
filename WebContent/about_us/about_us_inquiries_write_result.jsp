@@ -1,18 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<link rel = "stylesheet" href = "../css/about_us_style.css">
-	<title>aqua | 문의 내역</title>
-</head>
-<body>
-	<nav>
-	
-	</nav>
-	<div align="center">
+<%@ include file="../../layout/header.jsp"%>
+<link rel="stylesheet" href="../../css/tickets_style.css?a">
+<link rel = "stylesheet" href = "../css/about_us_style.css">
 
+<!--<body> -> header.jsp에 있음-->
+	<div align="center">
 			<%
 			request.setCharacterEncoding("utf-8");
 			
@@ -82,8 +75,6 @@
 %>
 		
 	</div>
-	<footer>
-	
-	</footer>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>
