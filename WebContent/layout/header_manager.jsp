@@ -138,7 +138,7 @@ String manager_id = (String) session.getAttribute("manager_id");
 							</a>
 							<ul class="submenu">
 								<li><a
-										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">주문
+										href="${pageContext.request.contextPath}/manager/order/manager_order_select.jsp">주문
 										전체 보기</a></li>
 
 								<li><a href="#">후기 게시판</a></li>

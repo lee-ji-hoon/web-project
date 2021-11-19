@@ -11,7 +11,6 @@ try {
  	 
 	 Class.forName("org.gjt.mm.mysql.Driver");  
  	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
-
      String jsql = "select * from member";   
 	 PreparedStatement  pstmt = con.prepareStatement(jsql);
 	 ResultSet  rs = pstmt.executeQuery();
