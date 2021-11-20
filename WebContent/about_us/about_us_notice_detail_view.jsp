@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
-<link rel = "stylesheet" href = "../css/about_us_style.css?abc">
+<link rel = "stylesheet" href = "../css/about_us_style.css?ab">
 
 <!--<body> -> header.jsp에 있음-->
 	<div align="center">
@@ -9,6 +9,11 @@
 		<br>
 
 		<table border="0" style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
+		<tr>
+				<td colspan='2' style = "border-top : none;">
+					<input id = "abu_notice_list_btn" type="button" value = "목록 보기" onClick="location.href='about_us_notice.jsp'">
+				</td>
+			</tr>
 			<%
 			try {
 				String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
