@@ -26,7 +26,13 @@
 	%>
 
 </head>
-
+<form id="headerSearchForm" method="POST"
+		action="<%=request.getContextPath()%>/product?cmd=search">
+		<button class="headerSearchForm-btn">
+			<i class="tiny material-icons">search</i>
+		</button>
+		<input name="keyword" placeholder="상품명 또는 브랜드명으로 검색" class="headerSearchForm-input" />
+	</form>
 <div class="frame">
 	<!-- main 타이틀 시작 -->
 	<div class="favor-head border-btm-black">상품 리스트</div>

@@ -54,10 +54,10 @@ try {
 				<th>주문일자</th>
 				<th>수령자</th>
 				<th>수령자 주소</th>
-				<th>수령 번호</th>
+				<th>수령자 번호</th>
 				<th>가격</th>
 				<th>결제 은행</th>
-				<th>결제 카드</th>
+				<th>카드 번호</th>
 				<th>카드 비밀번호</th>
 				<th><b>[배송상태]</b></th>
 				<th><b>[수정]</b></th>
@@ -71,10 +71,19 @@ try {
 				<td><%=ord_receiver%></td>
 				<td><%=ord_rcv_address%></td>
 				<td><%=ord_rcv_phone%></td>
-				<td><%=ord_pay%></td>
-				<td><%=ord_bank%></td>
-				<td><%=ord_card_no%></td>
-				<td><%=ord_card_pass%></td>
+				<td><fmt:formatNumber value="<%=ord_pay%>"/></td>
+				<%
+					if (ord_card_no.equals("")) {
+				%>
+					<td><%=ord_bank%></td>
+					<td colspan="2"><font color=red>무통장 입금 결제입니다.</font></td>
+				<%}else{
+				%>
+					<td><font color=red>카드 결제입니다.</font></td>
+					<td><%=ord_card_no%></td>
+					<td><%=ord_card_pass%></td>
+				<%} 
+				%>
 				<%
 				if(ord_state.equals("입금확인중")){
 				%>	
@@ -157,6 +166,7 @@ try {
 		}
 		%>
 		</body>
+	
 </center>
 <%@ include file="../../layout/footer.jsp"%>
 </html>

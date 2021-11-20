@@ -92,10 +92,10 @@ try {
 			</tr>
 
 			<tr>
-				<th>수령자</th>
+				<th>수령자 번호</th>
 				<td>
-					<input name="ord_receiver" class="form-control"
-						placeholder="수령자 입력" type="text" value="<%=ord_receiver%>"
+					<input name="ord_rcv_phone" class="form-control"
+						placeholder="수령자 입력" type="text" value="<%=ord_rcv_phone%>"
 						required />
 				</td>
 			</tr>
@@ -113,21 +113,23 @@ try {
 			<tr>
 				<th>결제 은행</th>
 				<td>
-					<input name="ord_card_no" class="form-control" type="hidden"
+					<input name="ord_bank" class="form-control" type="hidden"
 						value="<%=ord_bank%>" required /><%=ord_bank%>
 				</td>
 			</tr>
 			<tr>
 				<th>결제 카드</th>
 				<td>
-					<font color=red>무통장 입금 결제입니다.</font>
+					<input name="ord_bank" class="form-control" type="hidden"
+						value="<%=ord_card_no%>" required /><font color=red>무통장 결제입니다.</font>
 				</td>
 			</tr>
 
 			<tr>
 				<th>카드 비밀번호</th>
 				<td>
-					<font color=red>무통장 입금 결제입니다.</font>
+					<input name="ord_bank" class="form-control" type="hidden"
+						value="<%=ord_card_no%>" required /><font color=red>무통장 결제입니다.</font>
 				</td>
 			</tr>
 			<%
@@ -136,7 +138,8 @@ try {
 			<tr>
 				<th>결제 은행</th>
 				<td>
-					<font color=red>카드 결제입니다.</font>
+					<input name="ord_bank" class="form-control" type="hidden"
+						value="<%=ord_bank%>" required /><font color=red>카드 결제입니다.</font>
 				</td>
 			</tr>
 			<tr>
@@ -160,68 +163,10 @@ try {
 			<tr>
 				<th>배송상태</th>
 				<td>
-					<input name="ord_card_pass" class="form-control" type="text"
+					<input name="ord_state" class="form-control" type="text"
 						value="<%=ord_state%>" required />
 				</td>
 			</tr>
-
-
-			<tr colspan="2">
-				<td colspan="2">&nbsp</td>
-			</tr>
-
-			<tr>
-				<th colspan="2" style="font-size: 16px"><font color="blue">
-						[<%=m_id%>회원님의 주문목록입니다]
-					</font></th>
-			</tr>
-			<tr>
-				<%
-				String jsql2 = "select * from order_product where ord_no = ?";
-				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-				pstmt2.setInt(1, ord_no);
-				ResultSet rs2 = pstmt2.executeQuery();
-
-				while (rs2.next()) {
-					String p_id = rs2.getString("p_id");
-					int ord_no2 = rs2.getInt("ord_no");
-					int ord_qty = rs2.getInt("ord_qty");
-				%>
-				<th>상품 이미지</th>
-				<td>
-					<img src="../../img/product/<%=p_id%>.jpg" width="100" height="100"
-						border=0>
-				</td>
-			</tr>
-			<tr>
-				<th>상품 아이디</th>
-				<td>
-					<input name="p_id" class="form-control" type="hidden"
-						value="<%=p_id%>" required /><%=p_id%>
-				</td>
-			</tr>
-			<tr>
-				<th>주문번호</th>
-				<td>
-					<input name="ord_no2" class="form-control" type="hidden"
-						value="<%=ord_no2%>" required /><%=ord_no2%>
-				</td>
-			</tr>
-
-			<tr>
-				<th>수량</th>
-				<td>
-					<input name="ord_qty" class="form-control" type="text"
-						value="<%=ord_qty%>" required />
-				</td>
-			</tr>
-
-			<tr>
-				<td class="none" colspan="2" style="border: 1px solid #ccc;">&nbsp</td>
-			</tr>
-			<%
-			}
-			%>
 		</table>
 		<input type=submit class="btn btn-large btn-primary" type="button"
 			value="수정완료">

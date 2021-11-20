@@ -70,7 +70,7 @@ String manager_id = (String) session.getAttribute("manager_id");
 		<title>aqua</title>
 	</c:when>
 	<c:otherwise>
-		<title><%=manager_id %>님 환영합니다</title>
+		<title><%=manager_id %>매니저님 환영합니다</title>
 	</c:otherwise>
 </c:choose>
 
