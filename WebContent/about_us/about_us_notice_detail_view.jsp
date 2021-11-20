@@ -1,18 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<link rel = "stylesheet" href = "../css/about_us_style.css">
-	<title>aqua | 공지 사항</title>
-</head>
-<body>
-	<nav>
-	
-	</nav>
+<%@ include file="../../layout/header.jsp"%>
+<link rel = "stylesheet" href = "../css/about_us_style.css?abc">
+
+<!--<body> -> header.jsp에 있음-->
 	<div align="center">
-		<h3> 공지 사항 </h3>
+		<p style="font-size:25pt; color:#333;">공지사항</p>
+		<br>
 
 		<table border="0" style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
 			<%
@@ -37,13 +31,15 @@
 				Date notice_date = rs.getDate("notice_date");
 				String notice_title = rs.getString("notice_title");
 				String notice_content = rs.getString("notice_content");
+				
+				notice_content = notice_content.replace("\r\n","<br>");
 			%>
-			<tr id = 'notice_detail_title'>
-				<td align=center width = 100 height = 50 style = "color:#555;">공지</td>
-				<td align=left width = 500 height = 50 style = "font-weight:bold"> <%=notice_title%> </td>
+			<tr id = 'abu_notice_detail_title'>
+				<td align=center width = 100 style = "color:#555;">공지</td>
+				<td align=left width = 700 style="font-weight:normal"> <%=notice_title%> </td>
 			</tr>
 			<tr>
-				<td align="center" colspan='2' style = "padding-top : 30px">
+				<td name ="notice_content"id = 'abu_notice_detail_content' align="center" colspan='2'>
 					<%=notice_content%>
 				</td>
 			</tr>
@@ -55,8 +51,6 @@
 %>
 		
 	</div>
-	<footer>
-	
-	</footer>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>
