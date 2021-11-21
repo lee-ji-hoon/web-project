@@ -18,8 +18,6 @@
 <script src="${pageContext.request.contextPath}/js/gnb.js?v=1"></script>
 <script src="${pageContext.request.contextPath}/js/tab-ex-1.js?v=1"></script>
 
-
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -94,7 +92,7 @@ String sid = (String) session.getAttribute("sid");
 							<li><a
 									href="${pageContext.request.contextPath}/member/login/logout.jsp">logout</a></li>
 							<li><a
-									href="${pageContext.request.contextPath}/member/my_page.jsp">mypage</a></li>
+									href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">mypage</a></li>
 							<li><a
 									href="${pageContext.request.contextPath}/member/order/cart_show.jsp">cart</a></li>
 						</c:otherwise>
