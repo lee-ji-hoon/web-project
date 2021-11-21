@@ -36,9 +36,9 @@ try {
 <center>
 	<form name="newMem" method=post action=manager_member_update_result.jsp>
 		<table style="font-size: 10pt; font-family: 맑은 고딕" class="detail">
+		
 			<tr>
 				<th>ID</th>
-				<div class="form-group input-group fg-x700">
 				<td>
 					<input name="id" class="form-control" placeholder="Id 입력"
 						type="hidden" value="<%=id%>" required />

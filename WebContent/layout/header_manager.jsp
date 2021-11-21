@@ -70,7 +70,7 @@ String manager_id = (String) session.getAttribute("manager_id");
 		<title>aqua</title>
 	</c:when>
 	<c:otherwise>
-		<title><%=manager_id %>님 환영합니다</title>
+		<title><%=manager_id %>매니저님 환영합니다</title>
 	</c:otherwise>
 </c:choose>
 
@@ -138,7 +138,7 @@ String manager_id = (String) session.getAttribute("manager_id");
 							</a>
 							<ul class="submenu">
 								<li><a
-										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">주문
+										href="${pageContext.request.contextPath}/manager/order/manager_order_select.jsp">주문
 										전체 보기</a></li>
 
 								<li><a href="#">후기 게시판</a></li>

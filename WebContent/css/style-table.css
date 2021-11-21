@@ -54,3 +54,9 @@ table tr td {
 	border-bottom: 1px solid #ccc;
 	
 }
+
+.none{
+	border-left:none;
+	border-right:none;
+	
+}
