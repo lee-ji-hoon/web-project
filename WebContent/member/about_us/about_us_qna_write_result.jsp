@@ -2,7 +2,7 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" href="../../css/tickets_style.css?a">
-<link rel = "stylesheet" href = "../css/about_us_style.css">
+<link rel = "stylesheet" href = "../../css/about_us_style.css">
 
 <!--<body> -> header.jsp에 있음-->
 	<div align="center">
@@ -66,7 +66,7 @@
 						</tr>
 					</table>
 					<p>
-					<jsp:forward page="mypage_inquiries.jsp"/>
+					<jsp:forward page="../mypage/mypage_qna.jsp"/>
 						<%
 						
     } catch (Exception e) {
