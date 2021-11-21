@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/aqua_header.css">
+	href="${pageContext.request.contextPath}/css/aqua_header.css?v=115">
 
 
 
@@ -126,12 +126,16 @@ String manager_id = (String) session.getAttribute("manager_id");
 										href="${pageContext.request.contextPath}/manager/product/manager_product_insert.jsp">상품
 										추가</a></li>
 								<li><a
-										href="${pageContext.request.contextPath}/manager/product/manager_ticket_insert.jsp">티켓
+										href="${pageContext.request.contextPath}/manager/product/manager_product_select.jsp">상품
+										전체 조회/수정/삭제</a></li>
+								<li><a
+										href="${pageContext.request.contextPath}/manager/tickets/manager_tickets_insert.jsp">티켓
 										추가</a></li>
 								<li><a
-										href="${pageContext.request.contextPath}/manager/product/manager_product_ticket_select.jsp">상품/티켓
-										전체 조회/수정/삭제</a></li>
-							</ul></li>
+										href="${pageContext.request.contextPath}/manager/tickets/manager_tickets.jsp">티켓
+										전체 조회/수정/삭제</a></li>	
+							</ul>
+							</li>
 						<li><a href="#">
 								<span class="eng">order</span>
 								<span class="kor">주문관리</span>
@@ -149,8 +153,8 @@ String manager_id = (String) session.getAttribute("manager_id");
 								<span class="kor">문의사항</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="#">공지사항 조회/수정/삭제</a></li>
-								<li><a href="#">개별문의 조회/수정/삭제</a></li>
+								<li><a href="${pageContext.request.contextPath}/manager/notice/manager_notice.jsp">공지사항 조회/수정/삭제</a></li>
+								<li><a href="${pageContext.request.contextPath}/manager/qna/manager_qna.jsp">개별문의 조회/수정/삭제</a></li>
 
 							</ul></li>
 					</ul>
