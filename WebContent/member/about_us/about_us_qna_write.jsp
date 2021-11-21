@@ -3,7 +3,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="../../layout/header.jsp"%>
-<link rel = "stylesheet" href = "../css/about_us_style.css">
+<link rel = "stylesheet" href = "../../css/about_us_style.css">
 
 <!--<body> -> header.jsp에 있음-->
 <%
