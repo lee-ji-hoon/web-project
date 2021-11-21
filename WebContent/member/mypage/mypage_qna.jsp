@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
-<link rel = "stylesheet" href = "../css/about_us_style.css?abc">
+<link rel = "stylesheet" href = "../../css/about_us_style.css?abc">
 
 <!--<body> -> header.jsp에 있음-->
 	<div align="center">
@@ -76,7 +76,7 @@
 					</a>
 				</td>
 				<td align="center">
-					<a href="mypage_inquiries_detail_view.jsp?qna_no=<%=qna_no1%>?m_id=<%=m_id1%>">자세히 보기</a>
+					<a href="mypage_qna_detail_view.jsp?qna_no=<%=qna_no1%>?m_id=<%=m_id1%>">자세히 보기</a>
 				</td>
 			</tr>
 			<%
