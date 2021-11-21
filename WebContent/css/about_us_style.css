@@ -20,7 +20,33 @@ textarea {
 	resize: none;
 	margin : 20px;
 }
-
+/* qna */
+#abu_qna_title{
+	border-bottom : 2px solid black;
+	line-height : 20px;
+	font-size : 15pt;
+	font-weight : lighter;
+}
+#abu_qna_subtitle_line{
+	border-top : 1px solid #ccc;
+}
+#abu_qna_subtile{
+	padding-left : 30px;
+	font-weight : bold;
+}
+#abu_qna_subtitle input{
+	width : 230px;
+	height : 35px;
+}
+#abu_qna_submit_btn{
+	font-size : 15px;
+	line-height : 15px;
+	color : white;
+	background-color : #2535C7;
+	border : none;
+	width : 110px;
+	height : 35px;
+}
 /* notice */
 #abu_notice_list{
 	border-bottom:1px solid #cccccc;
@@ -70,11 +96,4 @@ textarea {
 	border-right : none;
 	padding-left : 50px;
 	text-align : left;
-}
-#qna_title_line{
-	border-top : 2px solid black;
-	border-bottom : 1px solid #ccc;
-}
-#qna_detail_title{
-	border-top : 1px solid #ccc;
 }
