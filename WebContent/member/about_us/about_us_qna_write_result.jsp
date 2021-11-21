@@ -66,7 +66,7 @@
 						</tr>
 					</table>
 					<p>
-					<jsp:forward page="mypage_inquiries.jsp"/>
+					<jsp:forward page="../mypage/mypage_qna.jsp"/>
 						<%
 						
     } catch (Exception e) {
