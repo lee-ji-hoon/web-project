@@ -127,7 +127,7 @@ String sid = (String) session.getAttribute("sid");
 							</a>
 							<ul class="submenu">
 								<li><a
-										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">티켓
+										href="${pageContext.request.contextPath}/member/ticket/tickets_select.jsp">티켓
 										구매하기</a></li>
 								<li><a
 										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">굿즈
@@ -140,8 +140,8 @@ String sid = (String) session.getAttribute("sid");
 								<span class="kor">소개</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="#">공지사항</a></li>
-								<li><a href="#">개별문의 (1:1)</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_notice.jsp">공지사항</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_qna_write.jsp">개별문의 (1:1)</a></li>
 
 							</ul></li>
 					</ul>
