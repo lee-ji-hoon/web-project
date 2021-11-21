@@ -3,7 +3,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="../../layout/header.jsp"%>
-<link rel = "stylesheet" href = "../../css/about_us_style.css">
+<link rel = "stylesheet" href = "../../css/about_us_style.css?a">
 
 <!--<body> -> header.jsp에 있음-->
 <%
@@ -11,13 +11,13 @@
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 %>
 	<div align="center">
-		<form method="post" action="about_us_inquiries_write_result.jsp">
+		<form method="post" action="about_us_qna_write_result.jsp">
 			<table border = "0">
-				<tr id = 'qna_title_line' align=center>
-					<td colspan ="2">궁금하신 점을 적어주시면 성심성의 껏 답변해드리겠습니다.</td>
-				<tr id = 'qna_detail_title' >
-					<td id = 'table_subtitle_padding' width = 200>카테고리분류</td>
-					<td>
+				<tr id = 'abu_qna_title' align=center>
+					<td colspan ="2" width = 800>궁금하신 점을 적어주시면 성심성의 껏 답변해드리겠습니다.</td>
+				<tr id = 'abu_qna_subtitle_line' >
+					<td id = 'abu_qna_subtile' width = 250>카테고리분류</td>
+					<td width = 550>
 						<select name="qna_category" style = "width : 230px; height : 35px; text-align:left; font-size:15px;">
 							<option value="Goods">굿즈</option>
 							<option value="Ticket">티켓</option>
@@ -25,44 +25,44 @@
 						</select>
 					</td>
 				</tr>
-				<tr id = 'qna_detail_title'>
-					<td id = 'table_subtitle_padding' >아이디</td>
+				<tr id = 'abu_qna_subtitle_line'>
+					<td id = 'abu_qna_subtile' >아이디</td>
 					<td>
-						<input type="text" name="m_id">
+						<input type="text" name="m_id" value="<%=sid%>" readonly>
 					</td>
 				</tr>
-				<tr id = 'qna_detail_title' style = "display:none;">
-					<td id = 'table_subtitle_padding' >작성일</td>
+				<tr id = 'abu_qna_subtitle_line' style = "display:none;">
+					<td id = 'abu_qna_subtile' >작성일</td>
 					<td>
 						<input type="text" name="qna_date" value="<%= sf.format(nowTime) %>" readonly>
 					</td>
 				</tr>
-				<tr id = 'qna_detail_title' style = "display:none;">
-					<td id = 'table_subtitle_padding' >번호</td>
+				<tr id = 'abu_qna_subtitle_line' style = "display:none;">
+					<td id = 'abu_qna_subtile' >번호</td>
 					<td>
 						<input type="text" name="qna_no" value="1" readonly>
 					</td>
 				</tr>
-				<tr id = 'qna_detail_title' style = "display:none;">
-					<td id = 'table_subtitle_padding' >답변 작성 여부</td>
+				<tr id = 'abu_qna_subtitle_line' style = "display:none;">
+					<td id = 'abu_qna_subtile' >답변 작성 여부</td>
 					<td>
 						<input type="text" name="qna_answer_or_not" value="false" readonly>
 					</td>
 				</tr>
-				<tr id = 'qna_detail_title'>
-					<td id = 'table_subtitle_padding' >제목</td>
+				<tr id = 'abu_qna_subtitle_line'>
+					<td id = 'abu_qna_subtile' >제목</td>
 					<td>
 						<input type="text" name="qna_title">
 					</td>
 				</tr>
-				<tr id = 'qna_detail_title'>
+				<tr id = 'abu_qna_subtitle_line'>
 					<td colspan ="2">
-						<textarea name="qna_content" rows="15" cols="60" placeholder=" 내용을 적어주세요." style = "align:center;"></textarea>
+						<textarea name="qna_content" rows="15" cols="90" placeholder=" 내용을 적어주세요." style = "align:center;"></textarea>
 					</td>
 				</tr>
 			</table>
 			<p>
-				<input type="submit" value="문의등록">
+				<input id = 'abu_qna_submit_btn' type="submit" value="문의등록">
 		</form>
 	</div>
 	<%@ include file="../../layout/footer.jsp"%>
