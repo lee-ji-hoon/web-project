@@ -5,7 +5,7 @@
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" href="../css/style-product.css">
 <body onload="init();">
-	<link rel="stylesheet" type="text/css" href="../css/style-product.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style-product.css">
 <head>
 <meta charset="UTF-8">
 
@@ -37,13 +37,19 @@ try {
 	int t_price_child = rs.getInt("t_price_child");
 	String t_description = rs.getString("t_description");
 	String t_place = ("t_place");
+	
+	/*
+	String jsql2 = "SELECT * FROM ticket WHERE t_id = ?";
+	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, key);
+	*/
 %>
 </head>
 
 
 <!-- 전체 박스 시작 -->
-<form name="product" method="post">
-	<input type=hidden name=p_id value="<%=t_id%>">
+<form name="ticket" method="post">
+	<input type=hidden name=t_id value="<%=t_id%>">
 	<div class="products-detail">
 		<!-- 상단 박스 시작 -->
 		<div class="products-detail-box">
@@ -53,20 +59,10 @@ try {
 					<!-- 이미지 -->
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="../img/product/<%=t_id%>.jpg" width="500" height="200">
-						</div>
-						<div class="swiper-slide">
-							<img src="../img/product/<%=t_id%>_1.jpg" width="500"
-								height="200">
-						</div>
-						<div class="swiper-slide">
-							<img src="../../img/product/<%=t_id%>_2.jpg" width="500"
-								height="200">
+							<img src="../../img/tickets/<%=t_id%>.jpg" width="500" height="200">
 						</div>
 					</div>
 				</div>
-				<span class="products-info-desciption">※ 이미지를 좌우로 드래그하면 더 많은
-					이미지를 확인하실 수 있습니다.</span>
 			</div>
 
 			<div class="products-box-detail">
@@ -86,18 +82,16 @@ try {
 				</div>
 				<div class="products-box-detail-postInfo border-btm-e1e1e1">
 					<span class="products-box-detail-postInfo-title">배송정보</span>
-					<span class="products-box-detail-postInfo-content">일반배송</span>
+					<span class="products-box-detail-postInfo-content">e-ticket(문자 알림)</span>
 				</div>
 
 				<div class="products-box-detail-realInfo border-btm-e1e1e1">
-					<span class="products-box-detail-realInfo-title">정품인증</span>
-					<span class="products-box-detail-realInfo-content">aqua 내 모든
-						상품은 100% 정품입니다.</span>
+					<span class="products-box-detail-realInfo-title">설명</span>
+					<span class="products-box-detail-realInfo-content">아쿠아플래닛 입장 티켓입니다.</span>
 					<span class="products-box-detail-realInfo-popover"
 						onclick="realInfoBox();"> ∨ </span>
 					<div id="realInfo-box">
-						&lt;정품인증&gt;<br /> aqua에서 판매되는 모든 브랜드 상품은 정식제조, <br /> 정식수입원을 통해
-						유통되는 100% 정품임을 보증합니다.
+						&lt;티켓 설명&gt;<br /> <%=t_description%>
 					</div>
 				</div>
 				<!--  수량 선택 및 상품 구매  -->
@@ -164,7 +158,7 @@ try {
 			<li class="active" id="tab-qna"><a href="#detail-qna-box"
 					id="tab-qna-a">Q&amp;A</a></li>
 			<li class="active" id="tab-purchaseInfo"><a
-					href="#detail-purchaseInfo-box" id="tab-purchaseInfo-a">주문정보</a></li>
+					href="#detail-purchaseInfo-box" id="tab-purchaseInfo-a">환불규정</a></li>
 		</ul>
 	</div>
 	<!-- 상품정보/리뷰/Q&A/주문정보 끝 -->
@@ -244,4 +238,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-<script type="text/javascript" src="../js/tickets.js"></script>
+<script type="text/javascript" src="../../js/tickets.js?abc"></script>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	Date nowTime = new Date();
+	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+%>
 	<div align="center">
 
 		<%
@@ -50,17 +56,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>생일</td>
+					<td>수정일</td>
 					<td>
-						<%
-						String[] notice_date_arr = notice_date.toString().split("-");
-						%>
-						<input type=text name="notice_date_year" value="<%=notice_date_arr[0]%>" size="4">
-						년
-						<input type=text name="notice_date_month" value="<%=notice_date_arr[1]%>" size="2">
-						월
-						<input type=text name="notice_date_day" value="<%=notice_date_arr[2]%>" size="2">
-						일
+						<input type=text name="notice_date_year" value="<%= sf.format(nowTime) %>" readonly>
 					</td>
 				</tr>
 				<tr>

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -7,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	Date nowTime = new Date();
+	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+%>
 	<div align="center">
 
 		<%
@@ -15,10 +21,7 @@
 		int notice_no = Integer.parseInt(request.getParameter("notice_no"));
 		String manager_id = request.getParameter("manager_id");
 		
-		String	notice_date_year = request.getParameter("notice_date_year");
-		String	notice_date_month = request.getParameter("notice_date_month");
-		String	notice_date_day = request.getParameter("notice_date_day");
-		String	notice_date = notice_date_year + "-" +notice_date_month + "-" + notice_date_day;
+		String notice_date = request.getParameter("notice_date");
 		
 		String notice_title = request.getParameter("notice_title");
 		String notice_content = request.getParameter("notice_content");
