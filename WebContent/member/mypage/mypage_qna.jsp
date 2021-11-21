@@ -18,17 +18,7 @@
 
 			<%
 			request.setCharacterEncoding("utf-8");
-			
-			int qna_no = Integer.parseInt(request.getParameter("qna_no"));
-			String qna_category = request.getParameter("qna_category");
-			
-			String qna_date = request.getParameter("qna_date");
-			String qna_answer_or_not = request.getParameter("qna_answer_or_not");
-			String qna_title = request.getParameter("qna_title");
-			String qna_content = request.getParameter("qna_content");
-			
-			String m_id = request.getParameter("m_id");
-			
+			// mypage_qna.css 파일 만들기
 			try {
 				String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
 				String DB_ID = "aqua";
@@ -40,7 +30,7 @@
 				
 				String jsql2 = "SELECT * FROM qna where m_id = ?";
 				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-				pstmt2.setString(1, m_id);
+				pstmt2.setString(1, sid);
 				ResultSet rs = pstmt2.executeQuery();
 
 				while (rs.next()) {
