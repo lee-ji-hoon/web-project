@@ -2,14 +2,7 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../../css/about_us_style.css?abc">
-<title>manager | QnA 답변 작성</title>
-</head>
-<body>
+<%@ include file="../../layout/header_manager.jsp" %>
 	<%
 	Date nowTime = new Date();
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
@@ -98,7 +91,7 @@
 			<tr>
 				<td id='manager_qna_answer_td_head'>Manager ID</td>
 				<td>
-					<input type="text" name="manager_id" value="<%=a_manager_id%>" readonly>
+					<input type="text" name="manager_id" value="<%=manager_id%>" readonly>
 				</td>
 			</tr>
 			<tr>
@@ -145,7 +138,7 @@
 			<tr>
 				<td id='manager_qna_answer_td_head'>Manager ID</td>
 				<td>
-					<input type="text" name="manager_id">
+					<input type="text" name="manager_id" value="<%=manager_id%>">
 				</td>
 			</tr>
 			<tr>

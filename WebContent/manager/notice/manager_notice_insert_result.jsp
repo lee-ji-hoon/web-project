@@ -1,17 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %> 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>notice result</title>
-</head>
-<body>
+<%@ include file="../../layout/header_manager.jsp" %>
+
 	<%
 	request.setCharacterEncoding("utf-8");
 	
 	int notice_no = Integer.parseInt(request.getParameter("notice_no"));
-	String manager_id = request.getParameter("manager_id");
 	
 	String notice_date = request.getParameter("notice_date");
 	

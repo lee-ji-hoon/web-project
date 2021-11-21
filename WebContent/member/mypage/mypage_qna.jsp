@@ -1,24 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
-<link rel = "stylesheet" href = "../../css/about_us_style.css?abc">
+<link rel = "stylesheet" href = "../../css/mypage_qna.css">
 
 <!--<body> -> header.jsp에 있음-->
 	<div align="center">
 
-		<table border="0" style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
-			<tr id = 'notice_title_line'>
-				<td align=center width = 100>No.</td>
+		<table border="0" style="table-layout:fixed">
+			<tr id = 'mp_qna_info_title'>
+				<td align=center colspan="5">질문 내역</td>
+			</tr>
+			<tr id = 'mp_qna_title'>
 				<td align=center width = 100>카테고리</td>
-				<td align=center width = 300>문의 내용</td>
+				<td align=center width = 350>문의 제목</td>
 				<td align=center width = 150>작성 일자</td>
-				<td align=center width = 100>답변 여부</td>
-				<td align=center width = 100></td>
+				<td align=center width = 200>답변 여부</td>
+				<td align=center width = 150></td>
 			</tr>
 
 			<%
 			request.setCharacterEncoding("utf-8");
-			// mypage_qna.css 파일 만들기
 			try {
 				String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
 				String DB_ID = "aqua";
@@ -41,10 +42,7 @@
 					String qna_title1 = rs.getString("qna_title");
 					String m_id1 = rs.getString("m_id");
 			%>
-			<tr id = 'notice_line'>
-				<td align="center">
-					<a><%=qna_no1%></a>
-				</td>
+			<tr id = 'mp_qna_content_list'>
 				<td align="center">
 					<a><%=qna_category1%></a>
 				</td>
@@ -57,9 +55,13 @@
 				<td align="center">
 					<a>
 					<%
-					if(qna_answer_or_not1 == true){
+					if(qna_answer_or_not1 == true){%>
+					<font color = "blue"><b>
+					<%
 						out.println("답변 완료");
-					}
+					%>
+					</b></font>
+					<%}
 					else
 						out.println("답변 대기");
 					%>
@@ -73,6 +75,7 @@
 	 }
 %>
 		</table>
+		<br><br>
 			<%
     } catch (Exception e) {
       out.println(e);	

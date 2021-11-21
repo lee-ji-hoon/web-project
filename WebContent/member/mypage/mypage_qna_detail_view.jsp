@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>\
-<link rel = "stylesheet" href = "../../css/about_us_style.css?after">
+<link rel = "stylesheet" href = "../../css/mypage_qna.css">
 
 <!--<body> -> header.jsp에 있음-->
 	<div align="center">
-		<h3> QnA </h3>
-
-		<table style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
+		<table style="table-layout:fixed">
+			<tr id = 'mp_qna_detail_info_title'>
+				<td colspan = "3" width = "700">QnA</td>
+			</tr>
 			<%
 			try {
 				String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
@@ -34,27 +35,29 @@
 				String qna_comment = rs.getString("qna_comment");
 				String qna_comment_date = rs.getString("qna_comment_date");
 				String manager_id = rs.getString("manager_id");
+				
+				qna_comment = qna_comment.replace("\r\n","<br>");
 			%>
-			<tr id = 'qna_title_line'>
-				<td align=center width = 100 height = 50 style = "color:#555;"><%=qna_category %></td>
-				<td align=left width = 500 height = 50 colspan='2' style = "font-weight:bold">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=qna_title%> </td>
+			<tr id = 'mp_qna_detail_title'>
+				<td align=center width = 100 style = "color:#555;"><%=qna_category %></td>
+				<td align=left width = 400  colspan='2' style = "font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=qna_title%></td>
 			</tr>
-			<tr>
-				<td align="center" colspan='3' style = "padding-top : 10px">
+			<tr id = 'mp_qna_detail_mem_content'>
+				<td align="center" colspan='3' style = "padding : 50px">
 					<%=qna_content%>
 				</td>
 			</tr>
-			<tr id = 'qna_detail_title'>
-				<td align=center width = 100 height = 50 style = "color:#555;"><%=qna_comment_date %></td>
-				<td align=left width = 100 height = 50 style = "font-weight:bold"><%=manager_id%> </td>
-				<td align=left width = 400 height = 50><%=qna_comment%> </td>
+			<tr id = 'mp_qna_detail_manager_title'>
+				<td align=center width = 50 style = "color:#555;"><%=qna_comment_date %></td>
+				<td align=center width = 150 style = "font-weight:bold"><%=manager_id%> </td>
+				<td align=left width = 500 style = "padding:20px;"><%=qna_comment%> </td>
 			</tr>
 			
 		</table>
 		<%
     	} catch (Exception e) {
 		%>
-		<table style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
+		<table style="table-layout:fixed">
 			<%
 				String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
 				String DB_ID = "aqua";
@@ -77,17 +80,17 @@
 				String qna_title = rs2.getString("qna_title");
 				String qna_content = rs2.getString("qna_content");
 			%>
-			<tr id = 'qna_title_line'>
-				<td align=center width = 100 height = 50 style = "color:#555;"><%=qna_category %></td>
-				<td align=left width = 500 height = 50 colspan='2' style = "font-weight:bold">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=qna_title%> </td>
+			<tr id = 'mp_qna_detail_title'>
+				<td align=center width = 100 style = "color:#555;"><%=qna_category %></td>
+				<td align=left width = 600  colspan='2' style = "font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=qna_title%></td>
 			</tr>
-			<tr>
-				<td align="center" colspan='3' style = "padding-top : 10px">
+			<tr id = 'mp_qna_detail_mem_content'>
+				<td align="center" colspan='3' style = "padding : 50px">
 					<%=qna_content%>
 				</td>
 			</tr>
-			<tr id = 'qna_detail_title'>
-				<td align=center width = 100 height = 50 colspan="3" style = "color:#555;"><b>등록된 답변이 없습니다.</b></td>
+			<tr id = 'mp_qna_detail_manager_title'>
+				<td colspan="3" style = "text-align:center;color:#555;"><b>아직 답변이 등록되지 않았습니다.</b></td>
 			</tr>
 			
 		</table>

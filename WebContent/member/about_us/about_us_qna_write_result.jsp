@@ -41,7 +41,7 @@
 				pstmt.executeUpdate();
 				%>
 				<div align="center">
-					<font color="blue" size='6'><b>[등록된 공지 정보]</b></font>
+					<font color="blue" size='6'><b>[등록된 qna 정보]</b></font>
 					<p>
 					<table border="2" cellpadding="10" style="font-size: 10pt; font-family: 맑은 고딕">
 						<tr>
