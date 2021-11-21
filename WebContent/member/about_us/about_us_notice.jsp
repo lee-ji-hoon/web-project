@@ -46,6 +46,7 @@
 	 }
 %>
 		</table>
+		<br><br>
 			<%
     } catch (Exception e) {
       out.println(e);	

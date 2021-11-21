@@ -3,7 +3,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="../../layout/header.jsp"%>
-<link rel = "stylesheet" href = "../../css/about_us_style.css">
+<link rel = "stylesheet" href = "../../css/about_us_style.css?aa">
 
 <!--<body> -> header.jsp에 있음-->
 <%
@@ -13,13 +13,15 @@
 	<div align="center">
 		<form method="post" action="about_us_qna_write_result.jsp">
 			<table border = "0">
-			<tr>
-			<td colspan = "2">
-			<input id = "abu_notice_list_btn" type="button" value = "질문 내역 보기" onClick="location.href='../mypage/mypage_qna.jsp'">
-			</td>
-			</tr>
-				<tr id = 'abu_qna_title' align=center>
+				
+				<tr id = 'abu_qna_info_title' align=center>
 					<td colspan ="2" width = 800>궁금하신 점을 적어주시면 성심성의 껏 답변해드리겠습니다.</td>
+				</tr>
+				<tr id = 'abu_qna_title_under' >
+					<td colspan = "2">
+						<input id = "abu_notice_list_btn" type="button" value = "질문 내역 보기" onClick="location.href='../mypage/mypage_qna.jsp'">
+					</td>
+				</tr>
 				<tr id = 'abu_qna_subtitle_line' >
 					<td id = 'abu_qna_subtile' width = 250>카테고리분류</td>
 					<td width = 550>
@@ -33,7 +35,7 @@
 				<tr id = 'abu_qna_subtitle_line'>
 					<td id = 'abu_qna_subtile' >아이디</td>
 					<td>
-						<input type="text" name="m_id" value="<%=sid%>" readonly>
+						<input type="text" name="m_id" width="230" value="<%=sid%>" readonly>
 					</td>
 				</tr>
 				<tr id = 'abu_qna_subtitle_line' style = "display:none;">
@@ -67,7 +69,9 @@
 				</tr>
 			</table>
 			<p>
+			<br><br><br>
 				<input id = 'abu_qna_submit_btn' type="submit" value="문의등록">
+			<br><br><br>
 		</form>
 	</div>
 	<%@ include file="../../layout/footer.jsp"%>
