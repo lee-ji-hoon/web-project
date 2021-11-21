@@ -11,7 +11,7 @@
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 %>
 	<div align="center">
-		<form method="post" action="about_us_inquiries_write_result.jsp">
+		<form method="post" action="about_us_qna_write_result.jsp">
 			<table border = "0">
 				<tr id = 'qna_title_line' align=center>
 					<td colspan ="2">궁금하신 점을 적어주시면 성심성의 껏 답변해드리겠습니다.</td>
