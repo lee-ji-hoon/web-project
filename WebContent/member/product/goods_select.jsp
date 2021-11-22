@@ -36,6 +36,35 @@ try {
 	String p_description = rs.getString("p_description");
 	int p_stock = rs.getInt("p_stock");
 	String p_option = ("p_option");
+	
+	java.util.Date date = new java.util.Date(); //   Date 타입의 객체 date 생성
+	String recent_date = date.toLocaleString(); //   변수 oDate에 현재 시각(년.월.일 시:분:초)을 저장
+	
+	String jsql3 = "SELECT * FROM temp_recent WHERE p_id = ?";
+	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+	pstmt3.setString(1,p_id);
+	ResultSet rs3 = pstmt3.executeQuery();
+	
+	if(!rs3.next()){
+		String jsql2 = "INSERT INTO temp_recent (p_id, p_name, m_id, recent_date) VALUES (?,?,?,?)";
+		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+		pstmt2.setString(1, p_id);
+		pstmt2.setString(2, p_name);
+		pstmt2.setString(3, sid);
+		pstmt2.setString(4, recent_date);
+		
+		pstmt2.executeUpdate();
+	}
+	else{
+		String jsql2 = "UPDATE temp_recent SET recent_date =? WHERE p_id = ?";
+		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+		pstmt2.setString(1, recent_date);
+		pstmt2.setString(2, p_id);
+		
+		pstmt2.executeUpdate();
+	}
+	
+	
 %>
 </head>
 
