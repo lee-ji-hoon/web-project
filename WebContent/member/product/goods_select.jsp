@@ -40,9 +40,10 @@ try {
 	java.util.Date date = new java.util.Date(); //   Date 타입의 객체 date 생성
 	String recent_date = date.toLocaleString(); //   변수 oDate에 현재 시각(년.월.일 시:분:초)을 저장
 	
-	String jsql3 = "SELECT * FROM temp_recent WHERE p_id = ?";
+	String jsql3 = "SELECT * FROM temp_recent WHERE p_id = ? AND m_id = ?";
 	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
 	pstmt3.setString(1,p_id);
+	pstmt3.setString(2,sid);
 	ResultSet rs3 = pstmt3.executeQuery();
 	
 	if(!rs3.next()){
