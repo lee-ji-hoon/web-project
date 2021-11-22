@@ -2,13 +2,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.sql.*"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file="../../layout/header_manager.jsp" %>
 <%
 	Date nowTime = new Date();
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
@@ -19,7 +13,7 @@
 		request.setCharacterEncoding("utf-8");
 
 		int notice_no = Integer.parseInt(request.getParameter("notice_no"));
-		String manager_id = request.getParameter("manager_id");
+		String manage_id = request.getParameter("manager_id");
 		
 		String notice_date = request.getParameter("notice_date");
 		
