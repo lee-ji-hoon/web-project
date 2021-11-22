@@ -73,20 +73,37 @@
 					</label>
 				</div>
 			 -->
+			 <%
+				 String[] compList_arr = compList.split(" ");
+	
+					String[] checked = new String[4];
+	
+					for (int i = 0; i < compList_arr.length; i++) {
+						if (compList_arr[i].equals("상")) {
+							checked[0] = "checked";
+						} else if (compList_arr[i].equals("중")) {
+							checked[1] = "checked";
+						} else if (compList_arr[i].equals("하")) {
+							checked[2] = "checked";
+						} else if (compList_arr[i].equals("default")) {
+							checked[3] = "checked";
+						}
+					}
+			 %>
 				<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="상"/>
+					<input type="radio" name="compList" value="상" <%=checked[0]%>/>
 					상
 				</div>
 				<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="중" />
+					<input type="radio" name="compList" value="중" <%=checked[1]%>/>
 					중
 				</div>
 				<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="하" />
+					<input type="radio" name="compList" value="하" <%=checked[2]%>/>
 					하
 				</div>
 				<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="default" />
+					<input type="radio" name="compList" value="default" <%=checked[3]%>/>
 					전체보기
 				</div>
 				<br>
@@ -95,7 +112,7 @@
 			</form>
 			<br>
 		<div class="favor-sidebar-title">최근 본 상품</div>
-		<ul class="recent" style="width: 250px; height: 450px; overflow: auto">
+		<ul class="recent">
 		<% 
 			while(rs2.next()){
 				String m_id = rs2.getString("m_id");
