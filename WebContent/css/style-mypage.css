@@ -34,6 +34,8 @@
 	display: table;
 	overflow: hidden;
 	text-align: center;
+	border:0;
+	outline:0;
 }
 
 .hbox-menu li {
