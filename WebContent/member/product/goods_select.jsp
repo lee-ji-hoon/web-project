@@ -171,12 +171,18 @@ try {
 						<button type="button" class="cart-btn" onclick="need_login();">
 							<i class="material-icons">shopping_cart</i>
 						</button>
+						<button type="button" class="fav-btn" onclick="need_login();">
+							<i class="material-icons">favorite</i>
+						</button>
 					</c:when>
 					<c:otherwise>
 						<button type="button" class="buy-btn"
 							onclick="direct_product_order()">바로 구매</button>
 						<button type="button" class="cart-btn" onclick="add_to_cart()">
 							<i class="material-icons">shopping_cart</i>
+						</button>
+						<button type="button" class="fav-btn" onclick="add_to_dibs();">
+							<i class="material-icons" style="color: red;">favorite_border</i>
 						</button>
 
 					</c:otherwise>
