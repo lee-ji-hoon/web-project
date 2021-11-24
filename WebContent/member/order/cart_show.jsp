@@ -110,8 +110,8 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 						
 				%>
 				<tr>
-					<td><img src="../../img/product/<%=p_id%>.jpg"width="50" height="50"></td>
-					<td><%=p_name %></td>
+					<td><a href="../product/goods_select.jsp?p_id=<%=p_id%>"><img src="../../img/product/<%=p_id%>.jpg"width="50" height="50"></a></td>
+					<td><a href="../product/goods_select.jsp?p_id=<%=p_id%>" style="color:black"><%=p_name %></a></td>
 					<td><fmt:formatNumber value="<%=p_price%>" type="number" />원</td>
 					<td><%=ct_qty %>개</td>
 					<td><fmt:formatNumber value="<%=amount%>" type="number" />원</td>
