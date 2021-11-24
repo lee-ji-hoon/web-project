@@ -4,7 +4,7 @@
 <%@ include file="../../layout/mypage_header.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="../../css/style-table.css?v=112124123">
-	
+
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
@@ -13,52 +13,54 @@ try {
 
 	Class.forName("org.gjt.mm.mysql.Driver");
 	Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+	String state = request.getParameter("state");
 
-	String jsql = "select * from order_info where m_id = ?";
+	String jsql = "select * from order_info where m_id = ? AND ord_state=?";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
 	pstmt.setString(1, sid);
+	pstmt.setString(2, state);
 	ResultSet rs = pstmt.executeQuery();
-	
+
 	String jsql2 = "SELECT * FROM order_info WHERE ord_state = '입금확인중'";
 	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 	ResultSet rs2 = pstmt2.executeQuery();
-	
+
 	String jsql3 = "SELECT * FROM order_info WHERE ord_state = '배송준비중'";
 	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
 	ResultSet rs3 = pstmt3.executeQuery();
-	
+
 	String jsql4 = "SELECT * FROM order_info WHERE ord_state = '배송시작'";
 	PreparedStatement pstmt4 = con.prepareStatement(jsql4);
 	ResultSet rs4 = pstmt4.executeQuery();
-	
+
 	String jsql5 = "SELECT * FROM order_info WHERE ord_state = '배송완료'";
 	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
 	ResultSet rs5 = pstmt5.executeQuery();
-	
+
 	int count2 = 0;
 	int count3 = 0;
 	int count4 = 0;
 	int count5 = 0;
-	
-	while(rs2.next()){
+
+	while (rs2.next()) {
 		count2 = count2 + 1;
 	}
-	
-	while(rs3.next()){
+
+	while (rs3.next()) {
 		count3 = count3 + 1;
 	}
-	
-	while(rs4.next()){
+
+	while (rs4.next()) {
 		count4 = count4 + 1;
 	}
-	
-	while(rs5.next()){
+
+	while (rs5.next()) {
 		count5 = count5 + 1;
 	}
-	
-	int sum = count2+count3+count4+count5;
-	
+
+	int sum = count2 + count3 + count4 + count5;
 %>
+<%=state%>
 <!--  menu list 시작  -->
 <section id="menu">
 	<ul class="hbox-menu">
@@ -77,15 +79,33 @@ try {
 </section>
 
 <center>
-
+	<%
+	String[] p_state = state.split(" ");
+	String[] p_state_select = new String[5];
+	for(int i=0; i<p_state.length;i++) {
+		if (p_state[0].equals("입금확인중")) {
+			p_state[0] = "style=background-color:#d3d3d3";
+		} else if (p_state[1].equals("배송준비중")) {
+			p_state[1] = "style=background-color:#d3d3d3";
+		} else if (p_state[2].equals("배송시작")) {
+			p_state[2] = "style=background-color:#d3d3d3";
+		} else if (p_state[3].equals("배송완료")) {
+			p_state[3] = "style=background-color:#d3d3d3";
+		}
+	}
+	%>
+	<%=p_state[0] %>
+	<%=p_state[1] %>
+	<%=p_state[2] %>
+	<%=p_state[3] %>
 	<ul class="mylist">
-		<li style=background-color:#d3d3d3><a href="mypage_order.jsp">전체보기(<%=sum%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
-    </ul>
-    <br>
+		<li><a href="mypage_order.jsp">전체보기(<%=sum%>)</a></li>
+        <li <%=p_state[0]%>> <a href="mypage_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
+        <li <%=p_state[1]%>> <a href="mypage_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
+        <li <%=p_state[2]%>> <a href="mypage_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
+        <li <%=p_state[3]%>> <a href="mypage_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
+	</ul>
+	<br>
 	<p>
 		<%
 		while (rs.next()) {
@@ -108,8 +128,7 @@ try {
 		<thead>
 			<tr>
 				<th colspan="13" style="font-size: 16px"><font color="blue">
-						배송자 정보
-					</font></th>
+						배송자 정보 </font></th>
 			</tr>
 		</thead>
 		<thead>
@@ -196,7 +215,7 @@ try {
 		<p>
 		<thead>
 			<tr>
-				<th colspan=3 style="padding:0px">상품 이미지</th>
+				<th colspan=3 style="padding: 0px">상품 이미지</th>
 				<th colspan=3>상품 가격</th>
 				<th colspan=3>수량</th>
 				<th colspan=3>금액</th>
@@ -209,39 +228,45 @@ try {
 			String p_id = rs6.getString("p_id");
 			int ord_no2 = rs6.getInt("ord_no");
 			int ord_qty = rs6.getInt("ord_qty");
-			
+
 			String jsql7 = "SELECT p_price,p_name FROM product WHERE p_id = ?";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
 			pstmt7.setString(1, p_id);
 			ResultSet rs7 = pstmt7.executeQuery();
-			
-			while (rs7.next()){
+
+			while (rs7.next()) {
 				String p_name = rs7.getString("p_name");
 				int p_price = rs7.getInt("p_price");
 				int p_sum = 0;
 				p_sum = ord_qty * p_price;
-			
 		%>
 		<tbody>
 			<tr>
-				<td class ="p_img" colspan=2 align="center">
-					<div><a href="../product/goods_select.jsp?p_id=<%=p_id%>">
-						<img src="../../img/product/<%=p_id%>.jpg" border=0>
-					</a>
+				<td class="p_img" colspan=2 align="center">
+					<div>
+						<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
+							<img src="../../img/product/<%=p_id%>.jpg" border=0>
+						</a>
 					</div>
-					
+
 				</td>
 				<th colspan=2><a
 						href="../product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a></th>
-				<td colspan=2><fmt:formatNumber value="<%=p_price%>" />원</td>
+				<td colspan=2>
+					<fmt:formatNumber value="<%=p_price%>" />
+					원
+				</td>
 				<td colspan=2><%=ord_qty%></td>
-				<td colspan=2><fmt:formatNumber value="<%=p_sum%>" />원</td>
+				<td colspan=2>
+					<fmt:formatNumber value="<%=p_sum%>" />
+					원
+				</td>
 			</tr>
 		</tbody>
 		<%
 		}
-			} // rs6
-				} // rs7 
+		} // rs6
+		} // rs7
 		%>
 
 	</table>
