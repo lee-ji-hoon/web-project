@@ -14,7 +14,7 @@ try {
 	Class.forName("org.gjt.mm.mysql.Driver");
 	Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 
-	String jsql = "select * from order_info where m_id = ?";
+	String jsql = "select * from order_info where m_id = ? AND ord_state='입금확인중'";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
 	pstmt.setString(1, sid);
 	ResultSet rs = pstmt.executeQuery();
@@ -79,11 +79,11 @@ try {
 <center>
 
 	<ul class="mylist">
-		<li style=background-color:#d3d3d3><a href="mypage_order.jsp">전체보기(<%=sum%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
-        <li><a href="mypage_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
+		<li><a href="mypage_order.jsp">전체보기(<%=sum%>)</a></li>
+        <li style="background-color:#d3d3d3"><a href="">입금확인중(<%=count2%>)</a></li>
+        <li><a href="mypage_order_prepare.jsp">배송준비중(<%=count3%>)</a></li>
+        <li><a href="mypage_order_start.jsp">배송시작(<%=count4%>)</a></li>
+        <li><a href="mypage_order_arrive.jsp">배송완료(<%=count5%>)</a></li>
     </ul>
     <br>
 	<p>
