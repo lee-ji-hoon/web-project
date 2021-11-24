@@ -60,7 +60,6 @@ try {
 
 	int sum = count2 + count3 + count4 + count5;
 %>
-<%=state%>
 <!--  menu list 시작  -->
 <section id="menu">
 	<ul class="hbox-menu">
@@ -80,30 +79,35 @@ try {
 
 <center>
 	<%
-	String[] p_state = state.split(" ");
-	String[] p_state_select = new String[5];
+	String[ ]  p_state = state.split(" ");   
+	String[ ]  checked = new String[4];   
+
+
 	for(int i=0; i<p_state.length;i++) {
-		if (p_state[0].equals("입금확인중")) {
-			p_state[0] = "style=background-color:#d3d3d3";
-		} else if (p_state[1].equals("배송준비중")) {
-			p_state[1] = "style=background-color:#d3d3d3";
-		} else if (p_state[2].equals("배송시작")) {
-			p_state[2] = "style=background-color:#d3d3d3";
-		} else if (p_state[3].equals("배송완료")) {
-			p_state[3] = "style=background-color:#d3d3d3";
+		if(p_state[i].equals("입금확인중"))
+		{
+			checked[0] = "style=background-color:#d3d3d3";
+		}
+		else if(p_state[i].equals("배송준비중"))
+		{
+			checked[1] = "style=background-color:#d3d3d3";
+		}
+		else if(p_state[i].equals("배송시작"))
+		{
+			checked[2] = "style=background-color:#d3d3d3";
+		}
+		else if(p_state[i].equals("배송완료"))
+		{
+			checked[3] = "style=background-color:#d3d3d3";
 		}
 	}
 	%>
-	<%=p_state[0] %>
-	<%=p_state[1] %>
-	<%=p_state[2] %>
-	<%=p_state[3] %>
 	<ul class="mylist">
 		<li><a href="mypage_order.jsp">전체보기(<%=sum%>)</a></li>
-        <li <%=p_state[0]%>> <a href="mypage_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
-        <li <%=p_state[1]%>> <a href="mypage_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
-        <li <%=p_state[2]%>> <a href="mypage_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
-        <li <%=p_state[3]%>> <a href="mypage_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
+        <li <%=checked[0]%>> <a href="mypage_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
+        <li <%=checked[1]%>> <a href="mypage_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
+        <li <%=checked[2]%>> <a href="mypage_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
+        <li <%=checked[3]%>> <a href="mypage_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
 	</ul>
 	<br>
 	<p>
@@ -208,7 +212,7 @@ try {
 		<thead>
 			<tr>
 				<th colspan="13" style="font-size: 16px"><font color="blue">
-						[<%=m_id%>회원님의 주문목록입니다]
+						주문목록
 					</font></th>
 			</tr>
 		</thead>
