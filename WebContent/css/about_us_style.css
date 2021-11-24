@@ -39,6 +39,12 @@
 #abu_notice_list a{
 	font-size : 15pt;
 	font-weight : 300;
+	text-decoration : none;
+	color : black;
+}
+#abu_notice_list a:hover{
+	text-decoration : none;
+	color : black;
 }
 #abu_notice_title_line{
 	border-top : 2px solid black;
