@@ -181,10 +181,27 @@ try {
 						<button type="button" class="cart-btn" onclick="add_to_cart()">
 							<i class="material-icons">shopping_cart</i>
 						</button>
-						<button type="button" class="fav-btn" onclick="add_to_dibs();">
-							<i class="material-icons" style="color: red;">favorite_border</i>
-						</button>
-
+						<%
+							String jsql4 = "SELECT * FROM dibs WHERE p_id = ?";
+							PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+							pstmt4.setString(1,p_id);
+							ResultSet rs4 = pstmt4.executeQuery();
+							
+							if(rs4.next()){
+								
+						%>
+							<button type="button" class="fav-btn" onclick="rmv_to_dibs();">
+								<i class="material-icons">favorite_border</i>
+							</button>
+						<%
+							}else{
+						%>
+							<button type="button" class="fav-btn" onclick="add_to_dibs();">
+								<i class="material-icons" style="color: red;">favorite_border</i>
+							</button>
+						<%
+							}
+						%>
 					</c:otherwise>
 				</c:choose>
 </form>
