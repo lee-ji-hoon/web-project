@@ -13,7 +13,7 @@
 			<h1 class="display-3">주문하기</h1>
 		</div>
 	</div>
-	<p>
+	<center>
 
 		<%
 		//    (1) (17행~120행): 장바구니 내역을 그대로 보여주기  => showCart.jsp의 13행~116행과 
@@ -213,11 +213,11 @@
 					</font></td>
 					<td colspan=3 width=474><select name="bank">
 							<option value="0" selected>다음 중 선택</option>
-							<option value="우리은행">우리은행 ( 324-01-123400 / (주)남서울멀티쇼핑몰)</option>
-							<option value="국민은행">국민은행 ( 011-02-300481 / (주)남서울멀티쇼핑몰)</option>
-							<option value="외환은행">외환은행 ( 327-56-333002 / (주)남서울멀티쇼핑몰)</option>
-							<option value="신한은행">신한은행 ( 987-25-202099 / (주)남서울멀티쇼핑몰)</option>
-							<option value="하나은행">하나은행 ( 698-00-222176 / (주)남서울멀티쇼핑몰)</option>
+							<option value="우리은행">우리은행 ( 324-01-123400 / (주)aqua)</option>
+							<option value="국민은행">국민은행 ( 011-02-300481 / (주)aqua)</option>
+							<option value="외환은행">외환은행 ( 327-56-333002 / (주)aqua)</option>
+							<option value="신한은행">신한은행 ( 987-25-202099 / (주)aqua)</option>
+							<option value="하나은행">하나은행 ( 698-00-222176 / (주)aqua)</option>
 					</select> <font size=1 color=blue>(카드 or 무통장입금 중 택일!)</font></td>
 					</td>
 				</tr>
@@ -248,6 +248,7 @@
 
 		</form>
 	</div>
+	</center>
 	<%
 	} //  if-else문의 끝
 	} catch (Exception e) {

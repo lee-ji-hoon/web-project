@@ -49,8 +49,8 @@
 		<div class="row">
 			<table width=100%>
 				<tr>
-					<td align="left"><a href="dibs_all_delete.jsp?id=<%=sid %>" class="btn btn-danger">찜목록 비우기</a></td>
-					<td align="right"><a href="dibs_cart_order_in.jsp?ct_no=<%=dibs_no %>" class="btn btn-success">전체 장바구니에 추가</a></td>
+					<td align="left"><a href="../dibs/dibs_all_delete.jsp?id=<%=sid %>" class="btn btn-danger">찜목록 비우기</a></td>
+					<td align="right"><a href="../dibs/dibs_cart_order_in.jsp?ct_no=<%=dibs_no %>" class="btn btn-success">전체 장바구니에 추가</a></td>
 				</tr>
 			</table>
 		</div>
@@ -91,7 +91,7 @@
 				<tr>
 					<td><img src="../../img/product/<%=p_id%>.jpg"width="50" height="50"></td>
 					<td><%=p_name %></td>
-					<td><a href="cart_order_in.jsp?p_id=<%=p_id%>" class="badge badge-danger">장바구니에 추가</a></td>
+					<td><a href="../dibs/dibs_cart_in.jsp?p_id=<%=p_id%>" class="badge badge-danger">장바구니에 추가</a></td>
 					<td><a href="../dibs/dibs_delete.jsp?p_id=<%=p_id%>" class="badge badge-success">삭제</a></td>
 				</tr>
 				<% 
