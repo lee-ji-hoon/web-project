@@ -77,7 +77,7 @@
 				하
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="default" checked />
+				<input type="radio" name="compList" value="default"/>
 				전체보기
 			</div><br>
 		<button type="button" class="btn btn-primary" onclick="category_top()">검색</button>
