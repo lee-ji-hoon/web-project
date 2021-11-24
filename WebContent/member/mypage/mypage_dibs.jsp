@@ -11,8 +11,8 @@
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp">회원정보</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp">구매내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
-		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp" style="color:black">장바구니</a></li>
-		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp" style="color:black">찜목록</a></li>
 	    </ul>
 	</section>
 	<%
@@ -26,9 +26,9 @@
 
 	String dibs_no = session.getId();   //세션 번호를 장바구니 번호로서 이용하기 위해 ctNo에 저장
 
-	String jsql = "select * from dibs where dibs_no = ?";
+	String jsql = "select * from dibs where m_id = ?";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
-	pstmt.setString(1, dibs_no);
+	pstmt.setString(1, sid);
 
 	ResultSet rs = pstmt.executeQuery();
 
@@ -39,6 +39,7 @@
 	찜목록이 비었습니다.
 	<a href="../product/goods_group.jsp" class="btn btn-secondary">쇼핑 계속하기</a>
 	</center>
+	<br>
 	<%
 		}
 		else
@@ -48,8 +49,8 @@
 		<div class="row">
 			<table width=100%>
 				<tr>
-					<td align="left"><a href="cart_all_delete.jsp?id=<%=dibs_no %>" class="btn btn-danger">찜목록 비우기</a></td>
-					<td align="right"><a href="cart_order.jsp?ct_no=<%=dibs_no %>" class="btn btn-success">전체 장바구니에 추가</a></td>
+					<td align="left"><a href="dibs_all_delete.jsp?id=<%=sid %>" class="btn btn-danger">찜목록 비우기</a></td>
+					<td align="right"><a href="dibs_cart_order_in.jsp?ct_no=<%=dibs_no %>" class="btn btn-success">전체 장바구니에 추가</a></td>
 				</tr>
 			</table>
 		</div>
@@ -66,18 +67,15 @@
 
 				<%
 
-				String jsql2 = "select p_id, dibs_qty from dibs where dibs_no = ?";
+				String jsql2 = "select * from dibs where m_id = ?";
 				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-				pstmt2.setString(1, dibs_no);		
+				pstmt2.setString(1, sid);		
 
 				ResultSet rs2 = pstmt2.executeQuery(); 
 
-				int total=0;
-
 				while(rs2.next()) 
 		  		{			                   
-					String p_id = rs2.getString("p_id");	//  cart테이블로부터 상품번호 추출
-		    		int ct_qty = rs2.getInt("ct_qty");	                //  cart테이블로부터 주문수량 추출 
+					String p_id = rs2.getString("p_id");	//  cart테이블로부터 상품번호 추출 
 
 		    		String jsql3 = "select p_name from product where p_id = ?";
 			    	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
@@ -93,14 +91,14 @@
 				<tr>
 					<td><img src="../../img/product/<%=p_id%>.jpg"width="50" height="50"></td>
 					<td><%=p_name %></td>
-					<td><a href="cart_delete.jsp?p_id=<%=p_id%>" class="badge badge-danger">장바구니에 추가</a></td>
-					<td><a href="cart_delete.jsp?p_id=<%=p_id%>" class="badge badge-success">삭제</a></td>
+					<td><a href="cart_order_in.jsp?p_id=<%=p_id%>" class="badge badge-danger">장바구니에 추가</a></td>
+					<td><a href="../dibs/dibs_delete.jsp?p_id=<%=p_id%>" class="badge badge-success">삭제</a></td>
 				</tr>
 				<% 
 					}
 				%>
 			</table>
-			<a href="../product/goods_group.jsp" class="btn btn-secondary">쇼핑 계속하기
+			<a href="../product/goods_group.jsp" class="btn btn-secondary">상품 보러 가기
 				&raquo;</a>
 		</div>
 
