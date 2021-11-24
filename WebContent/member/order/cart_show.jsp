@@ -120,6 +120,50 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 				<% 
 					}
 				%>
+				
+				<%
+				String jsql4 = "select t_id, ct_qty_a, ct_qty_t, ct_qty_c from cart_t where ct_no = ?";
+				PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+				pstmt4.setString(1, ct_no);		
+
+				ResultSet rs4 = pstmt4.executeQuery();
+				
+				while(rs4.next()) 
+		  		{			                   
+					String t_id = rs2.getString("t_id");	//  cart_t테이블로부터 상품번호 추출
+		    		int ct_qty_a = rs2.getInt("ct_qty_a");	                //  cart_t테이블로부터 주문수량 추출 
+		    		int ct_qty_t = rs2.getInt("ct_qty_t");	
+		    		int ct_qty_c = rs2.getInt("ct_qty_c");	
+		    		
+		    		String jsql5 = "select t_name, t_price_adult, t_price_teen, t_price_child from ticket where t_id = ?";
+			    	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+				    pstmt5.setString(1, t_id);
+				    
+					ResultSet rs5 = pstmt5.executeQuery(); 
+					rs5.next();
+
+					String	t_name =  rs5.getString("t_name");	  //  goods 테이블로부터 상품명 추출
+					int t_price_adult =  rs5.getInt("t_price_adult");                 //  goods 테이블로부터 상품단가 추출
+					int t_price_teen =  rs5.getInt("t_price_teen");
+					int t_price_child =  rs5.getInt("t_price_child");
+					
+					int amount_t = (t_price_adult * ct_qty_a) + (t_price_teen * ct_qty_t) + (t_price_child * ct_qty_c);
+		    		//  주문액 계산
+		    		total = total + amount_t; 
+					//  전체 주문총액 계산
+						
+				%>
+				<tr>
+					<td><img src="../../img/tickets/<%=t_id%>.jpg"width="50" height="50"></td>
+					<td><%=t_name %></td>
+					<td><fmt:formatNumber value="<%=t_price_adult%>" type="number" />원</td>
+					<td><%=ct_qty_a%>개</td>
+					<td><fmt:formatNumber value="<%=amount_t%>" type="number" />원</td>
+					<td><a href="cart_delete.jsp?p_id=<%=t_id%>" class="badge badge-danger">삭제</a></td>
+				</tr>
+				<% 
+					}
+				%>
 
 				<tr>
 					<th></th>

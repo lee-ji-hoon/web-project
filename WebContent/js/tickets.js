@@ -270,7 +270,7 @@ function direct_product_order(){  //  "구매하기 버튼 클릭시"
 			var str2=ticket.amount_teen.value;
 			var str3=ticket.amount_child.value;
 			var frm = document.ticket;
-			frm.action = "../order/cart_in.jsp";
+			frm.action = "../order/cart_t_in.jsp";
 			frm.submit();
 	}
 	else {
@@ -284,7 +284,7 @@ function add_to_cart() {
 			var str2=ticket.amount_teen.value;
 			var str3=ticket.amount_child.value;
 			var frm = document.ticket;
-			frm.action = "../order/cart_in.jsp";
+			frm.action = "../order/cart_t_in.jsp";
 			frm.submit();
 	}
 	else {
