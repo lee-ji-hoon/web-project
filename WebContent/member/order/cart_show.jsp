@@ -110,8 +110,8 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 						
 				%>
 				<tr>
-					<td><img src="../../img/product/<%=p_id%>.jpg"width="50" height="50"></td>
-					<td><%=p_name %></td>
+					<td><a href="../product/goods_select.jsp?p_id=<%=p_id%>"><img src="../../img/product/<%=p_id%>.jpg"width="50" height="50"></a></td>
+					<td><a href="../product/goods_select.jsp?p_id=<%=p_id%>" style="color:black"><%=p_name %></a></td>
 					<td><fmt:formatNumber value="<%=p_price%>" type="number" />원</td>
 					<td><%=ct_qty %>개</td>
 					<td><fmt:formatNumber value="<%=amount%>" type="number" />원</td>
@@ -130,10 +130,10 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 				
 				while(rs4.next()) 
 		  		{			                   
-					String t_id = rs2.getString("t_id");	//  cart_t테이블로부터 상품번호 추출
-		    		int ct_qty_a = rs2.getInt("ct_qty_a");	                //  cart_t테이블로부터 주문수량 추출 
-		    		int ct_qty_t = rs2.getInt("ct_qty_t");	
-		    		int ct_qty_c = rs2.getInt("ct_qty_c");	
+					String t_id = rs4.getString("t_id");	//  cart_t테이블로부터 상품번호 추출
+		    		int ct_qty_a = rs4.getInt("ct_qty_a");	                //  cart_t테이블로부터 주문수량 추출 
+		    		int ct_qty_t = rs4.getInt("ct_qty_t");	
+		    		int ct_qty_c = rs4.getInt("ct_qty_c");	
 		    		
 		    		String jsql5 = "select t_name, t_price_adult, t_price_teen, t_price_child from ticket where t_id = ?";
 			    	PreparedStatement pstmt5 = con.prepareStatement(jsql5);

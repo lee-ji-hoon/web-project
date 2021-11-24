@@ -182,9 +182,10 @@ try {
 							<i class="material-icons">shopping_cart</i>
 						</button>
 						<%
-							String jsql4 = "SELECT * FROM dibs WHERE p_id = ?";
+							String jsql4 = "SELECT * FROM dibs WHERE p_id = ? AND m_id = ? ";
 							PreparedStatement pstmt4 = con.prepareStatement(jsql4);
 							pstmt4.setString(1,p_id);
+							pstmt4.setString(2,sid);
 							ResultSet rs4 = pstmt4.executeQuery();
 							
 							if(rs4.next()){
