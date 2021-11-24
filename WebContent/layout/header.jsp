@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/aqua_header.css?1">
+	href="${pageContext.request.contextPath}/css/aqua_header.css?v=1232">
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
@@ -78,6 +78,7 @@ String sid = (String) session.getAttribute("sid");
 		<div class="inner">
 			<h1 class="logo">
 				<a href="${pageContext.request.contextPath}/member/index.jsp">아쿠아플라넷</a>
+				
 			</h1>
 			<div class="nav_wrap">
 				<ul class="service">
@@ -90,12 +91,10 @@ String sid = (String) session.getAttribute("sid");
 									href="${pageContext.request.contextPath}/member/join/insert_member.jsp">Join</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a><%=sid%>님 환영합니다
-								</a></li>
 							<li><a
 									href="${pageContext.request.contextPath}/member/login/logout.jsp">logout</a></li>
 							<li><a
-									href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">mypage</a></li>
+									href="${pageContext.request.contextPath}/member/mypage/mypage.jsp?id=<%=sid%>">mypage</a></li>
 							<li><a
 									href="${pageContext.request.contextPath}/member/order/cart_show.jsp">cart</a></li>
 						</c:otherwise>
