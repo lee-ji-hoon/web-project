@@ -189,7 +189,7 @@ try {
 		<thead>
 			<tr>
 				<th colspan="13" style="font-size: 16px"><font color="blue">
-						[<%=m_id%>회원님의 주문목록입니다]
+						주문목록
 					</font></th>
 			</tr>
 		</thead>
