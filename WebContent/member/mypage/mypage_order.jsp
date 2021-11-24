@@ -25,6 +25,7 @@ try {
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp" style="color:black">구매내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
 	    </ul>
 	</section>
 	
