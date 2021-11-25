@@ -302,8 +302,8 @@ try {
 					어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
 				</td>
 				<td colspan=2>
-					성인(<%=ord_qty_a %>)
-					청소년(<%=ord_qty_t %>)
+					성인(<%=ord_qty_a %>)<br>
+					청소년(<%=ord_qty_t %>)<br>
 					어린이(<%=ord_qty_c %>)
 				</td>
 				<td colspan=2>
