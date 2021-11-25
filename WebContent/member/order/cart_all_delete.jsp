@@ -23,6 +23,12 @@ try {
 	pstmt.setString(1, ct_no);
 	
     pstmt.executeUpdate();
+    
+    String jsql2 = "delete from cart_t where ct_no=?";   
+	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, ct_no);
+	
+	pstmt2.executeUpdate();
 
 	if(case_no!= null)  //  (1) 주문완료로 인한 장바구니 비우기 수행하고 난 후의 주문완료 메시지 출력
 	{                             //   orderOK.jsp의 107행 참조
