@@ -154,12 +154,14 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 						
 				%>
 				<tr>
-					<td><img src="../../img/tickets/<%=t_id%>.jpg"width="50" height="50"></td>
+					<td><a href="../ticket/tickets_detail.jsp?t_id=<%=t_id%>"><img src="../../img/tickets/<%=t_id%>.jpg"width="50" height="50"></a></td>
 					<td>
-						<%=t_name %> <br>
-						&nbsp;&nbsp;- 성인(만 19세 이상)<br>
-						&nbsp;&nbsp;- 청소년(만 13세 ~ 18세)<br>
-						&nbsp;&nbsp;- 어린이(만 4세 ~ 12세)
+						<a href="../ticket/tickets_detail.jsp?t_id=<%=t_id%>"style="color:black">
+							<%=t_name %> <br>
+							&nbsp;&nbsp;- 성인(만 19세 이상)<br>
+							&nbsp;&nbsp;- 청소년(만 13세 ~ 18세)<br>
+							&nbsp;&nbsp;- 어린이(만 4세 ~ 12세)
+						</a>
 					</td>
 					<td>
 						<fmt:formatNumber value="" type="number" /><br>
