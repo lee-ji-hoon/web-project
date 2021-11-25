@@ -28,10 +28,6 @@
 
 		ResultSet rs = pstmt.executeQuery();
 		
-		String jsql2 = "SELECT * FROM temp_recent WHERE m_id=? ORDER BY recent_date desc";
-		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-		pstmt2.setString(1,sid);
-		ResultSet rs2  = pstmt2.executeQuery();
 		
 	%>
 
@@ -113,25 +109,46 @@
 			<br>
 		<div class="favor-sidebar-title">최근 본 상품</div>
 		<ul class="recent">
-		<% 
-			while(rs2.next()){
-				String m_id = rs2.getString("m_id");
-				 String p_id = rs2.getString("p_id");
-				 String p_name = rs2.getString("p_name");
-				 String recent_date = rs2.getString("recent_date");
-			 %>
-				 	<li>
-					 	<a href="goods_select.jsp?p_id=<%=p_id%>">
-					 		<li><img src="../../img/product/<%=p_id%>.jpg" height="50px" width="50px" >
-					 	</a> 
-					 	&nbsp
-					 	<a href="goods_select.jsp?p_id=<%=p_id%>"><%=p_name %></a>
-					 	
-					 	</a>
-					 </li>
-			 <%
-			 }
-			 %>
+		<%
+			if (sid != null) {
+				String jsql2 = "SELECT * FROM temp_recent WHERE m_id=? ORDER BY recent_date desc";
+				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+				pstmt2.setString(1, sid);
+				ResultSet rs2 = pstmt2.executeQuery();
+
+				while (rs2.next()) {
+					String m_id = rs2.getString("m_id");
+					String p_id = rs2.getString("p_id");
+					String p_name = rs2.getString("p_name");
+					String recent_date = rs2.getString("recent_date");
+			%>
+			<li><a href="goods_select.jsp?p_id=<%=p_id%>">
+					<li><img src="../../img/product/<%=p_id%>.jpg" height="50px"
+							width="50px">
+				</a> &nbsp <a href="goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a> </a></li>
+			<%
+			}
+			} else {
+			String ct_no = session.getId();
+			String jsql2 = "SELECT * FROM temp_recent WHERE ct_no=? ORDER BY recent_date desc";
+			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+			pstmt2.setString(1, ct_no);
+			ResultSet rs2 = pstmt2.executeQuery();
+
+			while (rs2.next()) {
+			String m_id = rs2.getString("m_id");
+			String p_id = rs2.getString("p_id");
+			String p_name = rs2.getString("p_name");
+			String recent_date = rs2.getString("recent_date");
+			%>
+			<li><a href="goods_select.jsp?p_id=<%=p_id%>">
+					<li><img src="../../img/product/<%=p_id%>.jpg" height="50px"
+							width="50px">
+				</a> &nbsp <a href="goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a> </a></li>
+			<%
+			}
+			}
+			%>
 			 </ul>
 		</div>
 	</div>
