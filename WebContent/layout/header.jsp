@@ -54,6 +54,7 @@
 <!-- Iamport -->
 <script type="text/javascript"
 	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+	
 
 
 
@@ -107,18 +108,18 @@ String sid = (String) session.getAttribute("sid");
 								<span class="kor">홈</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="#">아쿠아리움 소개</a></li>
-								<li><a href="#">찾아 오시는 길</a></li>
-								<li><a href="#">이용 요금 안내</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/about_us_info.html">아쿠아리움 소개</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/about_us_road.html">찾아 오시는 길</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/about_us_cost.html">이용 요금 안내</a></li>
 							</ul></li>
 						<li><a href="#">
 								<span class="eng">Theme</span>
 								<span class="kor">테마</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="#">Theme A</a></li>
-								<li><a href="#">Theme B</a></li>
-								<li><a href="#">Theme C</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeA.html">Theme A</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeB.html">Theme B</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeC.html">Theme C</a></li>
 
 							</ul></li>
 						<li><a href="#">
@@ -143,7 +144,7 @@ String sid = (String) session.getAttribute("sid");
 								<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_notice.jsp">공지사항</a></li>
 							<c:choose>
 								<c:when test="${empty sid}">
-										<li><a class="btn" onClick="need_login();">개별문의 (1:1)</a></li>
+									<li><a class="btn" onClick="need_login();">개별문의 (1:1)</a></li>
 								</c:when>
 								<c:otherwise>
 									<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_qna_write.jsp">개별문의 (1:1)</a></li>
