@@ -35,8 +35,14 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 	pstmt.setString(1, ct_no);
 
 	ResultSet rs = pstmt.executeQuery();
+	
+	String jsql6 = "select * from cart_t where ct_no = ?";
+	PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+	pstmt6.setString(1, ct_no);
 
-	if (!rs.next()) // 조회 결과가 존재하지 않으면,  rs.next()는 false를 리턴함. 
+	ResultSet rs6 = pstmt6.executeQuery();
+
+	if (!rs.next() && !rs6.next()) // 조회 결과가 존재하지 않으면,  rs.next()는 false를 리턴함. 
 	{ //  따라서,  !rs.next()의 값은 true가 됨
 %>
 	<center>
