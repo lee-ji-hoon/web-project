@@ -197,9 +197,10 @@ try {
 		<thead>
 			<tr>
 				<th colspan=3 style="padding:0px">상품 이미지</th>
-				<th colspan=3>상품 가격</th>
-				<th colspan=3>수량</th>
-				<th colspan=3>금액</th>
+				<th colspan=3>상품 이름</th>
+				<th colspan=2>상품 가격</th>
+				<th colspan=2>수량</th>
+				<th colspan=2>금액</th>
 
 
 			</tr>
@@ -224,14 +225,14 @@ try {
 		%>
 		<tbody>
 			<tr>
-				<td class ="p_img" colspan=2 align="center">
+				<td class ="p_img" colspan=3 align="center">
 					<div><a href="../product/goods_select.jsp?p_id=<%=p_id%>">
 						<img src="../../img/product/<%=p_id%>.jpg" border=0>
 					</a>
 					</div>
 					
 				</td>
-				<th colspan=2><a
+				<th colspan=3><a
 						href="../product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a></th>
 				<td colspan=2><fmt:formatNumber value="<%=p_price%>" />원</td>
 				<td colspan=2><%=ord_qty%></td>
