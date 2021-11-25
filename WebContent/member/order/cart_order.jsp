@@ -13,7 +13,7 @@
 			<h1 class="display-3">주문하기</h1>
 		</div>
 	</div>
-	<center>
+	<div align="center">
 
 		<%
 		//    (1) (17행~120행): 장바구니 내역을 그대로 보여주기  => showCart.jsp의 13행~116행과 
@@ -119,6 +119,60 @@
 						원</font></td>
 				<td bgcolor="#eeeede" height="30" align="center"><a
 					href="cart_delete.jsp?p_id=<%=p_id%>"><font size="2" color=blue><b>삭제</b></a></font></td>
+			</tr>
+			<%
+			} // while문의 끝
+			%>
+			<%
+			String jsql5 = "select t_id, ct_qty_a, ct_qty_t, ct_qty_c from cart_t where ct_no = ? order by t_id";
+			PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+			pstmt5.setString(1, ct_no);
+
+			ResultSet rs5 = pstmt5.executeQuery();
+			
+			while (rs5.next()) {
+				String t_id = rs5.getString("t_id"); //  cart테이블로부터 상품번호 추출
+				int ct_qty_a = rs5.getInt("ct_qty_a");	                //  cart_t테이블로부터 주문수량 추출 
+	    		int ct_qty_t = rs5.getInt("ct_qty_t");	
+	    		int ct_qty_c = rs5.getInt("ct_qty_c");	
+	    		int ct_qty_sum = ct_qty_a + ct_qty_t + ct_qty_c;
+
+				String jsql6 = "select t_name, t_price_adult, t_price_teen, t_price_child from ticket where t_id = ?";
+				PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+				pstmt6.setString(1, t_id);
+
+				ResultSet rs6 = pstmt6.executeQuery();
+				rs6.next();
+
+				String t_name = rs6.getString("t_name"); //  goods 테이블로부터 상품명 추출
+				int t_price_adult =  rs6.getInt("t_price_adult");                 //  goods 테이블로부터 상품단가 추출
+				int t_price_teen =  rs6.getInt("t_price_teen");
+				int t_price_child =  rs6.getInt("t_price_child");
+
+				int amount_t = (t_price_adult * ct_qty_a) + (t_price_teen * ct_qty_t) + (t_price_child * ct_qty_c);
+				total = total + amount_t; //  전체 주문총액 계산
+			%>
+			<tr>
+				<td bgcolor="#eeeede" height="30" align="center"><font size="2"><%=t_id%></font></td>
+				<td bgcolor="#eeeede" height="30" align="center"><font size="2"><%=t_name%></font></td>
+				<td bgcolor="#eeeede" height="30" align="center" align=right>
+					<font size="2">
+						성인 : <fmt:formatNumber value="<%=t_price_adult%>" type="number" /><br>
+						청소년 : <fmt:formatNumber value="<%=t_price_teen%>" type="number" /><br>
+						어린이 : <fmt:formatNumber value="<%=t_price_child%>" type="number" />
+					</font>
+				</td>
+				<td bgcolor="#eeeede" height="30" align="center" align=right>
+					<font size="2">
+						성인(<%=ct_qty_a%>)<br>
+						청소년(<%=ct_qty_t%>)<br>
+						어린이(<%=ct_qty_c%>)
+					</font>
+				</td>
+				<td bgcolor="#eeeede" height="30" align="right"><font size="2"><fmt:formatNumber value="<%=amount_t%>" type="number" />
+						원</font></td>
+				<td bgcolor="#eeeede" height="30" align="center"><a
+					href="cart_delete.jsp?t_id=<%=t_id%>"><font size="2" color=blue><b>삭제</b></a></font></td>
 			</tr>
 			<%
 			} // while문의 끝
@@ -248,7 +302,7 @@
 
 		</form>
 	</div>
-	</center>
+	</div>
 	<%
 	} //  if-else문의 끝
 	} catch (Exception e) {
