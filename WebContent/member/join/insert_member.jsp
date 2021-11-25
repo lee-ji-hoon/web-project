@@ -2,7 +2,7 @@
 
 <%@ include file="../../layout/header.jsp" %>
     
-    <script language="javascript" src="../js/js_package.js?ver=123" charset="utf-8"></script>
+    <script language="javascript" src="../../js/js_package.js" charset="utf-8"></script>
     
 <body onLoad="name_focus()">
 <div class="frame user-frm">
@@ -64,7 +64,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		</div>
-		<select name=phone1 class="input">
+		<select name=phone1 class="form-control">
 			<option value="010" selected>010
 			<option value="011">011
 			<option value="016">016

@@ -13,7 +13,7 @@
 			<h1 class="display-3">주문하기</h1>
 		</div>
 	</div>
-	<p>
+	<div align="center">
 
 		<%
 		//    (1) (17행~120행): 장바구니 내역을 그대로 보여주기  => showCart.jsp의 13행~116행과 
@@ -123,6 +123,60 @@
 			<%
 			} // while문의 끝
 			%>
+			<%
+			String jsql5 = "select t_id, ct_qty_a, ct_qty_t, ct_qty_c from cart_t where ct_no = ? order by t_id";
+			PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+			pstmt5.setString(1, ct_no);
+
+			ResultSet rs5 = pstmt5.executeQuery();
+			
+			while (rs5.next()) {
+				String t_id = rs5.getString("t_id"); //  cart테이블로부터 상품번호 추출
+				int ct_qty_a = rs5.getInt("ct_qty_a");	                //  cart_t테이블로부터 주문수량 추출 
+	    		int ct_qty_t = rs5.getInt("ct_qty_t");	
+	    		int ct_qty_c = rs5.getInt("ct_qty_c");	
+	    		int ct_qty_sum = ct_qty_a + ct_qty_t + ct_qty_c;
+
+				String jsql6 = "select t_name, t_price_adult, t_price_teen, t_price_child from ticket where t_id = ?";
+				PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+				pstmt6.setString(1, t_id);
+
+				ResultSet rs6 = pstmt6.executeQuery();
+				rs6.next();
+
+				String t_name = rs6.getString("t_name"); //  goods 테이블로부터 상품명 추출
+				int t_price_adult =  rs6.getInt("t_price_adult");                 //  goods 테이블로부터 상품단가 추출
+				int t_price_teen =  rs6.getInt("t_price_teen");
+				int t_price_child =  rs6.getInt("t_price_child");
+
+				int amount_t = (t_price_adult * ct_qty_a) + (t_price_teen * ct_qty_t) + (t_price_child * ct_qty_c);
+				total = total + amount_t; //  전체 주문총액 계산
+			%>
+			<tr>
+				<td bgcolor="#eeeede" height="30" align="center"><font size="2"><%=t_id%></font></td>
+				<td bgcolor="#eeeede" height="30" align="center"><font size="2"><%=t_name%></font></td>
+				<td bgcolor="#eeeede" height="30" align="center" align=right>
+					<font size="2">
+						성인 : <fmt:formatNumber value="<%=t_price_adult%>" type="number" /><br>
+						청소년 : <fmt:formatNumber value="<%=t_price_teen%>" type="number" /><br>
+						어린이 : <fmt:formatNumber value="<%=t_price_child%>" type="number" />
+					</font>
+				</td>
+				<td bgcolor="#eeeede" height="30" align="center" align=right>
+					<font size="2">
+						성인(<%=ct_qty_a%>)<br>
+						청소년(<%=ct_qty_t%>)<br>
+						어린이(<%=ct_qty_c%>)
+					</font>
+				</td>
+				<td bgcolor="#eeeede" height="30" align="right"><font size="2"><fmt:formatNumber value="<%=amount_t%>" type="number" />
+						원</font></td>
+				<td bgcolor="#eeeede" height="30" align="center"><a
+					href="cart_delete.jsp?t_id=<%=t_id%>"><font size="2" color=blue><b>삭제</b></a></font></td>
+			</tr>
+			<%
+			} // while문의 끝
+			%>
 			<tr>
 				<td colspan=4 align=center><font size="2" color="red"><b>전체
 							주문총액</b></font></td>
@@ -194,11 +248,13 @@
 
 			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
 				<tr>
-					<td rowspan=2 align="center" width="155" bgcolor="#002C57"><font
-						size="2" color="#ECFAE4"> <strong>결제 방법</strong>
-					</font></td>
-					<td align="center" width=110 bgcolor="#002C57"><font size="2"
-						color="#ECFAE4"> <strong>신용카드 번호 </td>
+					<td rowspan=2 align="center" width="155" bgcolor="#002C57">
+						<font size="2" color="#ECFAE4"> <strong>결제 방법</strong>
+						</font>
+					</td>
+					<td align="center" width=110 bgcolor="#002C57"><font size="2" color="#ECFAE4"> 
+						<strong>신용카드 번호 
+					</td>
 					<td width=120><input type="text" name="cardNo"></td>
 					<td align="center" width=112 bgcolor="#002C57"><font size="2"
 						color="#ECFAE4"> <strong>비밀번호</strong>
@@ -211,11 +267,11 @@
 					</font></td>
 					<td colspan=3 width=474><select name="bank">
 							<option value="0" selected>다음 중 선택</option>
-							<option value="우리은행">우리은행 ( 324-01-123400 / (주)남서울멀티쇼핑몰)</option>
-							<option value="국민은행">국민은행 ( 011-02-300481 / (주)남서울멀티쇼핑몰)</option>
-							<option value="외환은행">외환은행 ( 327-56-333002 / (주)남서울멀티쇼핑몰)</option>
-							<option value="신한은행">신한은행 ( 987-25-202099 / (주)남서울멀티쇼핑몰)</option>
-							<option value="하나은행">하나은행 ( 698-00-222176 / (주)남서울멀티쇼핑몰)</option>
+							<option value="우리은행">우리은행 ( 324-01-123400 / (주)aqua)</option>
+							<option value="국민은행">국민은행 ( 011-02-300481 / (주)aqua)</option>
+							<option value="외환은행">외환은행 ( 327-56-333002 / (주)aqua)</option>
+							<option value="신한은행">신한은행 ( 987-25-202099 / (주)aqua)</option>
+							<option value="하나은행">하나은행 ( 698-00-222176 / (주)aqua)</option>
 					</select> <font size=1 color=blue>(카드 or 무통장입금 중 택일!)</font></td>
 					</td>
 				</tr>
@@ -245,6 +301,7 @@
 
 
 		</form>
+	</div>
 	</div>
 	<%
 	} //  if-else문의 끝
