@@ -154,27 +154,27 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 						
 				%>
 				<tr>
-					<td rowspan="4"><img src="../../img/tickets/<%=t_id%>.jpg"width="50" height="50"></td>
-					<td><%=t_name %></td>
-					<td><fmt:formatNumber value="" type="number" /></td>
-					<td></td>
-					<td rowspan="4"><fmt:formatNumber value="<%=amount_t%>" type="number" />원</td>
-					<td rowspan="4"><a href="cart_delete.jsp?t_id=<%=t_id%>" class="badge badge-danger">삭제</a></td>
-				</tr>
-				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;- 성인(만 19세 이상)</td>
-					<td><fmt:formatNumber value="<%=t_price_adult%>" type="number" />원</td>
-					<td><%=ct_qty_a%>개</td>
-				</tr>
-				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;- 청소년(만 13세 ~ 18세)</td>
-					<td><fmt:formatNumber value="<%=t_price_teen%>" type="number" />원</td>
-					<td><%=ct_qty_t%>개</td>
-				</tr>
-				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;- 어린이(만 4세 ~ 12세)</td>
-					<td><fmt:formatNumber value="<%=t_price_child%>" type="number" />원</td>
-					<td><%=ct_qty_c%>개</td>
+					<td><img src="../../img/tickets/<%=t_id%>.jpg"width="50" height="50"></td>
+					<td>
+						<%=t_name %> <br>
+						&nbsp;&nbsp;- 성인(만 19세 이상)<br>
+						&nbsp;&nbsp;- 청소년(만 13세 ~ 18세)<br>
+						&nbsp;&nbsp;- 어린이(만 4세 ~ 12세)
+					</td>
+					<td>
+						<fmt:formatNumber value="" type="number" /><br>
+						<fmt:formatNumber value="<%=t_price_adult%>" type="number" />원<br>
+						<fmt:formatNumber value="<%=t_price_teen%>" type="number" />원<br>
+						<fmt:formatNumber value="<%=t_price_child%>" type="number" />원
+					</td>
+					<td>
+					<br>
+					<%=ct_qty_a%>개<br>
+					<%=ct_qty_t%>개<br>
+					<%=ct_qty_c%>개
+					</td>
+					<td><fmt:formatNumber value="<%=amount_t%>" type="number" />원</td>
+					<td><a href="cart_delete.jsp?t_id=<%=t_id%>" class="badge badge-danger">삭제</a></td>
 				</tr>
 				<% 
 					}
