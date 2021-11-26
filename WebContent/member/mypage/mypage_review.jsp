@@ -75,6 +75,7 @@ try {
 						height=96px>
 						</a>
 					</td>
+					
 					<td>
 						<a>
 							<%= p_name %>
@@ -86,7 +87,7 @@ try {
 						</a>
 					</td>
 					<td id = 'review_write_btn'>
-						<button type="button" class="buy-btn" onclick="need_login();">작성하기</button>
+						<button type="button" class="buy-btn" >작성하기</button>
 					</td>
 				</tr>
 				<%
@@ -114,7 +115,7 @@ try {
 							</a>
 						</td>
 						<td id = 'review_write_btn'>
-						<button type="button" class="buy-btn" onclick="need_login();">작성하기</button>
+						<button type="button" class="buy-btn">작성하기</button>
 					</td>
 					</tr>
 					<%
