@@ -47,7 +47,7 @@
 
 			pstmt.executeUpdate();
 		%>
-	<center>
+	<div align = "center">
 		<br>
 		<br>
 		<font color="blue" size='6'>
@@ -335,7 +335,7 @@
 					<font color="red">
 						<fmt:formatNumber value="<%=total%>" type="number" />
 					</font>
-					&nbsp(원)
+					&nbsp;(원)
 				</td>
 			</tr>
 		</table>
@@ -359,7 +359,7 @@
 
 	</form>
 	</div>
-	</center>
+	</div>
 	<%
 	} catch (Exception e) {
 	out.println(e);
