@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <html lang="en">
-<head>
+<%@ include file="../../layout/header.jsp"%>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/themeB.css">
+    <link rel="stylesheet" href="../css/themeC.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/gnb.js"></script>
@@ -12,110 +14,39 @@
     <script src="js/main.js"></script>
     <script src="js/theme.js"></script>
     
-    
-    <title>Document</title>
-</head>
-
-<body>
-
-  <header id="header">
-      <div class="bg_gnb"></div>
-      <div class="inner">
-         <h1 class="logo"><a href="#">아쿠아플라넷</a></h1>
-         <div class="nav_wrap">
-           <ul class="service">
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Join</a></li>
-
-           </ul>
-            <nav class="gnb_wrap">
-                <ul class="gnb">
-                    <li>
-                        <a href="#">
-                            <span class="eng">About Aqua</span>
-                            <span class="kor">홈</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="../html/about_us_info.html">아쿠아리움 소개</a></li>
-                            <li><a href="../html/about_us_road.html">찾아 오시는 길</a></li>
-                            <li><a href="../html/about_us_cost.html">이용 요금 안내</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span class="eng">Theme</span>
-                            <span class="kor">테마</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="../html/themeA.html">Theme A</a></li>
-                            <li><a href="../html/themeB.html">Theme B</a></li>
-                            <li><a href="../html/themeC.html">Theme C</a></li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="eng">Products</span>
-                            <span class="kor">제품</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="#">티켓 구매하기</a></li>
-                            <li><a href="#">굿즈 구매하기</a></li>
-                            <li><a href="#">후기 게시판</a></li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="eng">About Us</span>
-                            <span class="kor">소개</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">개별문의 (1:1)</a></li>
-
-                        </ul>
-                    </li>
-                   
-                </ul>
-            </nav>
-          </div>
-      </div>
-  </header>
-
+   
     <section id="visual">
          <div class=""> 
               <div class="slide">
                  <ul class="left">
-                     <li><a href="../html/themeA.html"><i class="fas fa-angle-left"></i>     </a></li>
+                     <li><a href="../html/themeB.html"><i class="fas fa-angle-left"></i>     </a></li>
                  </ul>          
                  <ul class="right">
-                     <li><a href="../html/themeC.html"><i class="fas fa-angle-right"></i>       </a></li>
+                     <li><a href="../html/themeA.html"><i class="fas fa-angle-right"></i>       </a></li>
                  </ul>         
                </div>
              <div class="msg">
-                 <h2 class="visual_title">THEME B</h2>
+                 <h2 class="visual_title">THEME C</h2>
                  <p class="visual_txt">아쿠아리움 친구들을 소개합니다.</p>
              </div> 
          </div>
     </section>
     
-    
-     <section id="about" class="content">
+    <section id="about" class="content">
         <div class="inner">
            <h2 class="about_title">ㅡ AQUARIUM</h2>
             <p class="about_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>
             <div class="box"></div>
             <div class="box">
                 <h2 class="title">PLAY THEME ZONE</h2>
-                <h2 class="title_1">파충류관</h2>
+                <h2 class="title_1">정글존</h2>
                 <i class="line">ㅡ</i>
-                <p class="txt">세계의 다양한 파충류가 한 자리에!<br><br>다양한 생김새만큼 각자의 서식환경에서<br>자신만의 독특한 방식으로 살아가고 있는 여러<br>파충류들을 만나보세요.<br><br>
-                칠흑의 사냥꾼 블랙 킹스네이크와 파란색 혀를<br>가진 블루텅 스킨크까지 세계의 다양한파충류를<br>플레이아쿠아리움에서 모두 만나보실 수 <br>있습니다.</p>
+                <p class="txt">열대우림한복판에 온것 같은 분위기! 신비한 <br>야생의 나라로 탐험할 수 있는 도심 속 정글존에<br>오신 걸 환영 합니다.<br><br>TV에서만 보던 야생 친구들과 만나는 신기한<br>체험을 지금 경험해 보세요.<br><br>하얀 빛의 신기한 털을 가진 백호와 백사자,<br>귀엽지만 다가가기 힘든 반달가슴곰<br><br>무시무시한 정글 친구들부터 귀여운 정글친구들<br>까지 지금 만나보세요.</p>
             </div>
         </div>
     </section>   
-    
+      
+      
        
     <section id="gallery" class="content">
         <div class="inner">

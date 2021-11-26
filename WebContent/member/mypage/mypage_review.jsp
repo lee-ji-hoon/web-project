@@ -1,10 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
-<%@ include file="../../layout/header.jsp"%>
+<%@ include file="../../layout/mypage_header.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="../../css/review_style.css">
-	
+	<!--  menu list 시작  -->
+    <section id="menu">
+		 <ul class="hbox-menu">
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp">회원정보</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp">구매내역</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp" style="color:black">리뷰</a></li>
+	    </ul>
+	</section>
 	<div align = "center">
 	<br>
 		<h3>배송이 완료된 상품만 리뷰를 작성할 수 있습니다.</h3>

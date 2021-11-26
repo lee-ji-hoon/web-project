@@ -107,18 +107,18 @@ String sid = (String) session.getAttribute("sid");
 								<span class="kor">홈</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="${pageContext.request.contextPath}/html/about_us_info.html">아쿠아리움 소개</a></li>
-								<li><a href="${pageContext.request.contextPath}/html/about_us_road.html">찾아 오시는 길</a></li>
-								<li><a href="${pageContext.request.contextPath}/html/about_us_cost.html">이용 요금 안내</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/about_us_info.jsp">아쿠아리움 소개</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/about_us_road.jsp">찾아 오시는 길</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/about_us_cost.jsp">이용 요금 안내</a></li>
 							</ul></li>
 						<li><a href="#">
 								<span class="eng">Theme</span>
 								<span class="kor">테마</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="${pageContext.request.contextPath}/html/themeA.html">Theme A</a></li>
-								<li><a href="${pageContext.request.contextPath}/html/themeB.html">Theme B</a></li>
-								<li><a href="${pageContext.request.contextPath}/html/themeC.html">Theme C</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeA.jsp">Theme A</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeB.jsp">Theme B</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeC.jsp">Theme C</a></li>
 
 							</ul></li>
 						<li><a href="#">
@@ -132,7 +132,7 @@ String sid = (String) session.getAttribute("sid");
 								<li><a
 										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">굿즈
 										구매하기</a></li>
-								<li><a href="#">후기 게시판</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/product/review_list.jsp">후기 게시판</a></li>
 
 							</ul></li>
 						<li><a href="#">
