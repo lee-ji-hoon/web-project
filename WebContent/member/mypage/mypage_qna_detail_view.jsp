@@ -23,7 +23,9 @@
 				Class.forName("org.gjt.mm.mysql.Driver");
 				Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 				
+				request.setCharacterEncoding("utf-8");
 				String key = request.getParameter("qna_no");
+				String p_id = request.getParameter("p_id");
 
 				String jsql = "SELECT * FROM qna, qna_answer where qna_no = ? and qna_ref_no = ?";
 				PreparedStatement pstmt = con.prepareStatement(jsql);

@@ -3,7 +3,7 @@
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" type="text/css"
-	href="../../css/review_style.css">
+	href="../../css/review_style.css?aa">
 	
 	<div align = "center">
 	<br>
@@ -44,7 +44,7 @@ try {
 		while (rs2.next()){
 			String p_id = rs2.getString("p_id");
 			
-			String jsql3 = "select p_name from product where p_id = ?";
+			String jsql3 = "select p_name, p_id from product where p_id = ?";
 			PreparedStatement pstmt3 = con.prepareStatement(jsql3);
 			pstmt3.setString(1, p_id);
 			ResultSet rs3 = pstmt3.executeQuery();
@@ -60,13 +60,13 @@ try {
 				
 				<tr id = 'review_list_content_line' height = 130>
 					<td>
-						<a>
+						<a href = "../product/goods_select.jsp?p_id=<%=p_id%>">
 							<img src="../../img/product/<%=p_id%>.jpg" border=0 width=80px
 						height=96px>
 						</a>
 					</td>
 					<td>
-						<a>
+						<a href = "../product/goods_select.jsp?p_id=<%=p_id%>">
 							<%= p_name %>
 						</a>
 					</td>
@@ -76,25 +76,26 @@ try {
 						</a>
 					</td>
 					<td id = 'review_write_btn'>
-						<button type="button" class="buy-btn" onclick="need_login();">작성하기</button>
+						<a href = "../product/goods_select.jsp?p_id=<%=p_id%>">
+							<button type="button" class="buy-btn">작성하기</button>
+						</a>
 					</td>
 				</tr>
 				<%
 			}
 			while(rs4.next()){
 					String t_name = rs4.getString("t_name");
-					
 					%>
 					
 					<tr id = 'review_list_content_line' height = 130>
 						<td>
-							<a>
+							<a href = "../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
 								<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=80px
 							height=96px>
 							</a>
 						</td>
 						<td>
-							<a>
+							<a href = "../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
 								<%= t_name %>
 							</a>
 						</td>
@@ -104,8 +105,10 @@ try {
 							</a>
 						</td>
 						<td id = 'review_write_btn'>
-						<button type="button" class="buy-btn" onclick="need_login();">작성하기</button>
-					</td>
+							<a href = "../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
+								<button type="button" class="buy-btn">작성하기</button>
+							</a>
+						</td>
 					</tr>
 					<%
 			}
