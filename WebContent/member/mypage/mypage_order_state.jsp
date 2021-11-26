@@ -74,6 +74,7 @@ try {
 				href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
 		<li><a
 				href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
+		 <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp">리뷰</a></li>		
 	</ul>
 </section>
 
@@ -299,7 +300,7 @@ try {
 
 			t_sum = t_a_sum + t_t_sum + t_c_sum;
 			%>
-			<%=p_id%>
+			
 			<tbody>
 				<tr>
 					<td class="p_img" colspan=3 align="center">
