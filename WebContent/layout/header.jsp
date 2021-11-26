@@ -57,7 +57,6 @@
 	
 
 
-
 <%
 String sid = (String) session.getAttribute("sid");
 %>
