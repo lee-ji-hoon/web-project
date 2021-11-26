@@ -239,7 +239,7 @@ try {
 				<td class="p_img" colspan=3 align="center">
 					<div>
 						<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
-							<img src="../../img/product/<%=p_id%>.jpg" border=0>
+							<img src="../../img/product/<%=p_id%>.jpg" width=250px height=200px>
 						</a>
 					</div>
 
