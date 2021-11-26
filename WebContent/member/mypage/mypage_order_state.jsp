@@ -74,6 +74,7 @@ try {
 				href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
 		<li><a
 				href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
+		 <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp">리뷰</a></li>		
 	</ul>
 </section>
 
@@ -220,9 +221,11 @@ try {
 		<thead>
 			<tr>
 				<th colspan=3 style="padding: 0px">상품 이미지</th>
-				<th colspan=3>상품 가격</th>
-				<th colspan=3>수량</th>
-				<th colspan=3>금액</th>
+				<th colspan=3>상품 이름</th>
+				<th colspan=2>상품 가격</th>
+				<th colspan=2>수량</th>
+				<th colspan=2>금액</th>
+
 
 
 			</tr>
@@ -237,6 +240,10 @@ try {
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
 			pstmt7.setString(1, p_id);
 			ResultSet rs7 = pstmt7.executeQuery();
+			String jsql8 = "SELECT * FROM ticket WHERE t_id = ?";
+			PreparedStatement pstmt8 = con.prepareStatement(jsql8);
+			pstmt8.setString(1, p_id);
+			ResultSet rs8 = pstmt8.executeQuery();
 
 			while (rs7.next()) {
 				String p_name = rs7.getString("p_name");
@@ -246,7 +253,7 @@ try {
 		%>
 		<tbody>
 			<tr>
-				<td class="p_img" colspan=2 align="center">
+				<td class="p_img" colspan=3 align="center">
 					<div>
 						<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
 							<img src="../../img/product/<%=p_id%>.jpg" border=0>
@@ -254,7 +261,7 @@ try {
 					</div>
 
 				</td>
-				<th colspan=2><a
+				<th colspan=3><a
 						href="../product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a></th>
 				<td colspan=2>
 					<fmt:formatNumber value="<%=p_price%>" />
@@ -268,20 +275,75 @@ try {
 			</tr>
 		</tbody>
 		<%
-		}
-		} // rs6
 		} // rs7
+			int ord_qty_a = rs6.getInt("ord_qty_a");
+			int ord_qty_t = rs6.getInt("ord_qty_t");
+			int ord_qty_c = rs6.getInt("ord_qty_c");
+
+			while (rs8.next()) {
+			String p_name = rs8.getString("t_name");
+			int t_price_adult = rs8.getInt("t_price_adult");
+			int t_price_teen = rs8.getInt("t_price_teen");
+			int t_price_child = rs8.getInt("t_price_child");
+
+			int t_a_sum = 0;
+			int t_t_sum = 0;
+			int t_c_sum = 0;
+			int t_sum = 0;
+			int t_ord_qty = 0;
+
+			t_ord_qty = ord_qty_a + ord_qty_t + ord_qty_c;
+
+			t_a_sum = ord_qty_a * t_price_adult;
+			t_t_sum = ord_qty_t * t_price_teen;
+			t_c_sum = ord_qty_c * t_price_child;
+
+			t_sum = t_a_sum + t_t_sum + t_c_sum;
+			%>
+			
+			<tbody>
+				<tr>
+					<td class="p_img" colspan=3 align="center">
+						<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
+							<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px
+								height=200px>
+						</a>
+
+					</td>
+					<th colspan=3><a
+							href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a></th>
+					<td colspan=2>
+						성인 : <fmt:formatNumber value="<%=t_price_adult%>" />원<br>
+						청소년 : <fmt:formatNumber value="<%=t_price_teen%>" />원<br>
+						어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
+					</td>
+					<td colspan=2>
+						성인(<%=ord_qty_a %>)<br>
+						청소년(<%=ord_qty_t %>)<br>
+						어린이(<%=ord_qty_c %>)
+					</td>
+					<td colspan=2>
+						<fmt:formatNumber value="<%=t_sum%>" />
+						원
+					</td>
+				</tr>
+			</tbody>
+			<%
+			} // rs6
+
+			}
+			}
+			%>
+
+		</table>
+
+		<%
+		} catch (Exception e) {
+		out.println(e);
+		}
 		%>
+		</body>
 
-	</table>
-
-	<%
-	} catch (Exception e) {
-	out.println(e);
-	}
-	%>
-	</body>
-
-</center>
-<%@ include file="../../layout/footer.jsp"%>
-</html>
+	</center>
+	<%@ include file="../../layout/footer.jsp"%>
+	</html>

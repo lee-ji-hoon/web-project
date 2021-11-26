@@ -72,6 +72,7 @@ try {
 				href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
 		<li><a
 				href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
+		 <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp">리뷰</a></li>
 	</ul>
 </section>
 
@@ -239,7 +240,7 @@ try {
 				<td class="p_img" colspan=3 align="center">
 					<div>
 						<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
-							<img src="../../img/product/<%=p_id%>.jpg" border=0>
+							<img src="../../img/product/<%=p_id%>.jpg" width=250px height=200px>
 						</a>
 					</div>
 
@@ -284,7 +285,7 @@ try {
 
 		t_sum = t_a_sum + t_t_sum + t_c_sum;
 		%>
-		<%=p_id%>
+		
 		<tbody>
 			<tr>
 				<td class="p_img" colspan=3 align="center">
