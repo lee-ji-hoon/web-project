@@ -36,10 +36,16 @@
 			pstmt.setString(1, ct_no);
 
 			ResultSet rs = pstmt.executeQuery();
+			
+			String jsql7 = "select * from cart_t where ct_no = ? ";
+			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
+			pstmt7.setString(1, ct_no);
+
+			ResultSet rs7 = pstmt7.executeQuery();
 		%>
 
 		<%
-		if (!rs.next()) // 조회 결과가 존재하지 않으면,  rs.next()는 false를 리턴함. 
+		if (!rs.next() && !rs7.next()) // 조회 결과가 존재하지 않으면,  rs.next()는 false를 리턴함. 
 		{ //  따라서,  !rs.next()의 값은 true가 됨
 		%>
 		장바구니가 비었습니다.

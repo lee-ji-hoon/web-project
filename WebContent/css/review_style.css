@@ -1,0 +1,19 @@
+@charset "UTF-8";
+#review_list_title_line{
+	border-top : 1px solid #ccc;
+	border-bottom : 1px solid #ccc;
+	text-align : center;
+}
+#review_list_table tr td{
+	padding : 10px;
+}
+#review_write_btn button{
+	font-size : 10pt;
+	font-weight : lighter;
+	line-height : 15px;
+	color : white;
+	background-color : #2535C7;
+	border : none;
+	width : 80px;
+	height : 30px;
+}

@@ -27,7 +27,7 @@
 			//   46~50행 부분:   만일, "즉시구매하기" 클릭 후, 주문을 완료하지 않고 중간에 주문을 취소시킬 경우엔, 
 			//   주문하려다 취소시킨 상품내역이 그대로 tempcart 테이블에 남아있게 된다. 따라서, 이러한 문제점을 
 			//   방지하기 위하여, "즉시구매하기"를 수행하기 직전에 명시적으로 tempcart 테이블을 비워주도록 처리함.
-			String jsql5 = "delete from temp_cart where ct_no=?";
+			String jsql5 = "delete from temp_cart_t where ct_no=?";
 			PreparedStatement pstmt5 = con.prepareStatement(jsql5);
 			pstmt5.setString(1, ct_no);
 
@@ -35,15 +35,19 @@
 
 			//   54행부터, 실제로 "즉시구매하기"와 관련된 코드부분이 시작됨.
 			//  상세정보페이지(폼)으로부터 "즉시구매"하고자 하는 상품번호와 주문수량을 넘겨받는다.
-			String p_id = request.getParameter("p_id"); // 상품번호
-			int ct_qty = Integer.parseInt(request.getParameter("amount")); //  주문수량
+			String t_id = request.getParameter("t_id"); // 상품번호
+			int ct_qty_a = Integer.parseInt(request.getParameter("amount_adult")); //  주문수량
+			int ct_qty_t = Integer.parseInt(request.getParameter("amount_teen"));
+			int ct_qty_c = Integer.parseInt(request.getParameter("amount_child"));
 
 			// tempcart 테이블에 "즉시구매"할  상품레코드를 저장시킴
-			String jsql = "insert into temp_cart (ct_no, p_id, ct_qty) values (?,?,?)";
+			String jsql = "insert into temp_cart_t (ct_no, t_id, ct_qty_a, ct_qty_t, ct_qty_c) values (?,?,?,?,?)";
 			PreparedStatement pstmt = con.prepareStatement(jsql);
 			pstmt.setString(1, ct_no);
-			pstmt.setString(2, p_id);
-			pstmt.setInt(3, ct_qty);
+			pstmt.setString(2, t_id);
+			pstmt.setInt(3, ct_qty_a);
+			pstmt.setInt(4, ct_qty_t);
+			pstmt.setInt(5, ct_qty_c);
 
 			pstmt.executeUpdate();
 		%>
@@ -116,7 +120,7 @@
 		//         이를 토대로, 주문액(prdPrice*ctQty )과  전체주문총액(total)을 계산해 낸다.
 		//         그런 다음, 추출해 낸 각 필드들 및 계산된 결과값들을 웹브라우저상에 출력해 준다. 
 
-		String jsql2 = "select p_id, ct_qty from temp_cart where ct_no = ?"; //  tempcart 테이블을 사용함에 유의!
+		String jsql2 = "select t_id, ct_qty_a, ct_qty_t, ct_qty_c from temp_cart_t where ct_no = ?"; //  tempcart 테이블을 사용함에 유의!
 		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 		pstmt2.setString(1, ct_no);
 
@@ -129,38 +133,48 @@
 
 		rs2.next(); //  즉시구매하기의 경우, 즉시구매할 상품레코드만 가리켜주면 됨(while문은 불필요함!)
 
-		String p_id2 = rs2.getString("p_id"); //  tempcart 테이블로부터 상품번호 추출
-		int ct_qty2 = rs2.getInt("ct_qty"); //  tempcart 테이블로부터 주문수량 추출 
+		String t_id2 = rs2.getString("t_id"); //  tempcart 테이블로부터 상품번호 추출
+		int ct_qty_a2 = rs2.getInt("ct_qty_a"); //  tempcart 테이블로부터 주문수량 추출 
+		int ct_qty_t2 = rs2.getInt("ct_qty_t");
+		int ct_qty_c2 = rs2.getInt("ct_qty_c");
 
-		String jsql3 = "select p_name, p_price from product where p_id = ?";
+		String jsql3 = "select t_name, t_price_adult, t_price_teen, t_price_child from ticket where t_id = ?";
 		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1, p_id2);
+		pstmt3.setString(1, t_id2);
 
 		ResultSet rs3 = pstmt3.executeQuery();
 		rs3.next();
 
-		String p_name = rs3.getString("p_name"); //  goods 테이블로부터 상품명 추출
-		int p_price = rs3.getInt("p_price"); //  goods 테이블로부터 상품단가 추출
+		String t_name = rs3.getString("t_name"); //  goods 테이블로부터 상품명 추출
+		int t_price_adult = rs3.getInt("t_price_adult"); //  goods 테이블로부터 상품단가 추출
+		int t_price_teen = rs3.getInt("t_price_teen"); //  goods 테이블로부터 상품단가 추출
+		int t_price_child = rs3.getInt("t_price_child"); //  goods 테이블로부터 상품단가 추출
 
-		int amount = p_price * ct_qty2; //  주문액 계산
+		int amount = (t_price_adult * ct_qty_a2) + (t_price_teen * ct_qty_t2) + (t_price_child * ct_qty_c2); //  주문액 계산
 		total = total + amount; //  전체 주문총액 계산
 		%>
 
 
 		<tr>
 			<td bgcolor="#eeeede" height="30" align="center">
-				<font size="2"><%=p_id%></font>
+				<font size="2"><%=t_id%></font>
 			</td>
 			<td bgcolor="#eeeede" height="30" align="center">
-				<font size="2"><%=p_name%></font>
+				<font size="2"><%=t_name%></font>
 			</td>
 			<td bgcolor="#eeeede" height="30" align="center" align=right>
 				<font size="2">
-					<fmt:formatNumber value="<%=p_price%>" type="number" />
+					성인 : <fmt:formatNumber value="<%=t_price_adult%>" type="number" /><br>
+					청소년 : <fmt:formatNumber value="<%=t_price_teen%>" type="number" /><br>
+					어린이 : <fmt:formatNumber value="<%=t_price_child%>" type="number" />
 				</font>
 			</td>
 			<td bgcolor="#eeeede" height="30" align="center" align=right>
-				<font size="2"><%=ct_qty%></font>
+				<font size="2">
+					성인 (<%=ct_qty_a2%>)<br>
+					청소년 (<%=ct_qty_t%>)<br>
+					어린이 (<%=ct_qty_c%>)
+				</font>
 			</td>
 			<td bgcolor="#eeeede" height="30" align="right">
 				<font size="2">
@@ -169,7 +183,7 @@
 				</font>
 			</td>
 			<td bgcolor="#eeeede" height="30" align="center">
-				<a href="cart_delete.jsp?p_id=<%=p_id%>">
+				<a href="cart_delete.jsp?p_id=<%=t_id%>">
 					<font size="2" color=blue>
 						<b>삭제</b>
 				</a>
@@ -210,7 +224,7 @@
 	String phone = rs4.getString("m_phone");
 	String address = rs4.getString("m_address");
 	%>
-	<form name="form" method="Post" action="direct_product_order_ok.jsp">
+	<form name="form" method="Post" action="direct_ticket_order_ok.jsp">
 		<!--  폼의 이름이 form으로 지정됨 -->
 		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
 			<tr>
@@ -335,7 +349,7 @@
 					<font color="red">
 						<fmt:formatNumber value="<%=total%>" type="number" />
 					</font>
-					&nbsp;(원)
+					&nbsp(원)
 				</td>
 			</tr>
 		</table>
