@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <html lang="en">
-<head>
+<%@ include file="../../layout/header.jsp"%>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,76 +15,7 @@
     <script src="js/theme.js"></script>
     
 
-    
-    <title>Document</title>
-</head>
-
-<body>
-
-  <header id="header">
-      <div class="bg_gnb"></div>
-      <div class="inner">
-         <h1 class="logo"><a href="#">아쿠아플라넷</a></h1>
-         <div class="nav_wrap">
-           <ul class="service">
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Join</a></li>
-
-           </ul>
-            <nav class="gnb_wrap">
-                <ul class="gnb">
-                    <li>
-                        <a href="#">
-                            <span class="eng">About Aqua</span>
-                            <span class="kor">홈</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="../html/about_us_info.html">아쿠아리움 소개</a></li>
-                            <li><a href="../html/about_us_road.html">찾아 오시는 길</a></li>
-                            <li><a href="../html/about_us_cost.html">이용 요금 안내</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span class="eng">Theme</span>
-                            <span class="kor">테마</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="../html/themeA.html">Theme A</a></li>
-                            <li><a href="../html/themeB.html">Theme B</a></li>
-                            <li><a href="../html/themeC.html">Theme C</a></li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="eng">Products</span>
-                            <span class="kor">제품</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="#">티켓 구매하기</a></li>
-                            <li><a href="#">굿즈 구매하기</a></li>
-                            <li><a href="#">후기 게시판</a></li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="eng">About Us</span>
-                            <span class="kor">소개</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">개별문의 (1:1)</a></li>
-
-                        </ul>
-                    </li>
-                   
-                </ul>
-            </nav>
-          </div>
-      </div>
-  </header>
+  
 
     <section id="visual">
          <div class=""> 
