@@ -21,7 +21,33 @@
 	color : black;
 }
 
+/* 티켓 상세 페이지 리뷰 화면 */
+
+#review_t_list_content_line{
+	text-align : center;
+}
+#review_t_list_title_line{
+	border-top : 1px solid #ccc;
+	border-bottom : 1px solid #ccc;
+	text-align : center;
+	font-weight : bold;
+}
+#review_p_list_table tr td{
+	padding : 10px;
+	text-align : center;
+}
+#review_p_list_title_line{
+	border-bottom : 2px solid black;
+	font-weight : bold;
+	text-align : center;
+}
+#review_p_list_content_down_line{
+	border-bottom : 1px solid #ccc;
+	text-align : center;
+}
+
 /* 마이 페이지 리뷰 작성 */ 
+
 #mypage_r_in_table{
 	border : 2px solid black
 }

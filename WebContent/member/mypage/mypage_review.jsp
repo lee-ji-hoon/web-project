@@ -46,6 +46,7 @@
 			
 			String ord_date = rs.getString("ord_date");
 			int ord_no = rs.getInt("ord_no");
+			
 			String jsql2 = "select p_id from order_product where ord_no = ?";
 			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 			pstmt2.setInt(1, ord_no);
@@ -88,15 +89,16 @@
 						<td id = 'review_write_btn'>
 							
 									<%
-									String jsql5 = "select r_content from review where r_product = ? AND r_writer = ?";
+									String jsql5 = "select r_content from review where r_product = ? AND r_writer = ? AND r_no = ?";
 									PreparedStatement pstmt5 = con.prepareStatement(jsql5);
 									pstmt5.setString(1, p_name);
 									pstmt5.setString(2, sid);
+									pstmt5.setInt(3, ord_no);
 									ResultSet rs5 = pstmt5.executeQuery();
 									
 									if(!rs5.next()){
 										%>
-										<a href = "mypage_review_write.jsp?p_id=<%=p_id%>">
+										<a href = "mypage_review_write.jsp?p_id=<%=p_id%>&ord_no=<%=ord_no%>">
 										<button type="button" class="buy-btn">
 										<%
 										out.println("후기 작성");
@@ -143,15 +145,16 @@
 							</td>
 							<td id = 'review_write_btn'>
 										<%
-									String jsql5 = "select r_content from review where r_product = ? AND r_writer = ?";
+									String jsql5 = "select r_content from review where r_product = ? AND r_writer = ? AND r_no = ?";
 									PreparedStatement pstmt5 = con.prepareStatement(jsql5);
 									pstmt5.setString(1, t_name);
 									pstmt5.setString(2, sid);
+									pstmt5.setInt(3, ord_no);
 									ResultSet rs5 = pstmt5.executeQuery();
 									
 									if(!rs5.next()){
 										%>
-										<a href = "mypage_review_write.jsp?p_id=<%=p_id%>">
+										<a href = "mypage_review_write.jsp?p_id=<%=p_id%>&ord_no=<%=ord_no%>">
 										<button type="button">
 										<%
 										out.println("후기 작성");
