@@ -286,8 +286,8 @@ try {
 						<td width="50">작성일</td>
 						<td width="50">작성자</td>
 						<td width="80">상품 이름</td>
-						<td width="50">e-티켓 만족도</td>
-						<td width="50">현장 만족도</td>
+						<td width="50">배송 만족도</td>
+						<td width="50">상품 만족도</td>
 						<td width="200">후기 내용</td>
 					</tr>
 			<%
