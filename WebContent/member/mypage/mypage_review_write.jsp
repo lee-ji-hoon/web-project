@@ -34,6 +34,7 @@
 		Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 		
 		String rq_p_id = request.getParameter("p_id");
+		int rq_ord_no = Integer.parseInt(request.getParameter("ord_no"));
 		
 		String jsql = "SELECT * FROM product where p_id = ?";
 		PreparedStatement pstmt = con.prepareStatement(jsql);
@@ -54,10 +55,16 @@
 			String p_id = rs.getString("p_id");
 		%>
 		
-				<tr>
+				<tr style="display:none;">
 					<td id = 'mypage_r_in_title'>리뷰 번호</td>
 					<td>
-						<input type="text" name="r_no" value="1" readonly readonly>
+						<input type="text" name="r_no" value="<%=rq_ord_no%>" readonly readonly>
+					</td>
+				</tr>
+				<tr style="display:none;">
+					<td id = 'mypage_r_in_title'>상품 카테고리</td>
+					<td>
+						<input type="text" name="r_category" value="product" readonly>
 					</td>
 				</tr>
 				<tr>
@@ -116,10 +123,16 @@
 			String t_name = rs2.getString("t_name");
 			String t_id = rs2.getString("t_id");
 		%>
-				<tr>
+				<tr style="display:none;">
 					<td id = 'mypage_r_in_title'>리뷰 번호</td>
 					<td>
-						<input type="text" name="r_no" value="1" readonly>
+						<input type="text" name="r_no" value="<%=rq_ord_no%>" readonly>
+					</td>
+				</tr>
+				<tr style="display:none;">
+					<td id = 'mypage_r_in_title'>상품 카테고리</td>
+					<td>
+						<input type="text" name="r_category" value="ticket" readonly>
 					</td>
 				</tr>
 				<tr>
