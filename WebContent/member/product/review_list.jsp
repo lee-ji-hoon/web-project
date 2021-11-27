@@ -30,17 +30,20 @@
 				pstmt2.setString(1, t_id);
 				ResultSet rs2 = pstmt2.executeQuery();
 			%>
-				<table id = 'review_list_table' border="0" style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
-					<tr id = 'review_t_list_title_line' height = 30>
+				<table id = 'review_p_list_table' border="0" style="font-size: 10pt; font-family: 맑은 고딕; table-layout:fixed">
+					
+			<%
+				if(rs.next()){
+					%>
+					<tr id = 'review_p_list_title_line' height = 30>
 						<td width="100">작성일</td>
-						<td width="100">작성자</td>
-						<td width="100">상품 이름</td>
+						<td width="150">작성자</td>
+						<td width="200">상품 이름</td>
 						<td width="100">배송 만족도</td>
 						<td width="100">상품 만족도</td>
 						<td width="300">후기 내용</td>
 					</tr>
-			<%
-				if(rs.next()){
+					<%
 					String p_name = rs.getString("p_name");
 					String p_id2 = rs.getString("p_id");
 					
@@ -58,7 +61,7 @@
 						String r_content = rs3.getString("r_content");
 					
 			%>
-						<tr id = 'review_t_list_content_line'>
+						<tr id = 'review_p_list_content_line'>
 							<td>
 								<%=r_date%>
 							</td>
@@ -74,7 +77,10 @@
 							<td>
 								<%=p_satisfy%>
 							</td>
-							<td style=" text-overflow:ellipsis; overflow:hidden">
+						</tr>
+						<tr id = 'review_p_list_content_down_line'>
+							<td width="100"><b>후기 내용</b></td>
+							<td colspan="4" align="left"  height = 20 style=" text-overflow:ellipsis; overflow:hidden">
 								<%=r_content%>
 							</td>
 						</tr>
@@ -83,13 +89,12 @@
 				}
 				else{
 					%>
-					<tr id = 'review_t_list_title_line' height = 30>
+					<tr id = 'review_p_list_title_line' height = 30>
 						<td width="100">작성일</td>
-						<td width="100">작성자</td>
-						<td width="100">상품 이름</td>
+						<td width="150">작성자</td>
+						<td width="200">상품 이름</td>
 						<td width="100">e-티켓 만족도</td>
 						<td width="100">현장 만족도</td>
-						<td width="300">후기 내용</td>
 					</tr>
 				<%
 					rs2.next();
@@ -110,23 +115,26 @@
 						String r_content = rs3.getString("r_content");
 					
 			%>
-						<tr id = 'abu_notice_list'>
-							<td align="center" width = 100>
+						<tr id = 'review_p_list_content_line'>
+							<td>
 								<%=r_date%>
 							</td>
-							<td align="center" width = 150>
+							<td>
 								<%=r_writer%>
 							</td>
-							<td align="left" width = 100 height = 100 >
+							<td>
 								<%=r_product%>
 							</td>
-							<td align="right" width = 100 height = 100>
+							<td>
 								<%=d_satisfy%>
 							</td>
-							<td align="right" width = 100 height = 100>
+							<td>
 								<%=p_satisfy%>
 							</td>
-							<td align="right" width = 500 height = 100 style=" text-overflow:ellipsis; overflow:hidden">
+						</tr>
+						<tr id = 'review_p_list_content_down_line'>
+							<td width="100"><b>후기 내용</b></td>
+							<td colspan="4" align="left"  height = 20 style=" text-overflow:ellipsis; overflow:hidden">
 								<%=r_content%>
 							</td>
 						</tr>

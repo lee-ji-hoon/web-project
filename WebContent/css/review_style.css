@@ -32,6 +32,19 @@
 	text-align : center;
 	font-weight : bold;
 }
+#review_p_list_table tr td{
+	padding : 10px;
+	text-align : center;
+}
+#review_p_list_title_line{
+	border-bottom : 2px solid black;
+	font-weight : bold;
+	text-align : center;
+}
+#review_p_list_content_down_line{
+	border-bottom : 1px solid #ccc;
+	text-align : center;
+}
 
 /* 마이 페이지 리뷰 작성 */ 
 

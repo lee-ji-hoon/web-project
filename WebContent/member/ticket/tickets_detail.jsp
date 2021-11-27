@@ -182,7 +182,7 @@ try {
 	<div id="detail-review-box">
 		<div class="detail-review-header">
 			리뷰
-			<a class="detail-qna-header-a" href="review_list.jsp?t_id=<%=t_id%>">전체보기</a>
+			<a class="detail-qna-header-a" href="../product/review_list.jsp?t_id=<%=t_id%>">전체보기</a>
 		</div>
 		<div class="detail-qna-body">
 			<table id = 'review_list_table'>
