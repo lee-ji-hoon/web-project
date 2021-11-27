@@ -3,6 +3,7 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" href="../css/style-product.css">
+<link rel="stylesheet" type="text/css" href="../../css/review_style.css?aa">
 <body onload="init();">
 <head>
 <meta charset="UTF-8">
@@ -21,6 +22,7 @@ try {
 	Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 
 	String key = request.getParameter("p_id");
+	String product = "product";
 	String jsql = "SELECT * FROM product WHERE p_id = ?";
 
 	PreparedStatement pstmt = con.prepareStatement(jsql);
@@ -276,9 +278,47 @@ try {
 	<div id="detail-review-box">
 		<div class="detail-review-header">
 			리뷰
-			<a class="detail-qna-header-a" href="review.jsp">전체보기</a>
+			<a class="detail-qna-header-a" href="review_list.jsp?p_id=<%=p_id%>">전체보기</a>
 		</div>
-		<div class="detail-qna-body"></div>
+		<div class="detail-qna-body">
+			<table id = 'review_list_table'>
+					<tr id = 'review_t_list_title_line' height = 50>
+						<td width="50">작성일</td>
+						<td width="50">작성자</td>
+						<td width="80">상품 이름</td>
+						<td width="50">e-티켓 만족도</td>
+						<td width="50">현장 만족도</td>
+						<td width="200">후기 내용</td>
+					</tr>
+			<%
+			String jsql2 = "SELECT * FROM review WHERE r_category = ? order by r_no desc limit 5";
+			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+			pstmt2.setString(1, product);
+
+			ResultSet rs2 = pstmt2.executeQuery();
+			while(rs2.next()){
+				String r_writer = rs2.getString("r_writer");
+				String r_product = rs2.getString("r_product");
+				String r_date = rs2.getString("r_date");
+				String d_satisfy = rs2.getString("d_satisfy");
+				String p_satisfy = rs2.getString("p_satisfy");
+				String r_content = rs2.getString("r_content");
+				%>
+				
+					<tr id = 'review_t_list_content_line'>
+						<td><%=r_date%></td>
+						<td><%=r_writer%></td>
+						<td><%=r_product%></td>
+						<td><%=d_satisfy%></td>
+						<td><%=p_satisfy%></td>
+						<td><%=r_content%></td>
+					</tr>
+				
+				<%
+			}
+			%>
+			</table>
+		</div>
 
 	</div>
 	<!-- 리뷰 끝 -->

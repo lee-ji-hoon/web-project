@@ -132,7 +132,6 @@ String sid = (String) session.getAttribute("sid");
 								<li><a
 										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">굿즈
 										구매하기</a></li>
-								<li><a href="${pageContext.request.contextPath}/member/product/review_list.jsp">후기 게시판</a></li>
 
 							</ul></li>
 						<li><a href="#">
