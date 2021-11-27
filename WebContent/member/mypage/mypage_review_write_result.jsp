@@ -28,6 +28,7 @@
 	request.setCharacterEncoding("utf-8");
 	
 	int r_no = Integer.parseInt(request.getParameter("r_no"));
+	String r_category = request.getParameter("r_category");
 	String r_product = request.getParameter("r_product");
 	String r_writer = request.getParameter("r_writer");
 	String r_content = request.getParameter("r_content");
@@ -44,31 +45,19 @@
 		Class.forName("org.gjt.mm.mysql.Driver");
 		Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 		
-		String jsql = "INSERT INTO review (r_no, r_product, r_writer, r_content, r_date, d_satisfy, p_satisfy) VALUES (null,?,?,?,?,?,?)";
+		String jsql = "INSERT INTO review (r_no, r_product, r_category, r_writer, r_content, r_date, d_satisfy, p_satisfy) VALUES (?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = con.prepareStatement(jsql);
-		pstmt.setString(1, r_product);
-		pstmt.setString(2, r_writer);
-		pstmt.setString(3, r_content);
-		pstmt.setString(4, r_date);
-		pstmt.setString(5, d_satisfy);
-		pstmt.setString(6, p_satisfy);
+		pstmt.setInt(1, r_no);
+		pstmt.setString(2, r_product);
+		pstmt.setString(3, r_category);
+		pstmt.setString(4, r_writer);
+		pstmt.setString(5, r_content);
+		pstmt.setString(6, r_date);
+		pstmt.setString(7, d_satisfy);
+		pstmt.setString(8, p_satisfy);
 		
 		pstmt.executeUpdate();
 		
-		String jsql2 = "ALTER TABLE `review` AUTO_INCREMENT=1";
-		 PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-
-		 pstmt2.executeUpdate();
-		 
-		 String jsql3 = "SET @COUNT = 0";
-		 PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-
-		 pstmt3.executeUpdate();
-		 
-		 String jsql4 = "UPDATE `review` SET r_no = @COUNT:=@COUNT+1";
-		 PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-
-		 pstmt4.executeUpdate();
 		 %>
 		 <jsp:forward page="mypage_review.jsp"/>
 		 <%
