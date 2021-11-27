@@ -3,19 +3,16 @@
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" type="text/css"
-	href="../../css/review_style.css">
+	href="../../css/review_style.css?aa">
 	
 	<div align = "center">
 	<br>
-		<h3>배송이 완료된 상품만 리뷰를 작성할 수 있습니다.</h3>
+		<h1>공사중</h3>
+		<h2>티켓 / 상품 구분지어서 리뷰를 볼 수 있도록 작성</h3>
+		<h3>티켓 : 구분 없이 리뷰 출력</h3>
+		<h4>상품 : 각 품목별 리뷰 출력</h3>
 	<br>
-	<table id = 'review_list_table'>
-		<tr id = 'review_list_title_line' height = 50>
-			<td width = 100></td>
-			<td width = 300>상품정보</td>
-			<td width = 200>구매일</td>
-			<td width = 100>후기 작성</td>
-		</tr>
+	
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
@@ -31,89 +28,6 @@ try {
 	pstmt.setString(2, state);
 	ResultSet rs = pstmt.executeQuery();
 	
-	
-	while (rs.next()) {
-		
-		String ord_date = rs.getString("ord_date");
-		int ord_no = rs.getInt("ord_no");
-		String jsql2 = "select p_id from order_product where ord_no = ?";
-		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-		pstmt2.setInt(1, ord_no);
-		ResultSet rs2 = pstmt2.executeQuery();
-		
-		while (rs2.next()){
-			String p_id = rs2.getString("p_id");
-			
-			String jsql3 = "select p_name from product where p_id = ?";
-			PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-			pstmt3.setString(1, p_id);
-			ResultSet rs3 = pstmt3.executeQuery();
-			
-			String jsql4 = "select t_name from ticket where t_id = ?";
-			PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-			pstmt4.setString(1, p_id);
-			ResultSet rs4 = pstmt4.executeQuery();
-			
-			while(rs3.next()){
-				String p_name = rs3.getString("p_name");
-				%>
-				
-				<tr id = 'review_list_content_line' height = 130>
-					<td>
-						<a>
-							<img src="../../img/product/<%=p_id%>.jpg" border=0 width=80px
-						height=96px>
-						</a>
-					</td>
-					<td>
-						<a>
-							<%= p_name %>
-						</a>
-					</td>
-					<td style = "text-align : center;">
-						<a>
-							<%=ord_date%>
-						</a>
-					</td>
-					<td id = 'review_write_btn'>
-						<button type="button" class="buy-btn" onclick="need_login();">작성하기</button>
-					</td>
-				</tr>
-				<%
-			}
-			while(rs4.next()){
-					String t_name = rs4.getString("t_name");
-					
-					%>
-					
-					<tr id = 'review_list_content_line' height = 130>
-						<td>
-							<a>
-								<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=80px
-							height=96px>
-							</a>
-						</td>
-						<td>
-							<a>
-								<%= t_name %>
-							</a>
-						</td>
-						<td style = "text-align : center;">
-							<a>
-								<%= ord_date %>
-							</a>
-						</td>
-						<td id = 'review_write_btn'>
-						<button type="button" class="buy-btn" onclick="need_login();">작성하기</button>
-					</td>
-					</tr>
-					<%
-			}
-		}
-	}
-%>
-</table>
-<%
 }catch (Exception e) {
 	out.println("구매한 상품이 없습니다.");
 }

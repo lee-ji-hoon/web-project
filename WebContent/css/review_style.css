@@ -17,3 +17,42 @@
 	width : 80px;
 	height : 30px;
 }
+#review_list_table a{
+	color : black;
+}
+
+/* 마이 페이지 리뷰 작성 */ 
+#mypage_r_in_table{
+	border : 2px solid black
+}
+#mypage_r_in_title{
+	font-weight : bold;
+	background : #ececec;
+	width : 150px;
+	height : 50px;
+	text-align : center;
+}
+#mypage_r_in_table td{
+	text-align : center;
+	border : 1px solid black;
+	padding : 10px;
+}
+#mypage_r_in_table textarea{
+	resize : none;
+	padding : 10px;
+}
+#mypage_r_in_table input[type="text"]{
+	vertical-align: middle;
+	width : 200px;
+	height : 30px;
+}
+#mypage_r_in_btn{
+	font-size : 13pt;
+	font-weight : lighter;
+	line-height : 15px;
+	color : white;
+	background-color : #2535C7;
+	border : none;
+	width : 120px;
+	height : 40px;
+}
