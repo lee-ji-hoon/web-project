@@ -20,10 +20,10 @@
          <div class=""> 
               <div class="slide">
                  <ul class="left">
-                     <li><a href="../html/themeA.html"><i class="fas fa-angle-left"></i>     </a></li>
+                     <li><a href="../html/themeA.jsp"><i class="fas fa-angle-left"></i>     </a></li>
                  </ul>          
                  <ul class="right">
-                     <li><a href="../html/themeC.html"><i class="fas fa-angle-right"></i>       </a></li>
+                     <li><a href="../html/themeC.jsp"><i class="fas fa-angle-right"></i>       </a></li>
                  </ul>         
                </div>
              <div class="msg">

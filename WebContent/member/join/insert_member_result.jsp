@@ -59,7 +59,7 @@ try {
 		out.println(e);
 }
 %>
-<center>
+<div align=center>
     <h3> 축하합니다.  다음과 같이 회원 가입되었습니다! </h3><p>
 	<br><br>
 	<font color="" size='6'><b>[회원 가입 내역]</b></font><p>
@@ -104,7 +104,7 @@ try {
 	<p>
 <br>
  <a href="../login/login.jsp" style="font-size:10pt;font-family:맑은 고딕" >로그인</a>
- </center>
+ </div>
 <%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>
