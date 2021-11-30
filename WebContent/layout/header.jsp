@@ -126,12 +126,8 @@ String sid = (String) session.getAttribute("sid");
 								<span class="kor">제품</span>
 							</a>
 							<ul class="submenu">
-								<li><a
-										href="${pageContext.request.contextPath}/member/ticket/tickets_select.jsp">티켓
-										구매하기</a></li>
-								<li><a
-										href="${pageContext.request.contextPath}/member/product/goods_group.jsp">굿즈
-										구매하기</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/ticket/tickets_select.jsp">티켓 구매하기</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/product/goods_group.jsp">굿즈 구매하기</a></li>
 
 							</ul></li>
 						<li><a href="#">
@@ -140,14 +136,14 @@ String sid = (String) session.getAttribute("sid");
 							</a>
 							<ul class="submenu">
 								<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_notice.jsp">공지사항</a></li>
-							<c:choose>
-								<c:when test="${empty sid}">
-									<li><a class="btn" onClick="need_login();">개별문의 (1:1)</a></li>
-								</c:when>
-								<c:otherwise>
-									<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_qna_write.jsp">개별문의 (1:1)</a></li>
-								</c:otherwise>
-							</c:choose>
+								<c:choose>
+									<c:when test="${empty sid}">
+										<li><a class="button" onClick="need_login();">개별문의 (1:1)</a></li>
+									</c:when>
+									<c:otherwise>
+										<li><a href="${pageContext.request.contextPath}/member/about_us/about_us_qna_write.jsp">개별문의 (1:1)</a></li>
+									</c:otherwise>
+								</c:choose>
 
 							</ul></li>
 					</ul>
