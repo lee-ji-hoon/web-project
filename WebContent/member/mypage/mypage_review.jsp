@@ -3,7 +3,7 @@
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/mypage_header.jsp"%>
 <link rel="stylesheet" type="text/css"
-	href="../../css/review_style.css?aa">
+	href="../../css/review_style.css">
 	<!--  menu list 시작  -->
     <section id="menu">
 		 <ul class="hbox-menu">
