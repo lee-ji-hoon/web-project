@@ -73,7 +73,7 @@
         <div class="inner">
             <ul class="tab">
                 <li>
-                    <a href="#" class="menu">평일이다.</a>
+                    <a href="#" class="menu">평일</a>
                     <div class="div pannel"></div>
                 </li>
                 <li>
