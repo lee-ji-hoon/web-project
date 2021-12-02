@@ -114,7 +114,7 @@
             <div class="box">
                 <div class="pic"><img src="img/img.jpg" alt=""></div>
                 <div class="info">
-                    <strong>NEWS 3</strong>
+                    <strong>공지사항</strong>
                     <p>카드뉴스</p>
                     <a href="#" class="btn"><span>더보기</span></a>
                 </div>
