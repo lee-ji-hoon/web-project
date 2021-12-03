@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ include file="../../layout/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
 <html lang="en">
-<head>
+<%@ include file="../../layout/header.jsp"%>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,42 +16,35 @@
     
 
     
-    <title>Document</title>
-</head>
-
-<body>
-
-
 
     <section id="visual">
          <div class=""> 
               <div class="slide">
                  <ul class="left">
-                     <li><a href="../html/themeC.html"><i class="fas fa-angle-left"></i></a></li>
-                     
+                     <li><a href="../html/themeC.jsp"><i class="fas fa-angle-left"></i>     </a></li>
                  </ul>          
                  <ul class="right">
-                     <li><a href="../html/themeB.html"><i class="fas fa-angle-right"></i></a></li>
+                     <li><a href="../html/themeB.jsp"><i class="fas fa-angle-right"></i>       </a></li>
                  </ul>         
                </div>
              <div class="msg">
-                 <h2 class="visual_title">THEME A<br></h2>
-                 <p class="visual_txt">ìì¿ ìë¦¬ì ì¹êµ¬ë¤ì ìê°í©ëë¤.</p>
+                 <h2 class="visual_title">THEME A</h2><br>
+                 <p class="visual_txt">아쿠아리움 친구들을 소개합니다.</p>
              </div> 
          </div>
     </section>
     
    <section id="about" class="content">
         <div class="inner">
-           <h2 class="about_title">ã¡ AQUARIUM</h2>
-            <p class="about_txt">ë¤ìí ë°ë·ì ì¹êµ¬ë¤ì´ ê°ëí ìì¿ ìë¦¬ì</p>
+           <h2 class="about_title">ㅡ AQUARIUM</h2>
+            <p class="about_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>
             <div class="box"></div>
             <div class="box">
                 <h2 class="title">PLAY THEME ZONE</h2>
-                <h2 class="title_1">ìí°ëìì¡°</h2>
-                <i class="line">ã¡</i>
-                <p class="txt">ìì¿ ìë¦¬ìì ìë¤ë©´ ë°ëì ê±°ì³ì¼ í  íì ì¥ì!<br><br>ê³ í¹ì ì¸ íìì ëë¼ë¡ ë¹¨ë ¤ ë¤ì´ê°ë ê°ê°ì ìí°ë ìì¡±ê´ ìëë¤.<br><br>
-                ê¸¸ì­íê³  ë¹ëì´ ìì´ ë§¤ëí ë²¨ë£¨ê°ì² ê°ìì´,<br>ìì´ ì¤ì ìì´ ìì´ì¸í¸ì¹´íê¹ì§<br><br>ëì¹  ì ìë íìì ëë¼ë¡ ìì¥í´ ë³´ì¸ì</p>
+                <h2 class="title_1">원터널수조</h2>
+                <i class="line">ㅡ</i>
+                <p class="txt">아쿠아리움에 왔다면 반드시 거쳐야 할 필수 장소!<br><br>고혹적인 환상의 나라로 빨려 들어가는 감각의 원터널 수족관 입니다.<br><br>
+                길쭉하고 비늘이 없어 매끈한 벨루가철갑상어,<br>잉어 중의 잉어 자이언트카프까지<br><br>놓칠 수 없는 환상의 나라로 입장해 보세요</p>
             </div>
         </div>
     </section>   
@@ -62,45 +53,45 @@
        
     <section id="gallery" class="content">
         <div class="inner">
-            <h2 class="title">ã¡ ì´ë¤ ì¹êµ¬ë¤ì´ ì´ê³  ììê¹ì?</h2>
+            <h2 class="title">ㅡ 어떤 친구들이 살고 있을까요?</h2>
             <p class="txt"></p>  
             <div class="box">
                 <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ë²¨ë£¨ê°ì² ê°ìì´</strong>
+                    <strong class="gallery_title">벨루가철갑상어</strong>
                 </div>
             </div>
             <div class="box">
                 <div class="pic"><img src="../img/00501824_20180416.jpg" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ìë¹ë¸ë°ë¸</strong>
+                    <strong class="gallery_title">알비노바브</strong>
                 </div>
             </div>
             <div class="box">
                 <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ê°ì´ì</strong>
+                    <strong class="gallery_title">가이양</strong>
                 </div>
             </div>            
             <div class="box">
                 <div class="pic"><img src="../img/00501824_20180416.jpg" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ë¸ëíì¿ </strong>
+                    <strong class="gallery_title">블랙파쿠</strong>
                 </div>
             </div>            
             <div class="box">
                 <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ã</strong>
+                    <strong class="gallery_title">ㅗ</strong>
                 </div>
             </div>            
             <div class="box">
                 <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ã</strong>
+                    <strong class="gallery_title">ㅗ</strong>
                 </div>
             </div>           
-            <div class="button"><a href="#" class="">ìë§¤íê¸°</a>
+            <div class="button"><a href="#" class="">예매하기</a>
             </div>
             
         </div>
@@ -113,9 +104,9 @@
                 <div class="logo_footer"><a href="#"><img src="../img/logo-light-220x32.png" alt=""></a></div>
             </div>
             <div class="box contact">
-                <p><i class="fas fa-phone-alt"></i><span class="txt">32-326-9500 (ë¨ì²´ë¬¸ì : 032-326-9503)</span></p>
-                <p><i class="fas fa-street-view"></i><span class="txt">ìì¸í¹ë³ì ì±ë¶êµ¬ ì¼ì ë5ê° 298-10 ìì¿ ìíë¼ë· </span></p>
-                <p><i class="fas fa-clock"></i><span class="txt">MonâSat: 10:00amâ8:00pm</span></p>
+                <p><i class="fas fa-phone-alt"></i><span class="txt">32-326-9500 (단체문의 : 032-326-9503)</span></p>
+                <p><i class="fas fa-street-view"></i><span class="txt">서울특별시 강남구 영동대로 513 코엑스아쿠아리움 </span></p>
+                <p><i class="fas fa-clock"></i><span class="txt">Mon–Sat: 10:00am–8:00pm</span></p>
             </div>
             <div class="box sns">
                  <ul class="sns">
