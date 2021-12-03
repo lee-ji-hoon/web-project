@@ -4,6 +4,9 @@
 	border-bottom : 1px solid #ccc;
 	text-align : center;
 }
+#review_list_title_line td{
+	font-weight : bold;
+}
 #review_list_table tr td{
 	padding : 10px;
 }
