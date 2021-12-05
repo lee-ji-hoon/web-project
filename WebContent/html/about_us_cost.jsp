@@ -21,10 +21,10 @@
          <div class=""> 
               <div class="slide">
                  <ul class="left">
-                     <li><a href="../html/about_us_info.html"><i class="fas fa-angle-left"></i></a></li>
+                     <li><a href="about_us_info.jsp"><i class="fas fa-angle-left"></i></a></li>
                  </ul>          
                  <ul class="right">
-                     <li><a href="../html/about_us_road.html"><i class="fas fa-angle-right"></i></a></li>
+                     <li><a href="about_us_road.jsp"><i class="fas fa-angle-right"></i></a></li>
                  </ul>         
                </div>
              <div class="msg">
