@@ -43,8 +43,7 @@ function addressInfoBox() {
 
 var tab1 = $("#detail-img-text-box").offset().top - 100;
 var tab2 = $("#detail-review-box").offset().top - 100;
-var tab3 = $("#detail-qna-box").offset().top - 100;
-var tab4 = $("#detail-purchaseInfo-box").offset().top - 100;
+var tab3 = $("#detail-purchaseInfo-box").offset().top - 100;
 
 
 $(window).on("scroll", function() {
@@ -67,7 +66,7 @@ $(window).on("scroll", function() {
 		$("#tab-review").css('border-bottom', '4px solid #f2f2f2');
 		$("#tab-review-a").css('color', '#9a9a9e');
 	}
-
+/*
 	if (nowY > tab3) {
 		$("#tab-review").css('border-bottom', '4px solid #f2f2f2');
 		$("#tab-review-a").css('color', '#9a9a9e');
@@ -76,9 +75,9 @@ $(window).on("scroll", function() {
 	} else {
 		$("#tab-qna").css('border-bottom', '4px solid #f2f2f2');
 		$("#tab-qna-a").css('color', '#9a9a9e');
-	}
+	} */
 
-	if (nowY > tab4) {
+	if (nowY > tab3) {
 		$("#tab-qna").css('border-bottom', '4px solid #f2f2f2');
 		$("#tab-qna-a").css('color', '#9a9a9e');
 		$("#tab-purchaseInfo").css('border-bottom', '4px solid black');
@@ -91,19 +90,15 @@ $(window).on("scroll", function() {
 
 $("#tab-img-text-a").click(function(event) {
 	event.preventDefault();
-	$('html,body').animate({ scrollTop: tab1 + 10 }, 1000);
+	$('html,body').animate({ scrollTop: tab1  }, 1000);
 });
 $("#tab-review-a").click(function(event) {
 	event.preventDefault();
-	$('html,body').animate({ scrollTop: tab2 + 10 }, 1000);
-});
-$("#tab-qna-a").click(function(event) {
-	event.preventDefault();
-	$('html,body').animate({ scrollTop: tab3 + 10 }, 1000);
+	$('html,body').animate({ scrollTop: tab2  }, 1000);
 });
 $("#tab-purchaseInfo-a").click(function(event) {
 	event.preventDefault();
-	$('html,body').animate({ scrollTop: tab4 + 10 }, 1000);
+	$('html,body').animate({ scrollTop: tab3 }, 1000);
 });
 
 

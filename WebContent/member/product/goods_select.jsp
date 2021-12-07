@@ -3,7 +3,8 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" href="../css/style-product.css">
-<link rel="stylesheet" type="text/css" href="../../css/review_style.css?aa">
+<link rel="stylesheet" type="text/css"
+	href="../../css/review_style.css?aa">
 <body onload="init();">
 <head>
 <meta charset="UTF-8">
@@ -38,68 +39,64 @@ try {
 	String p_description = rs.getString("p_description");
 	int p_stock = rs.getInt("p_stock");
 	String p_option = ("p_option");
-	
+
 	java.util.Date date = new java.util.Date(); //   Date 타입의 객체 date 생성
 	String recent_date = date.toLocaleString(); //   변수 oDate에 현재 시각(년.월.일 시:분:초)을 저장
-	
+
 	String ct_no = session.getId();
-	if(sid != null){
+	if (sid != null) {
 		String jsql3 = "SELECT * FROM temp_recent WHERE p_id = ? AND m_id = ?";
 		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1,p_id);
-		pstmt3.setString(2,sid);
+		pstmt3.setString(1, p_id);
+		pstmt3.setString(2, sid);
 		ResultSet rs3 = pstmt3.executeQuery();
-		
-		if(!rs3.next()){
-			String jsql2 = "INSERT INTO temp_recent (p_id, p_name, m_id, recent_date) VALUES (?,?,?,?)";
-			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-			pstmt2.setString(1, p_id);
-			pstmt2.setString(2, p_name);
-			pstmt2.setString(3, sid);
-			pstmt2.setString(4, recent_date);
-			
-			pstmt2.executeUpdate();
-		}
-		else{
-			String jsql2 = "UPDATE temp_recent SET recent_date =? WHERE p_id = ?";
-			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-			pstmt2.setString(1, recent_date);
-			pstmt2.setString(2, p_id);
-			
-			pstmt2.executeUpdate();
+
+		if (!rs3.next()) {
+	String jsql2 = "INSERT INTO temp_recent (p_id, p_name, m_id, recent_date) VALUES (?,?,?,?)";
+	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, p_id);
+	pstmt2.setString(2, p_name);
+	pstmt2.setString(3, sid);
+	pstmt2.setString(4, recent_date);
+
+	pstmt2.executeUpdate();
+		} else {
+	String jsql2 = "UPDATE temp_recent SET recent_date =? WHERE p_id = ?";
+	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, recent_date);
+	pstmt2.setString(2, p_id);
+
+	pstmt2.executeUpdate();
 		}
 	}
-	
-	else{
+
+	else {
 		String jsql3 = "SELECT * FROM temp_recent WHERE p_id = ? AND ct_no = ?";
 		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		pstmt3.setString(1,p_id);
-		pstmt3.setString(2,ct_no);
+		pstmt3.setString(1, p_id);
+		pstmt3.setString(2, ct_no);
 		ResultSet rs3 = pstmt3.executeQuery();
-		
-		if(!rs3.next()){
-			String jsql2 = "INSERT INTO temp_recent (p_id, p_name, m_id, recent_date, ct_no) VALUES (?,?,?,?,?)";
-			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-			pstmt2.setString(1, p_id);
-			pstmt2.setString(2, p_name);
-			pstmt2.setString(3, sid);
-			pstmt2.setString(4, recent_date);
-			pstmt2.setString(5, ct_no);
-			
-			pstmt2.executeUpdate();
-		}
-		else{
-			String jsql2 = "UPDATE temp_recent SET recent_date =? WHERE ct_no = ? AND p_id = ?";
-			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-			pstmt2.setString(1, recent_date);
-			pstmt2.setString(2, ct_no);
-			pstmt2.setString(3, p_id);
-			
-			pstmt2.executeUpdate();
+
+		if (!rs3.next()) {
+	String jsql2 = "INSERT INTO temp_recent (p_id, p_name, m_id, recent_date, ct_no) VALUES (?,?,?,?,?)";
+	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, p_id);
+	pstmt2.setString(2, p_name);
+	pstmt2.setString(3, sid);
+	pstmt2.setString(4, recent_date);
+	pstmt2.setString(5, ct_no);
+
+	pstmt2.executeUpdate();
+		} else {
+	String jsql2 = "UPDATE temp_recent SET recent_date =? WHERE ct_no = ? AND p_id = ?";
+	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, recent_date);
+	pstmt2.setString(2, ct_no);
+	pstmt2.setString(3, p_id);
+
+	pstmt2.executeUpdate();
 		}
 	}
-	
-	
 %>
 </head>
 
@@ -129,8 +126,7 @@ try {
 						</div>
 					</div>
 				</div>
-				<span class="products-info-desciption">※ 이미지를 좌우로 드래그하면 더 많은
-					이미지를 확인하실 수 있습니다.</span>
+				<span class="products-info-desciption">※ 이미지를 좌우로 드래그하면 더 많은 이미지를 확인하실 수 있습니다.</span>
 			</div>
 
 			<div class="products-box-detail">
@@ -173,7 +169,8 @@ try {
 					<span class="products-box-detail-realInfo-popover"
 						onclick="realInfoBox();"> ∨ </span>
 					<div id="realInfo-box">
-						&lt;상품 설명&gt;<br /> <%=p_description %>
+						&lt;정품인증&gt;<br />
+						(주) 아쿠아에서 위 상품의 정품을 인증합니다.
 					</div>
 				</div>
 				<!--  수량 선택 및 상품 구매  -->
@@ -192,8 +189,7 @@ try {
 				<div class="products-box-detail-allPrice">
 					<span class="products-box-detail-allPrice-title">상품 금액: </span>
 					<input type="text" name="sum" size=7
-						style="text-align: right; border: none" readonly>
-					원
+						style="text-align: right; border: none" readonly>원
 
 
 				</div>
@@ -216,26 +212,25 @@ try {
 							<i class="material-icons">shopping_cart</i>
 						</button>
 						<%
-							String jsql4 = "SELECT * FROM dibs WHERE p_id = ? AND m_id = ? ";
-							PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-							pstmt4.setString(1,p_id);
-							pstmt4.setString(2,sid);
-							ResultSet rs4 = pstmt4.executeQuery();
-							
-							if(rs4.next()){
-								
+						String jsql4 = "SELECT * FROM dibs WHERE p_id = ? AND m_id = ? ";
+						PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+						pstmt4.setString(1, p_id);
+						pstmt4.setString(2, sid);
+						ResultSet rs4 = pstmt4.executeQuery();
+
+						if (rs4.next()) {
 						%>
-							<button type="button" class="fav-btn" onclick="rmv_to_dibs();">
-								<i class="material-icons">favorite_border</i>
-							</button>
+						<button type="button" class="fav-btn" onclick="rmv_to_dibs();">
+							<i class="material-icons">favorite_border</i>
+						</button>
 						<%
-							}else{
+						} else {
 						%>
-							<button type="button" class="fav-btn" onclick="add_to_dibs();">
-								<i class="material-icons" style="color: red;">favorite_border</i>
-							</button>
+						<button type="button" class="fav-btn" onclick="add_to_dibs();">
+							<i class="material-icons" style="color: red;">favorite_border</i>
+						</button>
 						<%
-							}
+						}
 						%>
 					</c:otherwise>
 				</c:choose>
@@ -254,8 +249,8 @@ try {
 					href="#detail-img-text-box" id="tab-img-text-a">상품정보</a></li>
 			<li class="active" id="tab-review"><a href="#detail-review-box"
 					id="tab-review-a">리뷰</a></li>
-			<li class="active" id="tab-qna"><a href="#detail-qna-box"
-					id="tab-qna-a">Q&amp;A</a></li>
+			<!-- <li class="active" id="tab-qna"><a href="#detail-qna-box"
+					id="tab-qna-a">Q&amp;A</a></li>  -->
 			<li class="active" id="tab-purchaseInfo"><a
 					href="#detail-purchaseInfo-box" id="tab-purchaseInfo-a">주문정보</a></li>
 		</ul>
@@ -271,7 +266,9 @@ try {
 		</a>
 	</div>
 	<!-- 우측 하단 sticky 끝 -->
-	<div id="detail-img-text-box"></div>
+	<div id="detail-img-text-box">
+		<%=p_description%>
+	</div>
 	<!-- 상품 상세 설명 이미지/글 끝 -->
 
 	<!-- 리뷰 시작 -->
@@ -281,49 +278,49 @@ try {
 			<a class="detail-qna-header-a" href="review_list.jsp?p_id=<%=p_id%>">전체보기</a>
 		</div>
 		<div class="detail-qna-body">
-			<table id = 'review_list_table'>
-					<tr id = 'review_t_list_title_line' height = 50>
-						<td width="50">작성일</td>
-						<td width="50">작성자</td>
-						<td width="80">상품 이름</td>
-						<td width="50">배송 만족도</td>
-						<td width="50">상품 만족도</td>
-						<td width="200">후기 내용</td>
-					</tr>
-			<%
-			String jsql2 = "SELECT * FROM review WHERE r_category = ? order by r_no desc limit 5";
-			PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-			pstmt2.setString(1, product);
-
-			ResultSet rs2 = pstmt2.executeQuery();
-			while(rs2.next()){
-				String r_writer = rs2.getString("r_writer");
-				String r_product = rs2.getString("r_product");
-				String r_date = rs2.getString("r_date");
-				String d_satisfy = rs2.getString("d_satisfy");
-				String p_satisfy = rs2.getString("p_satisfy");
-				String r_content = rs2.getString("r_content");
-				%>
-				
-					<tr id = 'review_t_list_content_line'>
-						<td><%=r_date%></td>
-						<td><%=r_writer%></td>
-						<td><%=r_product%></td>
-						<td><%=d_satisfy%></td>
-						<td><%=p_satisfy%></td>
-						<td><%=r_content%></td>
-					</tr>
-				
+			<table id='review_list_table'>
+				<tr id='review_t_list_title_line' height=50>
+					<td width="50">작성일</td>
+					<td width="50">작성자</td>
+					<td width="80">상품 이름</td>
+					<td width="50">배송 만족도</td>
+					<td width="50">상품 만족도</td>
+					<td width="200">후기 내용</td>
+				</tr>
 				<%
-			}
-			%>
+				String jsql2 = "SELECT * FROM review WHERE r_category = ? order by r_no desc limit 5";
+				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+				pstmt2.setString(1, product);
+
+				ResultSet rs2 = pstmt2.executeQuery();
+				while (rs2.next()) {
+					String r_writer = rs2.getString("r_writer");
+					String r_product = rs2.getString("r_product");
+					String r_date = rs2.getString("r_date");
+					String d_satisfy = rs2.getString("d_satisfy");
+					String p_satisfy = rs2.getString("p_satisfy");
+					String r_content = rs2.getString("r_content");
+				%>
+
+				<tr id='review_t_list_content_line'>
+					<td><%=r_date%></td>
+					<td><%=r_writer%></td>
+					<td><%=r_product%></td>
+					<td><%=d_satisfy%></td>
+					<td><%=p_satisfy%></td>
+					<td><%=r_content%></td>
+				</tr>
+
+				<%
+				}
+				%>
 			</table>
 		</div>
 
 	</div>
 	<!-- 리뷰 끝 -->
 
-	<!-- Q&A 시작 -->
+	<!-- Q&A 시작 
 	<div id="detail-qna-box">
 		<div class="detail-qna-header">
 			q&a
@@ -332,7 +329,7 @@ try {
 		<div class="detail-qna-body"></div>
 
 	</div>
-	<!-- Q&A 끝 -->
+	Q&A 끝 -->
 
 	<!-- 주문정보 시작 -->
 	<div id="detail-purchaseInfo-box">
