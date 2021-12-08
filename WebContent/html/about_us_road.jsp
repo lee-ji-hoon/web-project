@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/about_us_road.css">
+    <link rel="stylesheet" href="../css/about_us_road.css?zdc">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/gnb.js"></script>
@@ -21,10 +21,11 @@
          <div class=""> 
               <div class="slide">
                  <ul class="left">
-                     <li><a href="../html/about_us_info.html"><i class="fas fa-angle-left"></i></a></li>
+                     <li><a href="../html/about_us_info.jsp"><i class="fas fa-angle-left"></i></a></li>
                  </ul>          
                  <ul class="right">
-                     <li><a href="../html/about_us_cost.html"><i class="fas fa-angle-right"></i></a></li>
+                     <li><a href="../html/about_us_cost.
+                     jsp"><i class="fas fa-angle-right"></i></a></li>
                  </ul>         
                </div>
              <div class="msg">
