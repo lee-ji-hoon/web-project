@@ -41,7 +41,6 @@
 						<td width="200">상품 이름</td>
 						<td width="100">배송 만족도</td>
 						<td width="100">상품 만족도</td>
-						<td width="300">후기 내용</td>
 					</tr>
 					<%
 					String p_name = rs.getString("p_name");
