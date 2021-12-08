@@ -89,7 +89,7 @@
                     <strong class="gallery_title">알비노 콘스네이크</strong>
                 </div>
             </div>           
-            <div class="button"><a href="#" class="bread_btn">예매하기</a>
+            <div class="button"><a href="../member/ticket/tickets_select.jsp" class="bread_btn">예매하기</a>
             </div>
             
         </div>
