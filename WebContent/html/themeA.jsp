@@ -80,7 +80,7 @@
                 </div>
             </div>            
             </div>           
-            <div class="button"><a href="#" class="">예매하기</a>
+            <div class="button"><a href="../member/ticket/tickets_select.jsp" class="">예매하기</a>
             </div>
             
         </div>
