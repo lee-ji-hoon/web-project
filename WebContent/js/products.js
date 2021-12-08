@@ -66,16 +66,6 @@ $(window).on("scroll", function() {
 		$("#tab-review").css('border-bottom', '4px solid #f2f2f2');
 		$("#tab-review-a").css('color', '#9a9a9e');
 	}
-/*
-	if (nowY > tab3) {
-		$("#tab-review").css('border-bottom', '4px solid #f2f2f2');
-		$("#tab-review-a").css('color', '#9a9a9e');
-		$("#tab-qna").css('border-bottom', '4px solid black');
-		$("#tab-qna-a").css('color', 'black');
-	} else {
-		$("#tab-qna").css('border-bottom', '4px solid #f2f2f2');
-		$("#tab-qna-a").css('color', '#9a9a9e');
-	} */
 
 	if (nowY > tab3) {
 		$("#tab-qna").css('border-bottom', '4px solid #f2f2f2');
