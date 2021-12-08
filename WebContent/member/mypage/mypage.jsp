@@ -95,8 +95,9 @@ try {
     </table>
 	<p>
 
-<a href="mypage_member_update.jsp?id=<%=id%>"
-			style="font-size:10pt;font-family:맑은 고딕">수정</a>&nbsp;&nbsp;
+<a href="mypage_member_update.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">수정</a>&nbsp;&nbsp;&nbsp;
+<a href="mypage_member_delete.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">삭제</a>
+			
 
 </center>
     
