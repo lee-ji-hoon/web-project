@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/themeA.css">
+    <link rel="stylesheet" href="../css/themeA.css?zxc">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/gnb.js"></script>
@@ -56,42 +56,31 @@
             <h2 class="title">ㅡ 어떤 친구들이 살고 있을까요?</h2>
             <p class="txt"></p>  
             <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm1-1.png" alt=""></div>
                 <div class="info">
                     <strong class="gallery_title">벨루가철갑상어</strong>
                 </div>
             </div>
             <div class="box">
-                <div class="pic"><img src="../img/00501824_20180416.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm1-2.png" alt=""></div>
                 <div class="info">
                     <strong class="gallery_title">알비노바브</strong>
                 </div>
             </div>
             <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm1-3.png" alt=""></div>
                 <div class="info">
                     <strong class="gallery_title">가이양</strong>
                 </div>
             </div>            
             <div class="box">
-                <div class="pic"><img src="../img/00501824_20180416.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm1-4.png" alt=""></div>
                 <div class="info">
                     <strong class="gallery_title">블랙파쿠</strong>
                 </div>
             </div>            
-            <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
-                <div class="info">
-                    <strong class="gallery_title">ㅗ</strong>
-                </div>
-            </div>            
-            <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
-                <div class="info">
-                    <strong class="gallery_title">ㅗ</strong>
-                </div>
             </div>           
-            <div class="button"><a href="#" class="">예매하기</a>
+            <div class="button"><a href="../member/ticket/tickets_select.jsp" class="">예매하기</a>
             </div>
             
         </div>

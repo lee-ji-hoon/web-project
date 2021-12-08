@@ -7,11 +7,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/aqua.css?dfs">
+    <link rel="stylesheet" href="css/aqua.css?zxz">
     <script src="js/gnb.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/main.js"></script>
     <script src="js/theme.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     
 </head>
 <style>
@@ -73,12 +76,20 @@
         <div class="inner">
             <ul class="tab">
                 <li>
-                    <a href="#" class="menu">평일.</a>
-                    <div class="div pannel"></div>
+                    <a href="#" class="menu">평일</a>
+                    <div class="div pannel">
+                    <iframe width="1000px" height="450px" src="https://www.youtube.com/embed/YwTGlCo5mys" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe></div>
                 </li>
                 <li>
                     <a href="#" class="menu">주말</a>
-                    <div class="div pannel"></div>
+                    <div class="div pannel">
+                    <iframe width="1000px" height="450px" src="https://www.youtube.com/embed/xc7efOZRLSk" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe></div>
                 </li>
 
             </ul>
@@ -99,7 +110,7 @@
                 <div class="pic"><img src="img/5.jpg" alt=""></div>
                 <div class="info">
                     <strong>이용요금 안내</strong>
-                    <p>Charge info</p>
+                    <p>입장권 및 이용안내 서비스 안내입니다.</p>
                     <a href="#" class="btn"><span>더보기</span></a>
                 </div>
             </div>
@@ -107,15 +118,15 @@
                 <div class="pic"><img src="" alt=""></div>
                 <div class="info">
                     <strong>프로그램 안내</strong>
-                    <p>카드뉴스</p>
+                    <p>아쿠아리움 프로그램 안내 입니다.</p>
                     <a href="#" class="btn"><span>더보기</span></a>
                 </div>
             </div>
             <div class="box">
                 <div class="pic"><img src="img/img.jpg" alt=""></div>
                 <div class="info">
-                    <strong>공지사항</strong>
-                    <p>카드뉴스</p>
+                    <strong>EVENT</strong>
+                    <p>지점별 특별 이벤트와 통합 이벤트를<br> 만나보세요.</p>
                     <a href="#" class="btn"><span>더보기</span></a>
                 </div>
             </div>
@@ -135,7 +146,7 @@
 <footer id="footer">
         <div class="inner">
             <div class="box logo">
-                <div class="logo_footer"><a href="#"><img src="../WebContent/img/logo-light-220x32.png" alt=""></a></div>
+                <div class="logo_footer"><a href="#"><img src="img/logo-light-220x32.png" alt=""></a></div>
             </div>
             <div class="box contact">
                 <p><i class="fas fa-phone-alt"></i><span class="txt">32-326-9500 (단체문의 : 032-326-9503)</span></p>
