@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../../layout/header.jsp" %>
 
-<script language="javascript" src="../../js/js_package.js" charset="utf-8"></script>
+<script language="javascript" src="../../js/js_package.js?a" charset="utf-8"></script>
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -21,7 +21,7 @@
 			 </div>
 			 <c:choose>
 			 	<c:when test = "${empty s_m_id}">
-			 		<input name="id" class="form-control" placeholder="Id 입력" type="text" required/>
+			 		<input name="id" class="form-control" placeholder="Id 입력" type="text" required onkeyup="press()"/>
 			 	</c:when>
 			 	<c:otherwise>
 			 		<input name="id" class="form-control" placeholder="Id 입력" type="text" value="<%=s_m_id%>" required/>
@@ -33,7 +33,7 @@
 	    	<div class="input-group-prepend">
 			    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 			</div>
-	        <input name="pass" class="form-control" placeholder="비밀번호 입력" type="password" required/>
+	        <input name="pass" class="form-control" placeholder="비밀번호 입력" type="password" required onkeyup="press()"/>
 	    </div> <!-- form-group// -->
 	    
 	    <div class="fg-x400 form-group">
