@@ -169,8 +169,7 @@ try {
 					<span class="products-box-detail-realInfo-popover"
 						onclick="realInfoBox();"> ∨ </span>
 					<div id="realInfo-box">
-						&lt;정품인증&gt;<br />
-						(주) 아쿠아에서 위 상품의 정품을 인증합니다.
+						&lt;상품 설명&gt;<br /> <%=p_description %>
 					</div>
 				</div>
 				<!--  수량 선택 및 상품 구매  -->
@@ -267,7 +266,7 @@ try {
 	</div>
 	<!-- 우측 하단 sticky 끝 -->
 	<div id="detail-img-text-box">
-		<%=p_description%>
+		<img src="../../img/product/<%=p_id%>_description.jpg">
 	</div>
 	<!-- 상품 상세 설명 이미지/글 끝 -->
 

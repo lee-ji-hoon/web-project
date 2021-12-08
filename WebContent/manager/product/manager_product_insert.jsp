@@ -29,9 +29,9 @@
 			<th>카테고리분류 :  </th>
 			<td>		
 			     <select name="ctg">
-			        <option value="상">상</option>
-	        		<option value="중">중</option>
-			        <option value="하">하</option>
+			        <option value="아쿠아리움관">아쿠아리움관</option>
+	        		<option value="파충류관">파충류관</option>
+			        <option value="정글존">정글존 </option>
 		         </select><p>
 			 </td>
 		</tr>

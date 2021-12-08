@@ -45,16 +45,16 @@
 				<label class="custom-control-label" for="notSoldout">품절 제외<구현중...></label>
 			</div> -->
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="상" />
-				상
+				<input type="radio" name="compList" value="아쿠아리움관" />
+				아쿠아리움관
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="중" />
-				중
+				<input type="radio" name="compList" value="파충류관" />
+				파충류관
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="하" />
-				하
+				<input type="radio" name="compList" value="정글존" />
+				정글존
 			</div>
 			<div class=" custom-checkbox favor-content">
 				<input type="radio" name="compList" value="default"/>
