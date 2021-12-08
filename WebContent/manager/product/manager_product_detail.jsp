@@ -55,14 +55,6 @@ try {
 							<img src="../../img/product/<%=p_id%>.jpg" width="500"
 								height="200">
 						</div>
-						<div class="swiper-slide">
-							<img src="../../img/product/<%=p_id%>_1.jpg" width="500"
-								height="200">
-						</div>
-						<div class="swiper-slide">
-							<img src="../../img/product/<%=p_id%>_2.jpg" width="500"
-								height="200">
-						</div>
 					</div>
 				</div>
 				<span class="products-info-desciption">※ 이미지를 좌우로 드래그하면 더 많은

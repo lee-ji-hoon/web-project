@@ -73,11 +73,11 @@
 			String[] checked = new String[4];
 
 			for (int i = 0; i < compList_arr.length; i++) {
-				if (compList_arr[i].equals("상")) {
+				if (compList_arr[i].equals("아쿠아리움관")) {
 					checked[0] = "checked";
-				} else if (compList_arr[i].equals("중")) {
+				} else if (compList_arr[i].equals("파충류관")) {
 					checked[1] = "checked";
-				} else if (compList_arr[i].equals("하")) {
+				} else if (compList_arr[i].equals("정글존")) {
 					checked[2] = "checked";
 				} else if (compList_arr[i].equals("default")) {
 					checked[3] = "checked";
@@ -85,16 +85,16 @@
 			}
 			%>
 			<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="상" <%=checked[0]%>/>
-					상
+					<input type="radio" name="compList" value="아쿠아리움관" <%=checked[0]%>/>
+					아쿠아리움관
 				</div>
 				<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="중" <%=checked[1]%>/>
-					중
+					<input type="radio" name="compList" value="파충류관" <%=checked[1]%>/>
+					파충류관
 				</div>
 				<div class=" custom-checkbox favor-content">
-					<input type="radio" name="compList" value="하" <%=checked[2]%>/>
-					하
+					<input type="radio" name="compList" value="정글존" <%=checked[2]%>/>
+					정글존
 				</div>
 				<div class=" custom-checkbox favor-content">
 					<input type="radio" name="compList" value="default" <%=checked[3]%>/>
@@ -240,16 +240,16 @@ ResultSet rs2 = pstmt2.executeQuery();
 				<label class="custom-control-label" for="notSoldout">품절 제외<구현중...></label>
 			</div> -->
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="상" />
-				상
+				<input type="radio" name="compList" value="아쿠아리움관" />
+				아쿠아리움관
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="중" />
-				중
+				<input type="radio" name="compList" value="파충류관" />
+				파충류관
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="하" />
-				하
+				<input type="radio" name="compList" value="정글존" />
+				정글존
 			</div>
 			<div class=" custom-checkbox favor-content">
 				<input type="radio" name="compList" value="default" />
