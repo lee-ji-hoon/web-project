@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/themeC.css">
+    <link rel="stylesheet" href="../css/themeC.css?zdz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/gnb.js"></script>
@@ -53,41 +53,42 @@
             <h2 class="gallery_title">ㅡ AQUARIUM</h2>
             <p class="gallery_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>  
             <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm3-1.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">벨루가철갑상어</strong>
+                    <strong class="gallery_title">백호</strong>
                 </div>
             </div>
             <div class="box">
-                <div class="pic"><img src="../img/00501824_20180416.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm3-2.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">알비노바브</strong>
+                    <strong class="gallery_title">백사자</strong>
                 </div>
             </div>
             <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm3-3.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">가이양</strong>
+                    <strong class="gallery_title">스컹크</strong>
                 </div>
             </div>            
             <div class="box">
-                <div class="pic"><img src="../img/00501824_20180416.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm3-4.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">블랙파쿠</strong>
+                    <strong class="gallery_title">사막여우</strong>
                 </div>
             </div>            
             <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm3-5.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ㅗ</strong>
+                    <strong class="gallery_title">왈라비</strong>
                 </div>
             </div>            
             <div class="box">
-                <div class="pic"><img src="../img/99919F4A5DEE8E4E03.jpg" alt=""></div>
+                <div class="pic"><img src="../img/theme/thm3-6.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">ㅗ</strong>
+                    <strong class="gallery_title">미어캣</strong>
                 </div>
-            </div>           
+            </div>     
+                  
             <div class="button"><a href="#" class="bread_btn">예매하기</a>
             </div>
             

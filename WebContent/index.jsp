@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/aqua.css?dfd">
+    <link rel="stylesheet" href="css/aqua.css?zxc">
     <script src="js/gnb.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/main.js"></script>
@@ -34,7 +34,7 @@
                 <li>
                     <a href="#">아쿠아리움</a>
                     <div class="panel">
-                        <div class="pic"><img src="img/2-1.jpg" alt=""></div>
+                        <div class="pic"><img src="img/1.png" alt=""></div>
                         <div class="info">
                             <h3 class="tours_title">신비롭고 아름다운<br> 바닷속 아쿠아리움 세상</h3>
                             <p class="tours_txt">다양한 해양 동물들이 가득한 아쿠아리움 테마존 입니다.</p>
@@ -77,11 +77,19 @@
             <ul class="tab">
                 <li>
                     <a href="#" class="menu">평일</a>
-                    <div class="div pannel"></div>
+                    <div class="div pannel">
+                    <iframe width="1000px" height="450px" src="https://www.youtube.com/embed/YwTGlCo5mys" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe></div>
                 </li>
                 <li>
                     <a href="#" class="menu">주말</a>
-                    <div class="div pannel"></div>
+                    <div class="div pannel">
+                    <iframe width="1000px" height="450px" src="https://www.youtube.com/embed/xc7efOZRLSk" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe></div>
                 </li>
 
             </ul>
