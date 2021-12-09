@@ -54,7 +54,7 @@
 		%>
 	
 	<div class="container">
-		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 			<tr>
 				<td bgcolor="#002C57" width=120 height="30" align="center"><p align="center">
 						<font size="2" color="#ECFAE4"><strong>상품번호</strong></font></td>
@@ -124,7 +124,7 @@
 				<td bgcolor="#eeeede" height="30" align="right"><font size="2"><fmt:formatNumber value="<%=amount%>" type="number" />
 						원</font></td>
 				<td bgcolor="#eeeede" height="30" align="center"><a
-					href="cart_delete.jsp?p_id=<%=p_id%>"><font size="2" color=blue><b>삭제</b></a></font></td>
+					href="cart_delete.jsp?p_id=<%=p_id%>"><font size="2" color=#4B89DC><b>삭제</b></a></font></td>
 			</tr>
 			<%
 			} // while문의 끝
@@ -208,7 +208,7 @@
 		%>
 		<form name="form" method="Post" action="cart_order_ok.jsp">
 			<!--  폼의 이름이 form으로 지정됨 -->
-			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 				<tr>
 					<td rowspan=3 width="155" align="center" bgcolor="#002C57"><font
 						size="2" color="#ECFAE4"> <strong>주문자 정보</strong>
@@ -227,7 +227,7 @@
 			</table>
 
 
-			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 				<tr>
 					<td rowspan=3 width="155" align="center" bgcolor="#002C57"><font
 						size="2" color="#ECFAE4"> <strong>수령인 정보</strong>
@@ -252,7 +252,7 @@
 			</table>
 
 
-			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 				<tr>
 					<td rowspan=2 align="center" width="155" bgcolor="#002C57">
 						<font size="2" color="#ECFAE4"> <strong>결제 방법</strong>
@@ -278,13 +278,13 @@
 							<option value="외환은행">외환은행 ( 327-56-333002 / (주)aqua)</option>
 							<option value="신한은행">신한은행 ( 987-25-202099 / (주)aqua)</option>
 							<option value="하나은행">하나은행 ( 698-00-222176 / (주)aqua)</option>
-					</select> <font size=1 color=blue>(카드 or 무통장입금 중 택일!)</font></td>
+					</select> <font size=1 color=#4b89DC>(카드 or 무통장입금 중 택일!)</font></td>
 					</td>
 				</tr>
 			</table>
 
 
-			<table border=1 style="font-size: 13pt; font-family: 맑은 고딕">
+			<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 				<tr>
 					<td colspan=2 align="center" width="275" bgcolor="#002C57"><font
 						color="red"> <strong>전체 주문 총액(원)</strong>

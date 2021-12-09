@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../../layout/header.jsp" %>
 
-<script language="javascript" src="../../js/js_package.js?a" charset="utf-8"></script>
+<script language="javascript" src="../../js/js_package.js" charset="utf-8"></script>
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -42,7 +42,7 @@
 	   	</form>
 	   	<!-- 로그인 form태그 끝 -->
 	   	
-	   	<div class="links">
+	   	<div class="links" align="center">
 	        <a href="../join/find_id_form.jsp">아이디 찾기</a> | <a href="../join/find_pass_form.jsp">비밀번호 찾기</a> | <a href="../join/insert_member.jsp">회원가입</a>
 	    </div>
 </article>

@@ -6,7 +6,7 @@
 <!--  menu list 시작  -->
     <section id="menu">
 		 <ul class="hbox-menu">
-		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp" style="color:black">회원정보</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage.jsp" style="color:black">회원정보</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp">구매내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
@@ -95,8 +95,8 @@ try {
     </table>
 	<p>
 
-<a href="mypage_member_update.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">수정</a>&nbsp;&nbsp;&nbsp;
-<a href="mypage_member_delete.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">삭제</a>
+<a href="mypage_member_update.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">회원정보 수정</a>&nbsp;&nbsp;&nbsp;
+<a href="mypage_member_delete.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">회원정보 탈퇴</a>
 			
 
 </center>
