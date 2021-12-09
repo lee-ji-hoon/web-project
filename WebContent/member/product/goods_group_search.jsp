@@ -10,7 +10,11 @@
 
 
 <body>
-
+<%
+	request.setCharacterEncoding("utf-8");
+	String keyword = request.getParameter("keyword");
+	String key = "%" + keyword + "%";
+%>
 </head>
 <div class="frame">
 	<header>
@@ -21,7 +25,7 @@
 						<i class="tiny material-icons">search</i>
 					</button>
 					<input name="keyword" placeholder="상품명으로 검색"
-						class="headerSearchForm-input" value=""/>
+						class="headerSearchForm-input" value="<%=keyword %>" />
 				</form>
 	</header>
 	<!-- main 타이틀 시작 -->
@@ -74,8 +78,9 @@
 			Class.forName("org.gjt.mm.mysql.Driver");
 			Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 	
-			String jsql = "select * from product";
+			String jsql = "SELECT * FROM product WHERE p_name LIKE ?";
 			PreparedStatement pstmt = con.prepareStatement(jsql);
+			pstmt.setString(1,key);
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(sid!=null){
@@ -94,7 +99,7 @@
 					 	<a href="goods_select.jsp?p_id=<%=p_id%>">
 					 		<li><img src="../../img/product/<%=p_id%>.jpg" height="50px" width="50px" >
 					 	</a> 
-					 	&nbsp
+					 	&nbsp;
 					 	<a href="goods_select.jsp?p_id=<%=p_id%>"><%=p_name %></a>
 					 	
 					 	</a>
