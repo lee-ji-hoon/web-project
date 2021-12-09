@@ -64,7 +64,7 @@ try {
 <section id="menu">
 	<ul class="hbox-menu">
 		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp">회원정보</a></li>
+				href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">회원정보</a></li>
 		<li><a
 				href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp"
 				style="color: black">구매내역</a></li>

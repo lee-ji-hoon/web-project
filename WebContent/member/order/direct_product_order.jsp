@@ -50,7 +50,7 @@
 	<div align = "center">
 		<br>
 		<br>
-		<font color="blue" size='6'>
+		<font color="#4B89DC" size='6'>
 			<b>[상품 주문서]</b>
 		</font>
 	<p>
@@ -58,7 +58,7 @@
 
 		<!--  (74행~269행):   order.jsp의 48행~235행과 거의 95%이상 유사한 코드를 사용하고 있음  -->
 		<!--  103행에서 cart 테이블이 아니라, tempcart 테이블을 사용하고 있음에 유의할 것!              -->
-	<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+	<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 		<tr>
 			<td bgcolor="#002C57" width=120 height="30" align="center">
 				<p align="center">
@@ -170,7 +170,7 @@
 			</td>
 			<td bgcolor="#eeeede" height="30" align="center">
 				<a href="cart_delete.jsp?p_id=<%=p_id%>">
-					<font size="2" color=blue>
+					<font size="2" color=#4B89DC>
 						<b>삭제</b>
 				</a>
 				</font>
@@ -212,7 +212,7 @@
 	%>
 	<form name="form" method="Post" action="direct_product_order_ok.jsp">
 		<!--  폼의 이름이 form으로 지정됨 -->
-		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 			<tr>
 				<td rowspan=3 width="155" align="center" bgcolor="#002C57">
 					<font size="2" color="#ECFAE4">
@@ -238,7 +238,7 @@
 		</table>
 
 
-		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 			<tr>
 				<td rowspan=3 width="155" align="center" bgcolor="#002C57">
 					<font size="2" color="#ECFAE4">
@@ -277,7 +277,7 @@
 		</table>
 
 
-		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕">
+		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 			<tr>
 				<td rowspan=2 align="center" width="155" bgcolor="#002C57">
 					<font size="2" color="#ECFAE4">
@@ -315,14 +315,14 @@
 						<option value="신한은행">신한은행 ( 987-25-202099 / (주)aqua)</option>
 						<option value="하나은행">하나은행 ( 698-00-222176 / (주)aqua)</option>
 					</select>
-					<font size=1 color=blue>(카드 or 무통장입금 중 택일!)</font>
+					<font size=1 color=#4B89DC>(카드 or 무통장입금 중 택일!)</font>
 				</td>
 				</td>
 			</tr>
 		</table>
 
 
-		<table border=1 style="font-size: 13pt; font-family: 맑은 고딕">
+		<table border=1 style="font-size: 10pt; font-family: 맑은 고딕; width:850px">
 			<tr>
 				<td colspan=2 align="center" width="275" bgcolor="#002C57">
 					<font color="red">
