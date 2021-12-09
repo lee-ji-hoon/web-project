@@ -62,7 +62,7 @@ try {
 <section id="menu">
 	<ul class="hbox-menu">
 		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp">회원정보</a></li>
+				href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">회원정보</a></li>
 		<li><a
 				href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp"
 				style="color: black">구매내역</a></li>
@@ -117,7 +117,7 @@ try {
 		<%=ord_no%>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
+				<th colspan="13" style="font-size: 16px"><font color="#4B89DC">
 						배송자 정보 </font></th>
 			</tr>
 		</thead>
@@ -139,7 +139,7 @@ try {
 		</thead>
 		<tbody>
 			<tr>
-				<th><a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a></th>
+				<th><%=m_id%></th>
 				<td><%=ord_no%></td>
 				<td><%=ord_date%></td>
 				<td><%=ord_receiver%></td>
@@ -197,7 +197,7 @@ try {
 		</thead>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
+				<th colspan="13" style="font-size: 16px"><font color="#4B89DC">
 						주문목록 </font></th>
 			</tr>
 		</thead>

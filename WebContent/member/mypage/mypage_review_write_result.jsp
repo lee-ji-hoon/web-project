@@ -12,7 +12,7 @@
 	<!--  menu list 시작  -->
     <section id="menu">
 		 <ul class="hbox-menu">
-		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp">회원정보</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">회원정보</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp">구매내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>

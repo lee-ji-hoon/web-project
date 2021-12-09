@@ -38,10 +38,10 @@
 		<tr>
 			<th>옵션 : </th>
 			<td>
-				<input type=checkbox name="option" value="1">&nbsp1&nbsp
-				<input type=checkbox name="option" value="2">&nbsp2&nbsp
-				<input type=checkbox name="option" value="3">&nbsp3&nbsp
-				<input type=checkbox name="option" value="4">&nbsp4
+				<input type=checkbox name="option" value="1">&nbsp;&nbsp;
+				<input type=checkbox name="option" value="2">&nbsp;&nbsp;
+				<input type=checkbox name="option" value="3">&nbsp;&nbsp;
+				<input type=checkbox name="option" value="4">&nbsp;
 			</td>
 		</tr>	
 		<tr>
