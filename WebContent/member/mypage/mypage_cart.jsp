@@ -42,8 +42,8 @@
 	{ //  따라서,  !rs.next()의 값은 true가 됨
 %>
 	<center>
-	장바구니가 비었습니다.
-	<a href="../product/goods_group.jsp" class="btn btn-secondary">쇼핑 계속하기</a>
+	장바구니가 비었습니다. <br><br>
+	<a href="../product/goods_group.jsp" class="btn btn-secondary" style="color:white;">쇼핑 계속하기</a>
 	</center>
 	<%
 		}
@@ -111,7 +111,7 @@
 					<td><fmt:formatNumber value="<%=p_price%>" type="number" />원</td>
 					<td><%=ct_qty %>개</td>
 					<td><fmt:formatNumber value="<%=amount%>" type="number" />원</td>
-					<td><a href="cart_delete.jsp?p_id=<%=p_id%>" class="badge badge-danger" style="color:white;">삭제</a></td>
+					<td><a href="mypage_cart_delete.jsp?p_id=<%=p_id%>" class="badge badge-danger" style="color:white;">삭제</a></td>
 				</tr>
 				<% 
 					}
