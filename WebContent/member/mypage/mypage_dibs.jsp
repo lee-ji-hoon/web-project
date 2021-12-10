@@ -37,8 +37,8 @@
 	{ //  따라서,  !rs.next()의 값은 true가 됨
 %>
 	<center>
-	찜목록이 비었습니다.
-	<a href="../product/goods_group.jsp" class="btn btn-secondary">쇼핑 계속하기</a>
+	찜목록이 비었습니다. <br><br>
+	<a href="../product/goods_group.jsp" class="btn btn-secondary" style="color:white;">쇼핑 계속하기</a>
 	</center>
 	<br>
 	<%
@@ -51,7 +51,6 @@
 			<table width=100%>
 				<tr>
 					<td align="left"><a href="../dibs/dibs_all_delete.jsp?id=<%=sid %>" class="btn btn-danger" style="color:white;">찜목록 비우기</a></td>
-					<td align="right"><a href="../dibs/dibs_cart_order_in.jsp?ct_no=<%=dibs_no %>" class="btn btn-success" style="color:white;">전체 장바구니에 추가</a></td>
 				</tr>
 			</table>
 		</div>
@@ -65,6 +64,7 @@
 					<th>비고</th>
 					<th>비고</th>
 				</tr>
+
 
 				<%
 
