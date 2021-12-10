@@ -156,7 +156,7 @@
 						원
 					</li>
 					<!-- 가격 -->
-					<li class="prd-item-soldCount"><%=p_stock%>개
+					<li class="prd-item-soldCount"><%=p_stock%>개	
 					</li>
 					<%
 					} else {
@@ -165,8 +165,8 @@
 						<a class="favor-link-prod" href="goods_select.jsp?p_id=<%=p_id%>"></a>
 						<img src="../../img/product/<%=p_id%>.jpg" class="main-prd-item-img" />
 						<ul class="favor-prd-item">
-							<li class="prd-item-name"><%=p_name%></li>
 							<li class="prd-item-company"><%=p_category%></li>
+							<li class="prd-item-name"><%=p_name%></li>
 							<li class="prd-item-price">
 								<fmt:formatNumber value="<%=p_price%>" type="number" />
 								원
