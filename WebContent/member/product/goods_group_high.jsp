@@ -79,7 +79,7 @@
 					checked[0] = "checked";
 				} else if (compList_arr[i].equals("파충류관")) {
 					checked[1] = "checked";
-				} else if (compList_arr[i].equals("정글관")) {
+				} else if (compList_arr[i].equals("정글존")) {
 					checked[2] = "checked";
 				} else if (compList_arr[i].equals("default")) {
 					checked[3] = "checked";
@@ -95,8 +95,8 @@
 				파충류관
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="정글관" <%=checked[2]%> />
-				정글관
+				<input type="radio" name="compList" value="정글존" <%=checked[2]%> />
+				정글존
 			</div>
 			<div class=" custom-checkbox favor-content">
 				<input type="radio" name="compList" value="default" <%=checked[3]%> />
