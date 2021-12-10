@@ -3,11 +3,11 @@
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/mypage_header.jsp"%>
 <link rel="stylesheet" type="text/css"
-	href="../../css/review_style.css">
+	href="../../css/review_style.css?abc">
 	<!--  menu list 시작  -->
     <section id="menu">
 		 <ul class="hbox-menu">
-		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_member.jsp">회원정보</a></li>
+		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">회원정보</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp">구매내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
@@ -99,7 +99,7 @@
 									if(!rs5.next()){
 										%>
 										<a href = "mypage_review_write.jsp?p_id=<%=p_id%>&ord_no=<%=ord_no%>">
-										<button type="button" class="buy-btn">
+										<button type="button" class="buy-btn" style="background-color:#2535C7; color : white;">
 										<%
 										out.println("후기 작성");
 										%>
@@ -108,7 +108,7 @@
 									}
 									else{
 										%>
-										<button type="button" class="buy-btn">
+										<button type="button" class="buy-btn" style="background-color : #98A1EA; color : white; curor : text;">
 									<%
 										out.println("작성 완료");
 									%>
@@ -155,7 +155,7 @@
 									if(!rs5.next()){
 										%>
 										<a href = "mypage_review_write.jsp?p_id=<%=p_id%>&ord_no=<%=ord_no%>">
-										<button type="button">
+										<button type="button" style="background-color : #2535C7; color : white;">
 										<%
 										out.println("후기 작성");
 										%>
@@ -164,7 +164,7 @@
 									}
 									else{
 										%>
-										<button type="button">
+										<button type="button" style="background-color : #98A1EA; color : white; curor : text;">
 									<%
 										out.println("작성 완료");
 									%>

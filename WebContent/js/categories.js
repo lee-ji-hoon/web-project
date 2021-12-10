@@ -35,8 +35,26 @@ function price_high(){
 		frm.submit();
 }
 function price_low(){
-			var str=categorys.compList.value;
+		var str=categorys.compList.value;
 		var frm = document.categorys;
 		frm.action = "goods_group_low.jsp";
 		frm.submit();
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 상품 검색
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function keyword_check() {
+	let form = document.forms.headerSearchForm;
+	var key = form.elements.keyword;
+		if (!key.value) { //검색어가 없을 경우  
+			alert('검색어를 입력하세요'); //경고창 띄움 
+			key.focus(); //다시 검색창으로 돌아감 
+			return false;
+		}
+		else{
+			var str=headerSearchForm.keyword.value;
+			var frm = document.headerSearchForm;
+			frm.action = "goods_group_search.jsp";
+			frm.submit();
+		}
 }

@@ -16,12 +16,12 @@
 	<header>
 			<div id="header-first">
 				<form id="headerSearchForm" method="POST"
-					action="<%=request.getContextPath()%>/product?cmd=search">
-					<button class="headerSearchForm-btn">
+					action="<%=request.getContextPath()%>/member/product/goods_group_search.jsp">
+					<button class="headerSearchForm-btn" onClick="keyword_check();">
 						<i class="tiny material-icons">search</i>
 					</button>
 					<input name="keyword" placeholder="상품명으로 검색"
-						class="headerSearchForm-input" />
+						class="headerSearchForm-input" value=""/>
 				</form>
 	</header>
 	<!-- main 타이틀 시작 -->
@@ -29,9 +29,9 @@
 	<div id="product_order_list">
 		<form name="list" method="post" style="float:right">
 			<!--<a href="javascript:popular_list()">인기순<미구현></a>
-			&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp-->
+			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;-->
 			<a href="javascript:price_high();">높은가격</a>
-			&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 			<a href="javascript:price_low();">낮은가격</a>
 		</form>
 	</div>
@@ -152,7 +152,7 @@
 				<ul class="favor-prd-item">
 					<!-- 상품이미지 -->
 					<li class="prd-item-company"><%=p_category%></li>
-					<!-- 카테코 -->
+					<!-- 카테고리 -->
 					<li class="prd-item-name"><%=p_name%></li>
 					<!-- 상품명 -->
 					<li class="prd-item-price"><fmt:formatNumber
