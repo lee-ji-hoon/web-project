@@ -6,7 +6,7 @@
 <body onload="init();">
 <head>
 <meta charset="UTF-8">
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../../css/style-product.css">
 
@@ -153,7 +153,7 @@ try {
 					if (p_stock > 0) {
 					%>
 					<span class="products-box-detail-soldCount-figure">
-						재고:<%=p_stock%></span>
+						<input type="hidden" name="stock" value="<%=p_stock%>">재고:<%=p_stock%></span>
 					<span class="products-box-detail-soldCount-figure">개</span>
 					<%
 					} else {
@@ -179,8 +179,8 @@ try {
 				<!--  수량 선택 및 상품 구매  -->
 				<div class="products-box-detail-realInfo border-btm-e1e1e1">
 					<span class="products-box-detail-realInfo-title">수량 선택</span>
-					<input type=hidden name="sell_price" value="<%=p_price%>" style="border: none;">
-					<input type="text" name="amount" value="1" size="3" onchange="change();" style="border: none;" max="<%=p_stock%>">
+					<input type=hidden name="sell_price" value="<%=p_price%>" style="border: none;  ">
+					<input type="number" name="amount" value="1" size="1" onchange="change();" style="border: none;" max="<%=p_stock%>" readonly>
 					<input type="button" value=" + " onclick="add();" style="border: none;">
 					<input type="button" value=" - " onclick="del();" style="border: none;">
 				</div>
