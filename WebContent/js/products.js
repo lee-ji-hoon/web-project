@@ -134,7 +134,10 @@ function add() {
 		  title: "경고 메시지",
 		  text: "최대 수량입니다. 다시 선택해주세요!",
 		  icon: "warning",
-		  buttons: true,
+		  buttons: {
+			text: "예",	
+			cancel: "아니요",
+		 },
 		  dangerMode: true,
 		})
 
@@ -349,9 +352,9 @@ function check_val()             // 주문서의 미입력항목 부분을 체�
 
 function sold_out() {
 	Swal.fire({
-		title: '품절 상품',
-		text: '품절 상품입니다.',
-		icon: 'info',
+		title: '품절',
+		text: '품절 상품입니다. 다른 상품을 구매해주세요',
+		icon: 'warning',
 		closeOnClickOutside: false,
 		showCancelButton: true,
 		confirmButtonText: '다른 상품 보러가기',
