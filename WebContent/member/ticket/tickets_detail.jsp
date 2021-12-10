@@ -4,9 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" href="../css/style-product.css">
+<link rel="stylesheet" type="text/css"
+	href="../../css/review_style.css?aa">
 <body onload="init();">
-	<link rel="stylesheet" type="text/css" href="../../css/style-product.css">
-	<link rel="stylesheet" type="text/css" href="../../css/review_style.css?aa">
 <head>
 <meta charset="UTF-8">
 
@@ -158,10 +158,12 @@ try {
 					href="#detail-img-text-box" id="tab-img-text-a">상품정보</a></li>
 			<li class="active" id="tab-review"><a href="#detail-review-box"
 					id="tab-review-a">리뷰</a></li>
+			<!--
 			<li class="active" id="tab-qna"><a href="#detail-qna-box"
 					id="tab-qna-a">Q&amp;A</a></li>
+			-->
 			<li class="active" id="tab-purchaseInfo"><a
-					href="#detail-purchaseInfo-box" id="tab-purchaseInfo-a">환불규정</a></li>
+					href="#detail-purchaseInfo-box" id="tab-purchaseInfo-a">주문정보</a></li>
 		</ul>
 	</div>
 	<!-- 상품정보/리뷰/Q&A/주문정보 끝 -->
@@ -175,7 +177,9 @@ try {
 		</a>
 	</div>
 	<!-- 우측 하단 sticky 끝 -->
-	<div id="detail-img-text-box"></div>
+	<div id="detail-img-text-box">
+		<img src="../../img/tickets/<%=t_id%>_description.jpg">
+	</div>
 	<!-- 상품 상세 설명 이미지/글 끝 -->
 
 	<!-- 리뷰 시작 -->
@@ -227,7 +231,7 @@ try {
 	</div>
 	<!-- 리뷰 끝 -->
 
-	<!-- Q&A 시작 -->
+	<!-- Q&A 시작
 	<div id="detail-qna-box">
 		<div class="detail-qna-header">
 			q&a
@@ -236,13 +240,19 @@ try {
 		<div class="detail-qna-body"></div>
 
 	</div>
-	<!-- Q&A 끝 -->
+	Q&A 끝 -->
 
 	<!-- 주문정보 시작 -->
 	<div id="detail-purchaseInfo-box">
-		<div class="detail-purchaseInfo-header">환불 규정</div>
-
-		<b>[변경 및 취소안내]</b><br/>
+		<div class="detail-purchaseInfo-header">주문 정보</div>
+		<b>[ 배송 정보 ]</b><br />
+		<p>
+			고객센터 연락이 어려우니 게시판에 문의주시면 빠르게 답변드리도록 하겠습니다.<br/>
+			구매 시각으로부터
+			최대 1시간 내로 상품을 받으 실 수 있습니다.<br/> 
+		</p>
+		
+		<b>[ 변경 및 취소안내 ]</b><br/>
 		<p>
 			※특별상품이므로 부분사용 및 부분 취소/환불 불가합니다.<br>
 			※판매기간 내 취소가능합니다.<br>
@@ -252,14 +262,14 @@ try {
 			※ 구매시 기재한 이용자 정보로만 재발송 가능<br>
 			※ 연락처 변경 재발송 불가<br>
 		</p>
-		<b>[업체정보]</b><br/>
+		<b>[ 업체정보 ]</b><br/>
 		<p>
 			업체명 : 아쿠아플래닛<br>
 			주 소 : (00000) 수원<br>
 			홈페이지 : index.html<br>
 			시설문의 : 1234-5678<br>
 		</p>
-		<b>[판매처정보]</b><br/>
+		<b>[ 판매처정보 ]</b><br/>
 		<p>
 			업체명 : 아쿠아플래닛<br>
 			예약/취소문의 : 1234-5678<br>
@@ -279,4 +289,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-<script type="text/javascript" src="../../js/tickets.js"></script>
+<script type="text/javascript" src="../../js/tickets.js?aa"></script>
