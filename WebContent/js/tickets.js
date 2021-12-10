@@ -86,8 +86,8 @@ $(window).on("scroll", function() {
 	}
 
 	if (nowY > tab3) {
-		$("#tab-qna").css('border-bottom', '4px solid #f2f2f2');
-		$("#tab-qna-a").css('color', '#9a9a9e');
+		$("#tab-review").css('border-bottom', '4px solid #f2f2f2');
+		$("#tab-review-a").css('color', '#9a9a9e');
 		$("#tab-purchaseInfo").css('border-bottom', '4px solid black');
 		$("#tab-purchaseInfo-a").css('color', 'black');
 	} else {
