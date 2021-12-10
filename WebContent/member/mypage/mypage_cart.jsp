@@ -58,8 +58,8 @@
 		<div class="row">
 			<table width=100%>
 				<tr>
-					<td align="left"><a href="cart_all_delete.jsp?id=<%=ct_no %>" class="btn btn-danger">장바구니 비우기</a></td>
-					<td align="right"><a href="cart_order.jsp?ct_no=<%=ct_no %>" class="btn btn-success">주문하기</a></td>
+					<td align="left"><a href="../order/cart_all_delete.jsp?id=<%=ct_no %>" class="btn btn-danger" style="color:white;">장바구니 비우기</a></td>
+					<td align="right"><a href="../order/cart_order.jsp?ct_no=<%=ct_no %>" class="btn btn-success" style="color:white;">주문하기</a></td>
 				</tr>
 			</table>
 		</div>
@@ -111,7 +111,7 @@
 					<td><fmt:formatNumber value="<%=p_price%>" type="number" />원</td>
 					<td><%=ct_qty %>개</td>
 					<td><fmt:formatNumber value="<%=amount%>" type="number" />원</td>
-					<td><a href="cart_delete.jsp?p_id=<%=p_id%>" class="badge badge-danger">삭제</a></td>
+					<td><a href="cart_delete.jsp?p_id=<%=p_id%>" class="badge badge-danger" style="color:white;">삭제</a></td>
 				</tr>
 				<% 
 					}
@@ -126,7 +126,7 @@
 					<th></th>
 				</tr>
 			</table>
-			<a href="../product/goods_group.jsp" class="btn btn-secondary">쇼핑 계속하기
+			<a href="../product/goods_group.jsp" class="btn btn-secondary" style="color:white;">쇼핑 계속하기
 				&raquo;</a>
 		</div>
 
