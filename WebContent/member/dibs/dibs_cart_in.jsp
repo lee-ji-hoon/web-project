@@ -44,10 +44,9 @@
 			pstmt3.executeUpdate();
 		}
 		
-		String jsql4 = "DELETE FROM dibs WHERE dibs_no=? AND p_id = ?";
+		String jsql4 = "DELETE FROM dibs WHERE p_id = ?";
 		PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-		pstmt4.setString(1, ct_no);
-		pstmt4.setString(2, p_id);
+		pstmt4.setString(1, p_id);
 		pstmt4.executeUpdate();
 
 	} catch (Exception e) {
