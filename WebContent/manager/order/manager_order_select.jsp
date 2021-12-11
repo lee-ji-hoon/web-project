@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header_manager.jsp"%>
-<link rel="stylesheet" type="text/css"
-	href="../../css/style-table.css?v=123">
+<link rel="stylesheet" type="text/css" href="../../css/style-table.css?v=123">
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
@@ -16,7 +14,7 @@ try {
 	String jsql = "select * from order_info";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
 	ResultSet rs = pstmt.executeQuery();
-	
+
 	String jsql2 = "SELECT * FROM order_info WHERE ord_state = '입금확인중'";
 	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 	ResultSet rs2 = pstmt2.executeQuery();
@@ -59,21 +57,31 @@ try {
 
 <center>
 	<ul class="mylist">
-		<li style="background-color: #d3d3d3"><a href="manager_order.jsp">
+		<li style="background-color: #d3d3d3">
+			<a href="manager_order.jsp">
 				전체보기(<%=sum%>)
-			</a></li>
-		<li><a href="manager_order_state.jsp?state=입금확인중">
+			</a>
+		</li>
+		<li>
+			<a href="manager_order_state.jsp?state=입금확인중">
 				입금확인중(<%=count2%>)
-			</a></li>
-		<li><a href="manager_order_state.jsp?state=배송준비중">
+			</a>
+		</li>
+		<li>
+			<a href="manager_order_state.jsp?state=배송준비중">
 				배송준비중(<%=count3%>)
-			</a></li>
-		<li><a href="manager_order_state.jsp?state=배송시작">
+			</a>
+		</li>
+		<li>
+			<a href="manager_order_state.jsp?state=배송시작">
 				배송시작(<%=count4%>)
-			</a></li>
-		<li><a href="manager_order_state.jsp?state=배송완료">
+			</a>
+		</li>
+		<li>
+			<a href="manager_order_state.jsp?state=배송완료">
 				배송완료(<%=count5%>)
-			</a></li>
+			</a>
+		</li>
 	</ul>
 	<br>
 	<p>
@@ -92,13 +100,14 @@ try {
 			String ord_state = rs.getString("ord_state");
 		%>
 	
-	<table border="2">
+	<table border="2" width="1200px">
 		주문번호:
 		<%=ord_no%>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
-						배송자 정보 </font></th>
+				<th colspan="13" style="font-size: 16px">
+					<font color="blue"> 배송자 정보 </font>
+				</th>
 			</tr>
 		</thead>
 		<thead>
@@ -113,13 +122,19 @@ try {
 				<th>결제 은행</th>
 				<th>카드 번호</th>
 				<th>카드 비밀번호</th>
-				<th><b>[배송상태]</b></th>
-				<th><b>[수정]</b></th>
+				<th>
+					<b>[배송상태]</b>
+				</th>
+				<th>
+					<b>[수정]</b>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<th><a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a></th>
+				<th>
+					<a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a>
+				</th>
 				<td><%=ord_no%></td>
 				<td><%=ord_date%></td>
 				<td><%=ord_receiver%></td>
@@ -177,9 +192,9 @@ try {
 		</thead>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
-						주문목록
-					</font></th>
+				<th colspan="13" style="font-size: 16px">
+					<font color="blue"> 주문목록 </font>
+				</th>
 			</tr>
 		</thead>
 		<p>
@@ -226,8 +241,9 @@ try {
 					</div>
 
 				</td>
-				<th colspan=3><a
-						href="../product/manager_product_detail.jsp?p_id=<%=p_id%>"><%=p_name%></a></th>
+				<th colspan=3>
+					<a href="../product/manager_product_detail.jsp?p_id=<%=p_id%>"><%=p_name%></a>
+				</th>
 				<td colspan=2>
 					<fmt:formatNumber value="<%=p_price%>" />
 					원
@@ -270,22 +286,24 @@ try {
 			<tr>
 				<td class="p_img" colspan=3 align="center">
 					<a href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>">
-						<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px
-							height=200px>
+						<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px height=200px>
 					</a>
 
 				</td>
-				<th colspan=3><a
-						href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>"><%=p_name%></a></th>
+				<th colspan=3>
+					<a href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>"><%=p_name%></a>
+				</th>
 				<td colspan=2>
-					성인 : <fmt:formatNumber value="<%=t_price_adult%>" />원<br>
-					청소년 : <fmt:formatNumber value="<%=t_price_teen%>" />원<br>
-					어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
+					성인 :
+					<fmt:formatNumber value="<%=t_price_adult%>" />
+					원<br> 청소년 :
+					<fmt:formatNumber value="<%=t_price_teen%>" />
+					원<br> 어린이 :
+					<fmt:formatNumber value="<%=t_price_child%>" />
+					원
 				</td>
 				<td colspan=2>
-					성인(<%=ord_qty_a %>)<br>
-					청소년(<%=ord_qty_t %>)<br>
-					어린이(<%=ord_qty_c %>)
+					성인(<%=ord_qty_a%>)<br> 청소년(<%=ord_qty_t%>)<br> 어린이(<%=ord_qty_c%>)
 				</td>
 				<td colspan=2>
 					<fmt:formatNumber value="<%=t_sum%>" />
