@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/aqua_header.css?v=1232">
 
@@ -116,9 +117,9 @@ String sid = (String) session.getAttribute("sid");
 								<span class="kor">테마</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="${pageContext.request.contextPath}/html/themeA.jsp">Theme A</a></li>
-								<li><a href="${pageContext.request.contextPath}/html/themeB.jsp">Theme B</a></li>
-								<li><a href="${pageContext.request.contextPath}/html/themeC.jsp">Theme C</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeA.jsp">아쿠아리움관</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeB.jsp">파충류관</a></li>
+								<li><a href="${pageContext.request.contextPath}/html/themeC.jsp">정글존</a></li>
 
 							</ul></li>
 						<li><a href="#">
