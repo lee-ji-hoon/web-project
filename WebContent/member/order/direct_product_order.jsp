@@ -3,13 +3,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../../layout/header.jsp"%>
 <%@ page import="java.sql.*"%>
-
-<script language="javascript" src="../../js/js_package.js">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script language="javascript" src="../../js/js_package.js?v121233">
 </script>
 <body>
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">주문하기</h1>
+			
 		</div>
 	</div>
 		<%

@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/mypage_header.jsp"%>
-<link rel="stylesheet" type="text/css"
-	href="../../css/style-table.css?v=112124123">
+<link rel="stylesheet" type="text/css" href="../../css/style-table.css?v=112124123">
 
 <%
 try {
@@ -21,20 +19,24 @@ try {
 	pstmt.setString(2, state);
 	ResultSet rs = pstmt.executeQuery();
 
-	String jsql2 = "SELECT * FROM order_info WHERE ord_state = '입금확인중'";
+	String jsql2 = "SELECT * FROM order_info WHERE ord_state = '입금확인중' AND m_id = ? ";
 	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, sid);
 	ResultSet rs2 = pstmt2.executeQuery();
 
-	String jsql3 = "SELECT * FROM order_info WHERE ord_state = '배송준비중'";
+	String jsql3 = "SELECT * FROM order_info WHERE ord_state = '배송준비중' AND m_id = ? ";
 	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+	pstmt3.setString(1, sid);
 	ResultSet rs3 = pstmt3.executeQuery();
 
-	String jsql4 = "SELECT * FROM order_info WHERE ord_state = '배송시작'";
+	String jsql4 = "SELECT * FROM order_info WHERE ord_state = '배송시작' AND m_id = ? ";
 	PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+	pstmt4.setString(1, sid);
 	ResultSet rs4 = pstmt4.executeQuery();
 
-	String jsql5 = "SELECT * FROM order_info WHERE ord_state = '배송완료'";
+	String jsql5 = "SELECT * FROM order_info WHERE ord_state = '배송완료' AND m_id = ? ";
 	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+	pstmt5.setString(1, sid);
 	ResultSet rs5 = pstmt5.executeQuery();
 
 	int count2 = 0;
@@ -63,52 +65,70 @@ try {
 <!--  menu list 시작  -->
 <section id="menu">
 	<ul class="hbox-menu">
-		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">회원정보</a></li>
-		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp"
-				style="color: black">구매내역</a></li>
-		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a></li>
-		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a></li>
-		<li><a
-				href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a></li>
-		 <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp">리뷰</a></li>		
+		<li>
+			<a href="${pageContext.request.contextPath}/member/mypage/mypage.jsp">회원정보</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/member/mypage/mypage_order.jsp" style="color: black">구매내역</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/member/mypage/mypage_qna.jsp">문의내역</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/member/mypage/mypage_cart.jsp">장바구니</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/member/mypage/mypage_dibs.jsp">찜목록</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp">리뷰</a>
+		</li>
 	</ul>
 </section>
 
 <center>
 	<%
-	String[ ]  p_state = state.split(" ");   
-	String[ ]  checked = new String[4];   
+	String[] p_state = state.split(" ");
+	String[] checked = new String[4];
 
-
-	for(int i=0; i<p_state.length;i++) {
-		if(p_state[i].equals("입금확인중"))
-		{
+	for (int i = 0; i < p_state.length; i++) {
+		if (p_state[i].equals("입금확인중")) {
 			checked[0] = "style=background-color:#d3d3d3";
-		}
-		else if(p_state[i].equals("배송준비중"))
-		{
+		} else if (p_state[i].equals("배송준비중")) {
 			checked[1] = "style=background-color:#d3d3d3";
-		}
-		else if(p_state[i].equals("배송시작"))
-		{
+		} else if (p_state[i].equals("배송시작")) {
 			checked[2] = "style=background-color:#d3d3d3";
-		}
-		else if(p_state[i].equals("배송완료"))
-		{
+		} else if (p_state[i].equals("배송완료")) {
 			checked[3] = "style=background-color:#d3d3d3";
 		}
 	}
 	%>
 	<ul class="mylist">
-		<li><a href="mypage_order.jsp">전체보기(<%=sum%>)</a></li>
-        <li <%=checked[0]%>> <a href="mypage_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
-        <li <%=checked[1]%>> <a href="mypage_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
-        <li <%=checked[2]%>> <a href="mypage_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
-        <li <%=checked[3]%>> <a href="mypage_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
+		<li>
+			<a href="mypage_order.jsp">
+				전체보기(<%=sum%>)
+			</a>
+		</li>
+		<li <%=checked[0]%>>
+			<a href="mypage_order_state.jsp?state=입금확인중">
+				입금확인중(<%=count2%>)
+			</a>
+		</li>
+		<li <%=checked[1]%>>
+			<a href="mypage_order_state.jsp?state=배송준비중">
+				배송준비중(<%=count3%>)
+			</a>
+		</li>
+		<li <%=checked[2]%>>
+			<a href="mypage_order_state.jsp?state=배송시작">
+				배송시작(<%=count4%>)
+			</a>
+		</li>
+		<li <%=checked[3]%>>
+			<a href="mypage_order_state.jsp?state=배송완료">
+				배송완료(<%=count5%>)
+			</a>
+		</li>
 	</ul>
 	<br>
 	<p>
@@ -127,12 +147,12 @@ try {
 			String ord_state = rs.getString("ord_state");
 		%>
 	
-	<table border="2">
+	<table border="2" width="1000px;">
 		주문번호:
 		<%=ord_no%>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
+				<th colspan="13" style="font-size: 16px"><font color="#4B89DC">
 						배송자 정보 </font></th>
 			</tr>
 		</thead>
@@ -154,7 +174,7 @@ try {
 		</thead>
 		<tbody>
 			<tr>
-				<th><a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a></th>
+				<th><%=m_id%></th>
 				<td><%=ord_no%></td>
 				<td><%=ord_date%></td>
 				<td><%=ord_receiver%></td>
@@ -212,9 +232,8 @@ try {
 		</thead>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
-						주문목록
-					</font></th>
+				<th colspan="13" style="font-size: 16px"><font color="#4B89DC">
+						주문목록 </font></th>
 			</tr>
 		</thead>
 		<p>
@@ -225,7 +244,6 @@ try {
 				<th colspan=2>상품 가격</th>
 				<th colspan=2>수량</th>
 				<th colspan=2>금액</th>
-
 
 
 			</tr>
@@ -240,6 +258,7 @@ try {
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
 			pstmt7.setString(1, p_id);
 			ResultSet rs7 = pstmt7.executeQuery();
+
 			String jsql8 = "SELECT * FROM ticket WHERE t_id = ?";
 			PreparedStatement pstmt8 = con.prepareStatement(jsql8);
 			pstmt8.setString(1, p_id);
@@ -256,7 +275,7 @@ try {
 				<td class="p_img" colspan=3 align="center">
 					<div>
 						<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
-							<img src="../../img/product/<%=p_id%>.jpg" border=0>
+							<img src="../../img/product/<%=p_id%>.jpg" width=250px height=200px>
 						</a>
 					</div>
 
@@ -275,75 +294,76 @@ try {
 			</tr>
 		</tbody>
 		<%
-		} // rs7
-			int ord_qty_a = rs6.getInt("ord_qty_a");
-			int ord_qty_t = rs6.getInt("ord_qty_t");
-			int ord_qty_c = rs6.getInt("ord_qty_c");
+		} //rs7
 
-			while (rs8.next()) {
-			String p_name = rs8.getString("t_name");
-			int t_price_adult = rs8.getInt("t_price_adult");
-			int t_price_teen = rs8.getInt("t_price_teen");
-			int t_price_child = rs8.getInt("t_price_child");
+		int ord_qty_a = rs6.getInt("ord_qty_a");
+		int ord_qty_t = rs6.getInt("ord_qty_t");
+		int ord_qty_c = rs6.getInt("ord_qty_c");
 
-			int t_a_sum = 0;
-			int t_t_sum = 0;
-			int t_c_sum = 0;
-			int t_sum = 0;
-			int t_ord_qty = 0;
+		while (rs8.next()) {
+		String p_name = rs8.getString("t_name");
+		int t_price_adult = rs8.getInt("t_price_adult");
+		int t_price_teen = rs8.getInt("t_price_teen");
+		int t_price_child = rs8.getInt("t_price_child");
 
-			t_ord_qty = ord_qty_a + ord_qty_t + ord_qty_c;
+		int t_a_sum = 0;
+		int t_t_sum = 0;
+		int t_c_sum = 0;
+		int t_sum = 0;
+		int t_ord_qty = 0;
 
-			t_a_sum = ord_qty_a * t_price_adult;
-			t_t_sum = ord_qty_t * t_price_teen;
-			t_c_sum = ord_qty_c * t_price_child;
+		t_ord_qty = ord_qty_a + ord_qty_t + ord_qty_c;
 
-			t_sum = t_a_sum + t_t_sum + t_c_sum;
-			%>
-			
-			<tbody>
-				<tr>
-					<td class="p_img" colspan=3 align="center">
-						<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
-							<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px
-								height=200px>
-						</a>
+		t_a_sum = ord_qty_a * t_price_adult;
+		t_t_sum = ord_qty_t * t_price_teen;
+		t_c_sum = ord_qty_c * t_price_child;
 
-					</td>
-					<th colspan=3><a
-							href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a></th>
-					<td colspan=2>
-						성인 : <fmt:formatNumber value="<%=t_price_adult%>" />원<br>
-						청소년 : <fmt:formatNumber value="<%=t_price_teen%>" />원<br>
-						어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
-					</td>
-					<td colspan=2>
-						성인(<%=ord_qty_a %>)<br>
-						청소년(<%=ord_qty_t %>)<br>
-						어린이(<%=ord_qty_c %>)
-					</td>
-					<td colspan=2>
-						<fmt:formatNumber value="<%=t_sum%>" />
-						원
-					</td>
-				</tr>
-			</tbody>
-			<%
-			} // rs6
+		t_sum = t_a_sum + t_t_sum + t_c_sum;
+		%>
+		
+		<tbody>
+			<tr>
+				<td class="p_img" colspan=3 align="center">
+					<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
+						<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px
+							height=200px>
+					</a>
 
-			}
-			}
-			%>
-
-		</table>
-
+				</td>
+				<th colspan=3><a
+						href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a></th>
+				<td colspan=2>
+					성인 : <fmt:formatNumber value="<%=t_price_adult%>" />원<br>
+					청소년 : <fmt:formatNumber value="<%=t_price_teen%>" />원<br>
+					어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
+				</td>
+				<td colspan=2>
+					성인(<%=ord_qty_a %>)<br>
+					청소년(<%=ord_qty_t %>)<br>
+					어린이(<%=ord_qty_c %>)
+				</td>
+				<td colspan=2>
+					<fmt:formatNumber value="<%=t_sum%>" />
+					원
+				</td>
+			</tr>
+		</tbody>
 		<%
-		} catch (Exception e) {
-		out.println(e);
+		} // rs6
+
+		}
 		}
 		%>
-		</body>
 
-	</center>
-	<%@ include file="../../layout/footer.jsp"%>
-	</html>
+	</table>
+
+	<%
+	} catch (Exception e) {
+	out.println(e);
+	}
+	%>
+	</body>
+
+</center>
+<%@ include file="../../layout/footer.jsp"%>
+</html>

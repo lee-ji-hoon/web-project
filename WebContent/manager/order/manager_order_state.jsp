@@ -1,10 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
 <%@ include file="../../layout/header_manager.jsp"%>
-<link rel="stylesheet" type="text/css"
-	href="../../css/style-table.css?v=112124123">
-
+<link rel="stylesheet" type="text/css" href="../../css/style-table.css?v=123">
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
@@ -63,35 +60,47 @@ try {
 
 <center>
 	<%
-	String[ ]  p_state = state.split(" ");   
-	String[ ]  checked = new String[4];   
+	String[] p_state = state.split(" ");
+	String[] checked = new String[4];
 
-
-	for(int i=0; i<p_state.length;i++) {
-		if(p_state[i].equals("입금확인중"))
-		{
+	for (int i = 0; i < p_state.length; i++) {
+		if (p_state[i].equals("입금확인중")) {
 			checked[0] = "style=background-color:#d3d3d3";
-		}
-		else if(p_state[i].equals("배송준비중"))
-		{
+		} else if (p_state[i].equals("배송준비중")) {
 			checked[1] = "style=background-color:#d3d3d3";
-		}
-		else if(p_state[i].equals("배송시작"))
-		{
+		} else if (p_state[i].equals("배송시작")) {
 			checked[2] = "style=background-color:#d3d3d3";
-		}
-		else if(p_state[i].equals("배송완료"))
-		{
+		} else if (p_state[i].equals("배송완료")) {
 			checked[3] = "style=background-color:#d3d3d3";
 		}
 	}
 	%>
 	<ul class="mylist">
-		<li><a href="manager_order_select.jsp">전체보기(<%=sum%>)</a></li>
-        <li <%=checked[0]%>> <a href="manager_order_state.jsp?state=입금확인중">입금확인중(<%=count2%>)</a></li>
-        <li <%=checked[1]%>> <a href="manager_order_state.jsp?state=배송준비중">배송준비중(<%=count3%>)</a></li>
-        <li <%=checked[2]%>> <a href="manager_order_state.jsp?state=배송시작">배송시작(<%=count4%>)</a></li>
-        <li <%=checked[3]%>> <a href="manager_order_state.jsp?state=배송완료">배송완료(<%=count5%>)</a></li>
+		<li>
+			<a href="manager_order_select.jsp">
+				전체보기(<%=sum%>)
+			</a>
+		</li>
+		<li <%=checked[0]%>>
+			<a href="manager_order_state.jsp?state=입금확인중">
+				입금확인중(<%=count2%>)
+			</a>
+		</li>
+		<li <%=checked[1]%>>
+			<a href="manager_order_state.jsp?state=배송준비중">
+				배송준비중(<%=count3%>)
+			</a>
+		</li>
+		<li <%=checked[2]%>>
+			<a href="manager_order_state.jsp?state=배송시작">
+				배송시작(<%=count4%>)
+			</a>
+		</li>
+		<li <%=checked[3]%>>
+			<a href="manager_order_state.jsp?state=배송완료">
+				배송완료(<%=count5%>)
+			</a>
+		</li>
 	</ul>
 	<br>
 	<p>
@@ -110,13 +119,14 @@ try {
 			String ord_state = rs.getString("ord_state");
 		%>
 	
-	<table border="2">
+	<table border="2" width="1200px">
 		주문번호:
 		<%=ord_no%>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
-						배송자 정보 </font></th>
+				<th colspan="13" style="font-size: 16px">
+					<font color="blue"> 배송자 정보 </font>
+				</th>
 			</tr>
 		</thead>
 		<thead>
@@ -131,13 +141,19 @@ try {
 				<th>결제 은행</th>
 				<th>카드 번호</th>
 				<th>카드 비밀번호</th>
-				<th><b>[배송상태]</b></th>
-				<th><b>[수정]</b></th>
+				<th>
+					<b>[배송상태]</b>
+				</th>
+				<th>
+					<b>[수정]</b>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<th><a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a></th>
+				<th>
+					<a href="../member/manager_member_detail.jsp?id=<%=m_id%>"><%=m_id%></a>
+				</th>
 				<td><%=ord_no%></td>
 				<td><%=ord_date%></td>
 				<td><%=ord_receiver%></td>
@@ -190,14 +206,14 @@ try {
 		%>
 		<thead>
 			<tr>
-				<td colspan="13">&nbsp</td>
+				<td colspan="13">&nbsp;</td>
 			</tr>
 		</thead>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="blue">
-						주문목록
-					</font></th>
+				<th colspan="13" style="font-size: 16px">
+					<font color="blue"> 주문목록 </font>
+				</th>
 			</tr>
 		</thead>
 		<p>
@@ -243,8 +259,9 @@ try {
 					</div>
 
 				</td>
-				<th colspan=3><a
-						href="../product/manager_product_detail.jsp?p_id=<%=p_id%>"><%=p_name%></a></th>
+				<th colspan=3>
+					<a href="../product/manager_product_detail.jsp?p_id=<%=p_id%>"><%=p_name%></a>
+				</th>
 				<td colspan=2>
 					<fmt:formatNumber value="<%=p_price%>" />
 					원
@@ -258,73 +275,75 @@ try {
 		</tbody>
 		<%
 		} // rs7
-			int ord_qty_a = rs6.getInt("ord_qty_a");
-			int ord_qty_t = rs6.getInt("ord_qty_t");
-			int ord_qty_c = rs6.getInt("ord_qty_c");
+		int ord_qty_a = rs6.getInt("ord_qty_a");
+		int ord_qty_t = rs6.getInt("ord_qty_t");
+		int ord_qty_c = rs6.getInt("ord_qty_c");
 
-			while (rs8.next()) {
-			String p_name = rs8.getString("t_name");
-			int t_price_adult = rs8.getInt("t_price_adult");
-			int t_price_teen = rs8.getInt("t_price_teen");
-			int t_price_child = rs8.getInt("t_price_child");
+		while (rs8.next()) {
+		String p_name = rs8.getString("t_name");
+		int t_price_adult = rs8.getInt("t_price_adult");
+		int t_price_teen = rs8.getInt("t_price_teen");
+		int t_price_child = rs8.getInt("t_price_child");
 
-			int t_a_sum = 0;
-			int t_t_sum = 0;
-			int t_c_sum = 0;
-			int t_sum = 0;
-			int t_ord_qty = 0;
+		int t_a_sum = 0;
+		int t_t_sum = 0;
+		int t_c_sum = 0;
+		int t_sum = 0;
+		int t_ord_qty = 0;
 
-			t_ord_qty = ord_qty_a + ord_qty_t + ord_qty_c;
+		t_ord_qty = ord_qty_a + ord_qty_t + ord_qty_c;
 
-			t_a_sum = ord_qty_a * t_price_adult;
-			t_t_sum = ord_qty_t * t_price_teen;
-			t_c_sum = ord_qty_c * t_price_child;
+		t_a_sum = ord_qty_a * t_price_adult;
+		t_t_sum = ord_qty_t * t_price_teen;
+		t_c_sum = ord_qty_c * t_price_child;
 
-			t_sum = t_a_sum + t_t_sum + t_c_sum;
-			%>
-			<tbody>
-				<tr>
-					<td class="p_img" colspan=3 align="center">
-						<a href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>">
-							<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px
-								height=200px>
-						</a>
+		t_sum = t_a_sum + t_t_sum + t_c_sum;
+		%>
+		<tbody>
+			<tr>
+				<td class="p_img" colspan=3 align="center">
+					<a href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>">
+						<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px height=200px>
+					</a>
 
-					</td>
-					<th colspan=3><a
-							href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>"><%=p_name%></a></th>
-					<td colspan=2>
-						성인 : <fmt:formatNumber value="<%=t_price_adult%>" />원<br>
-						청소년 : <fmt:formatNumber value="<%=t_price_teen%>" />원<br>
-						어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
-					</td>
-					<td colspan=2>
-						성인(<%=ord_qty_a %>)<br>
-						청소년(<%=ord_qty_t %>)<br>
-						어린이(<%=ord_qty_c %>)
-					</td>
-					<td colspan=2>
-						<fmt:formatNumber value="<%=t_sum%>" />
-						원
-					</td>
-				</tr>
-			</tbody>
-			<%
-			} // rs6
-
-			}
-			}
-			%>
-
-		</table>
-
+				</td>
+				<th colspan=3>
+					<a href="../tickets/manager_tickets.jsp?t_id=<%=p_id%>"><%=p_name%></a>
+				</th>
+				<td colspan=2>
+					성인 :
+					<fmt:formatNumber value="<%=t_price_adult%>" />
+					원<br> 청소년 :
+					<fmt:formatNumber value="<%=t_price_teen%>" />
+					원<br> 어린이 :
+					<fmt:formatNumber value="<%=t_price_child%>" />
+					원
+				</td>
+				<td colspan=2>
+					성인(<%=ord_qty_a%>)<br> 청소년(<%=ord_qty_t%>)<br> 어린이(<%=ord_qty_c%>)
+				</td>
+				<td colspan=2>
+					<fmt:formatNumber value="<%=t_sum%>" />
+					원
+				</td>
+			</tr>
+		</tbody>
 		<%
-		} catch (Exception e) {
-		out.println(e);
+		} // rs6
+
+		}
 		}
 		%>
-		</body>
 
-	</center>
-	<%@ include file="../../layout/footer.jsp"%>
-	</html>
+	</table>
+
+	<%
+	} catch (Exception e) {
+	out.println(e);
+	}
+	%>
+	</body>
+
+</center>
+<%@ include file="../../layout/footer.jsp"%>
+</html>

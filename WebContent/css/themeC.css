@@ -223,7 +223,7 @@ a {
 }
 
 #about .box:nth-of-type(1) {
-	background: url('../img/thm3.JPG') no-repeat center;
+	background: url('../img/theme/thm3.JPG') no-repeat center;
 	background-size: cover
 }
 

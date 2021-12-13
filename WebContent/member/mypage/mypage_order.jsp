@@ -19,20 +19,24 @@ try {
 	pstmt.setString(1, sid);
 	ResultSet rs = pstmt.executeQuery();
 
-	String jsql2 = "SELECT * FROM order_info WHERE ord_state = '입금확인중'";
+	String jsql2 = "SELECT * FROM order_info WHERE ord_state = '입금확인중' AND m_id = ? ";
 	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+	pstmt2.setString(1, sid);
 	ResultSet rs2 = pstmt2.executeQuery();
 
-	String jsql3 = "SELECT * FROM order_info WHERE ord_state = '배송준비중'";
+	String jsql3 = "SELECT * FROM order_info WHERE ord_state = '배송준비중' AND m_id = ? ";
 	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+	pstmt3.setString(1, sid);
 	ResultSet rs3 = pstmt3.executeQuery();
 
-	String jsql4 = "SELECT * FROM order_info WHERE ord_state = '배송시작'";
+	String jsql4 = "SELECT * FROM order_info WHERE ord_state = '배송시작' AND m_id = ? ";
 	PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+	pstmt4.setString(1, sid);
 	ResultSet rs4 = pstmt4.executeQuery();
 
-	String jsql5 = "SELECT * FROM order_info WHERE ord_state = '배송완료'";
+	String jsql5 = "SELECT * FROM order_info WHERE ord_state = '배송완료' AND m_id = ? ";
 	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+	pstmt5.setString(1, sid);
 	ResultSet rs5 = pstmt5.executeQuery();
 
 	int count2 = 0;
@@ -112,7 +116,7 @@ try {
 			String ord_state = rs.getString("ord_state");
 		%>
 	
-	<table border="2">
+	<table border="2" width="1000px;">
 		주문번호:
 		<%=ord_no%>
 		<thead>
