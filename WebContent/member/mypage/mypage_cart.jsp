@@ -25,21 +25,15 @@
 	 Class.forName("org.gjt.mm.mysql.Driver");  
 		 	 Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD); 
 
-	String ct_no = session.getId();   //세션 번호를 장바구니 번호로서 이용하기 위해 ctNo에 저장
-
-
-	// 장바구니에 물건을 담기 전후, mysql상에서 select * from cart;의 결과를 함께 확인/비교 해가면서
-	// cart테이블에 남아있는 상품레코드정보와 장바구니번호(ctNo)를 함께 이해해 보도록 할 것!
-	//  =>  홈페이지상에서 보여지는 장바구니 내역에 포함된 레코드들이, 실제로 cart테이블상에서는 
-	//         무엇을 의미하고 있는지 곰곰히 생각해 볼 것! (중요!)
+	String ct_no = session.getId();  
 	String jsql = "select * from cart where ct_no = ?";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
 	pstmt.setString(1, ct_no);
 
 	ResultSet rs = pstmt.executeQuery();
 
-	if (!rs.next()) // 조회 결과가 존재하지 않으면,  rs.next()는 false를 리턴함. 
-	{ //  따라서,  !rs.next()의 값은 true가 됨
+	if (!rs.next())
+	{ 
 %>
 	<center>
 	장바구니가 비었습니다. <br><br>
@@ -98,8 +92,8 @@
 					ResultSet rs3 = pstmt3.executeQuery(); 
 					rs3.next();
 
-					String	p_name =  rs3.getString("p_name");	  //  goods 테이블로부터 상품명 추출
-					int p_price =  rs3.getInt("p_price");                 //  goods 테이블로부터 상품단가 추출
+					String	p_name =  rs3.getString("p_name");	  
+					int p_price =  rs3.getInt("p_price");                 
 						
 		    		int amount = p_price * ct_qty;    //  주문액 계산
 					total = total + amount;                  //  전체 주문총액 계산

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
-<%@ include file="../../layout/header.jsp"%>
 
 <%
 boolean isExist = false;
@@ -48,17 +47,26 @@ try {
     <tr>
         <td height="25" align=center>
   <%  
-		   if(isExist)  
+		   if(isExist)  {
                  out.println("이미 존재하는 ID입니다.");
-	       else 
+  			%>
+  			<tr>
+		        <td align=center>
+		            <a href="javascript:window.close()">다른 ID 사용하기</a>
+		        </td>
+		    </tr>
+  			<%
+		   }else{
                  out.println("사용 가능한 ID입니다. ");
+  			%>
+  			<tr>
+		        <td align=center>
+		            <a href="javascript:window.close()">사용하기</a>
+		        </td>
+		    </tr>
+  			<%
+		   }
   %>
-        </td>
-    </tr>
-
-    <tr>
-        <td align=center>
-            <a href="javascript:window.close()">사용하기</a>
         </td>
     </tr>
 </table>

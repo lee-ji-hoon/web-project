@@ -207,7 +207,7 @@ function direct_product_order() {  //  "구매하기 버튼 클릭시"
 		frm.action = "../order/direct_product_order.jsp";
 		frm.submit();
 	  } else {
-	    document.product.reset();
+	    swal.close();
 	  }
 	});
 	
@@ -303,43 +303,43 @@ function rmv_to_dibs() {
 function check_val()             // 주문서의 미입력항목 부분을 체크하는 자바스크립트 함수
 {
 	if (document.form.memTel.value == "") {
-		alert("주문자 전화번호는 반드시 기입을 해야 합니다. ");
+		swal("주문자 전화번호는 반드시 기입을 해야 합니다. ");
 		document.form.memTel.focus();
 		return false;
 	}
 
 	if (document.form.receiver.value == "") {
-		alert("수령인 성명은 반드시 기입을 해야 합니다. ");
+		swal("수령인 성명은 반드시 기입을 해야 합니다. ");
 		document.form.receiver.focus();
 		return false;
 	}
 
 	if (document.form.rcvAddress.value == "") {
-		alert("수령인 주소는 반드시 기입을 해야 합니다. ");
+		swal("수령인 주소는 반드시 기입을 해야 합니다. ");
 		document.form.rcvAddress.focus();
 		return false;
 	}
 
 	if (document.form.rcvPhone.value == "") {
-		alert("수령인 전화번호는 반드시 기입을 해야 합니다. ");
+		swal("수령인 전화번호는 반드시 기입을 해야 합니다. ");
 		document.form.rcvPhone.focus();
 		return false;
 	}
 
 	if (document.form.cardNo.value == "" && document.form.bank.value == 0) {
-		alert("결제방법 중 하나는 선택해야 합니다. ");
+		swal("결제방법 중 하나는 선택해야 합니다. ");
 		document.form.cardNo.focus();
 		return false;
 	}
 
 	if (document.form.cardNo.value != "" && document.form.bank.value != 0) {
-		alert("결제방법 중 하나만 선택해야 합니다. ");
+		swal("결제방법 중 하나만 선택해야 합니다. ");
 		document.form.cardNo.focus();
 		return false;
 	}
 
 	if (document.form.cardNo.value != "" && document.form.cardPass.value == "") {
-		alert("카드 비밀번호는 반드시 기입을 해야 합니다. ");
+		swal("카드 비밀번호는 반드시 기입을 해야 합니다. ");
 		document.form.cardNo.focus();
 		return false;
 	}
