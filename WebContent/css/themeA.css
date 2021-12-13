@@ -46,12 +46,17 @@ a {
 }
 
 #header .logo a {
-	display: block;
-	width: 140px;
-	background: url('../img/logo-light-220x32.png') no-repeat left top;
-	font: 8px/40px 'inherit';
-	color: transparent;
+     display: block;
+     width: 200px; 
+     height: 70px; 
+     background : url('../img/logo.png') no-repeat left top; 
+     font: 8px/40px 'inherit'; 
+     color: transparent; 
+     background-size: 100%; 
+     margin: -10px 10px;
+
 }
+
 
 #header .nav_wrap .service {
 	float: right;
@@ -184,7 +189,7 @@ a {
 
 
 #visual .msg h2{
-	font: bold 75px '맑은 고딕'; 
+	font: bold 70px '맑은 고딕'; 
 	color: white; 
     padding : 50px 0 0 ; 
     text-shadow: 0 0 10px rgba(0,0,0,0.5); 
@@ -336,70 +341,24 @@ a {
 	background-color: rgb(50, 119, 212)
 }
 
-#footer .inner {
-	width: 1180px;
-	margin: 0 auto
-}
 
-#footer .inner::after {
-	content: '';
-	display: block;
-	clear: both;
-}
 
-#footer .box.logo {
-	
-}
+#footer{width: 100%; height: 200px; background-color: rgb(50, 119, 212)}
+#footer .inner{width: 1180px; margin: 0 auto}
+#footer .inner::after{content: ''; display: block; clear: both;}
 
-#footer .box.logo .logo_footer {
-	margin-right: 15px;
-}
 
-#footer .box {
-	float: left;
-	padding: 30px;
-	height: 200px;
-}
+#footer .box.logo .logo_footer a{display: block; width: 200px; height: 70px; background : url('../img/logo.png') no-repeat left top; background-size: 100%; margin-right:15px; margin: 30px -20px; font: 8px/40px 'inherit'; color: transparent; }
 
-#footer .box.contact {
-	width: 50%;
-	padding: 30px 45px;
-	text-align: left;
-}
 
-#footer .box.contact p {
-	margin: 10px 0;
-	text-indent: -20px;
-}
+#footer .box{float: left; padding: 30px; height: 200px;}
+#footer .box.contact{text-align: left;}
+#footer .box.contact p{padding: 0px 105px; margin: 13px 0; text-indent: -20px;}
+#footer .box.contact p i{font-size: 20px; color: #ffffff; padding-right: 25px;}
+#footer .box.contact p span{font-size: 20px; color: #ffffff}
 
-#footer .box.contact p i {
-	font-size: 20px;
-	color: #ffffff;
-	padding-right: 25px;
-}
 
-#footer .box.contact p span {
-	font-size: 20px;
-	color: #ffffff
-}
-
-#footer .box.sns {
-	width: 25%;
-	height: 50px;
-}
-
-#footer .box.sns .sns {
-	margin-top: 10px;
-	padding: 55px 0 50px;
-	font-size: 35px;
-	float: right;
-}
-
-#footer .box.sns .sns li {
-	display: inline-block;
-	padding: 0 3px;
-}
-
-#footer .box.sns .sns li a {
-	color: #ffffff
-}
+#footer .box.sns{ height: 50px;}
+#footer .box.sns .sns{margin: 13px 0px; padding: 55px 10px 50px; font-size: 35px; float: right;}
+#footer .box.sns .sns li{ display: inline-block; padding: 0 5px;}
+#footer .box.sns .sns li a{color: #ffffff}

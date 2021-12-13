@@ -26,7 +26,7 @@
                  </ul>         
                </div>
              <div class="msg">
-                 <h2 class="visual_title">THEME B</h2><br>
+                 <h2 class="visual_title">파충류관</h2><br>
                  <p class="visual_txt">아쿠아리움 친구들을 소개합니다.</p>
              </div> 
          </div>
@@ -99,11 +99,11 @@
 <footer id="footer">
         <div class="inner">
             <div class="box logo">
-                <div class="logo_footer"><a href="#"><img src="../img/logo-light-220x32.png" alt=""></a></div>
+                <div class="logo_footer"><a href="#">아쿠아플라넷</a></div>
             </div>
             <div class="box contact">
                 <p><i class="fas fa-phone-alt"></i><span class="txt">32-326-9500 (단체문의 : 032-326-9503)</span></p>
-                <p><i class="fas fa-street-view"></i><span class="txt">서울특별시 강남구 영동대로 513 코엑스아쿠아리움 </span></p>
+                <p><i class="fas fa-street-view"></i><span class="txt">서울 강남구 영동대로 513 코엑스아쿠아리움 </span></p>
                 <p><i class="fas fa-clock"></i><span class="txt">Mon–Sat: 10:00am–8:00pm</span></p>
             </div>
             <div class="box sns">
