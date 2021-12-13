@@ -133,7 +133,7 @@
 <footer id="footer">
         <div class="inner">
             <div class="box logo">
-                <div class="logo_footer"><a href="#"><img src="img/logo-light-220x32.png" alt=""></a></div>
+                <div class="logo_footer"><a href="#">아쿠아플라넷</a></div>
             </div>
             <div class="box contact">
                 <p><i class="fas fa-phone-alt"></i><span class="txt">32-326-9500 (단체문의 : 032-326-9503)</span></p>
