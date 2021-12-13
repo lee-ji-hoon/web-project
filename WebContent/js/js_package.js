@@ -81,7 +81,7 @@ function checkID()		// ID를 입력받은 후에 팝업창을 띄워주면서
 
     if (id  == "")				//   11~16행:  ID를 입력없이 ID 중복체크 버튼을 클릭할 경우의 처리
     {
-		alert("ID를 입력해 주세요!"); 
+		swal("ID를 입력해 주세요!"); 
 		newMem.id.focus(); 
 		return; 
     }
@@ -95,7 +95,7 @@ function checkID2()		// ID를 입력받은 후에 팝업창을 띄워주면서
 
     if (id  == "")				//   11~16행:  ID를 입력없이 ID 중복체크 버튼을 클릭할 경우의 처리
     {
-		alert("ID를 입력해 주세요!"); 
+		swal("ID를 입력해 주세요!"); 
 		newMem.id.focus(); 
 		return; 
     }
@@ -110,91 +110,91 @@ function checkValue()             // 회원가입폼에서 미입력한 항목�
 {                                           
 	if(newMem.id.value == "")     // if(document.newMem.id.value == "")라고 사용해도 동일함
     {
-		alert("ID를 입력해 주세요!");  //  문자열이 포함된 경고창을 실행시킴
+		swal("ID를 입력해 주세요!");  //  문자열이 포함된 경고창을 실행시킴
 		newMem.id.focus();					//  작업의 포커스(커서)를 ID를 입력하는 텍스트필드로 이동시킴  
 		return;                         //  함수의 실행을 종료함 ( "return false; " 라고 사용해도 동일함)
     }
 
     if(newMem.password.value == "") 
     {
-		alert("비밀번호를 입력해 주세요!");
+		swal("비밀번호를 입력해 주세요!");
 		newMem.password.focus();
 		return;
     }
 
     if(newMem.name.value == "") 
     {
-		alert("성명을 입력해 주세요!");
+		swal("성명을 입력해 주세요!");
 		newMem.name.focus();
 		return;
     }
 
     if(newMem.joomin1.value == "") 
     {
-		alert("주민등록번호 앞자리를 입력해 주세요!");
+		swal("주민등록번호 앞자리를 입력해 주세요!");
 		newMem.joomin1.focus();
 		return;
     }
 
     if(newMem.joomin2.value == "") 
     {
-		alert("주민등록번호 뒷자리를 입력해 주세요!");
+		swal("주민등록번호 뒷자리를 입력해 주세요!");
 		newMem.joomin2.focus();
 		return;
     }
 
     if(newMem.birthYear.value == "") 
     {
-		alert("태어난 연도를 입력해 주세요!");
+		swal("태어난 연도를 입력해 주세요!");
 		newMem.birthYear.focus();
 		return;
     }
 
     if(newMem.birthMonth.value == "") 
     {
-		alert("태어난 달을 입력해 주세요!");
+		swal("태어난 달을 입력해 주세요!");
 		newMem.birthMonth.focus();
 		return;
     }
 
     if(newMem.birthDay.value == "") 
     {
-		alert("태어난 날짜를 입력해 주세요!");
+		swal("태어난 날짜를 입력해 주세요!");
 		newMem.birthDay.focus();
 		return;
     }
 
     if(newMem.telephone.value == "") 
     {
-		alert("전화번호를 입력해 주세요!");
+		swal("전화번호를 입력해 주세요!");
 		newMem.telephone.focus();
 		return;
     }
 
     if(newMem.address.value == "") 
     {
-		alert("주소를 입력해 주세요!");
+		swal("주소를 입력해 주세요!");
 		newMem.address.focus();
 		return;
     }
 
 	if(newMem.hp1.value == "") 
     {
-		alert("휴대폰 앞자리 국번을 입력해 주세요!");
+		swal("휴대폰 앞자리 국번을 입력해 주세요!");
 		newMem.hp1.focus();
 		return;
     }
 
     if(newMem.hp2.value == "") 
     {
-		alert("휴대폰 중간자리 번호를 입력해 주세요!");
+		swal("휴대폰 중간자리 번호를 입력해 주세요!");
 		newMem.hp2.focus();
 		return;
     }
 
     if(newMem.hp3.value == "") 
     {
-		alert("휴대폰 끝자리 번호를 입력해 주세요!");
+		swal("휴대폰 끝자리 번호를 입력해 주세요!");
 		newMem.hp3.focus();
 		return;
     }
@@ -239,14 +239,14 @@ function login_check()      // 로그인시 미입력항목 부분을 체크해�
 {
 	if(document.login.id.value=="")
 	{
-    	alert("아이디를 입력해 주세요.");
+    	swal("아이디를 입력해 주세요.");
     	document.login.id.focus();
     	return;	
     }
 
     if(document.login.pass.value=="")
 	{
-    	alert("비밀번호를 입력해 주세요.");
+    	swal("비밀번호를 입력해 주세요.");
     	document.login.pass.focus();			
     	return;
     }
@@ -306,7 +306,7 @@ function amountCheck()     //   주문수량에 유효한 값만 들어가도록
 	if(isNaN(obj.value))          //    isNaN(a)함수는 a가 숫자가 아닐 경우, true를 return해줌
 	{
 		obj.value="1";
-		alert('숫자만 입력해주세요');
+		swal('숫자만 입력해주세요');
 		return;
 	}
 
@@ -333,7 +333,7 @@ function amountMinus()        //   주문수량을 1 감소 시킴
 	}
 	else
 	{
-		alert('더이상 줄일수가 없습니다');
+		swal('더이상 줄일수가 없습니다');
 		return;
 	}
 }
