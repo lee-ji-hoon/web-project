@@ -52,12 +52,15 @@ a:hover{
 	padding-top: 30px;
 }
 
-#header .logo a {
-	display: block;
-	width: 140px;
-	background: url('../img/logo-light-220x32.png') no-repeat left top;
-	font: 8px/40px 'inherit';
-	color: transparent;
+#header .logo a{     
+	 display: block;
+     width: 200px; 
+     height: 70px; 
+     background : url('../img/logo.png') no-repeat left top; 
+     font: 8px/40px 'inherit'; 
+     color: transparent; 
+     background-size: 100%; 
+     margin: -10px 10px;
 }
 
 #header .nav_wrap .service {
