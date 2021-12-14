@@ -41,9 +41,9 @@ try {
 	String joomin = rs.getString("m_joomin");
 	String address = rs.getString("m_address");
 	String solar = rs.getString("m_solar");
+	String reserves = rs.getString("m_reserves");
 %>
 
-	
 	<center>
 	<font  size='6'>
 		<b>[<%=sid %>님의 상세 정보] </b>
@@ -91,6 +91,10 @@ try {
 		<tr>
 			<th>성별</th>
 			<td><%=sex%></td>
+		</tr>
+		<tr>
+			<th>적립금</th>
+			<td><%=reserves %>원</td>
 		</tr>
     </table>
 	<p>

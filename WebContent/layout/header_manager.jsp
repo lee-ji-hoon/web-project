@@ -69,7 +69,7 @@ String manager_id = (String) session.getAttribute("manager_id");
 		<div class="bg_gnb"></div>
 		<div class="inner">
 			<h1 class="logo">
-				<a href="${pageContext.request.contextPath}/member/index.jsp">아쿠아플라넷</a>
+				<a href="${pageContext.request.contextPath}/index.jsp">아쿠아플라넷</a>
 			</h1>
 			<div class="nav_wrap">
 				<ul class="service">

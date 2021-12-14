@@ -290,4 +290,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-<script type="text/javascript" src="../../js/tickets.js?123aa"></script>
+<script type="text/javascript" src="../../js/tickets.js?123a123123a"></script>

@@ -24,7 +24,7 @@ try {
 	String oTel = request.getParameter("memTel");
 	String oReceiver = request.getParameter("receiver");
 	String oEmail1 = request.getParameter("email1");
-	String oEmail2 = request.getParameter("email1");
+	String oEmail2 = request.getParameter("email2");
 	String oEmail = oEmail1 + "@" + oEmail2;
 	String oMassage = request.getParameter("massage");
 	String oRcvAddress = request.getParameter("rcvAddress");
@@ -37,6 +37,8 @@ try {
 	String oCardPass = request.getParameter("cardPass");
 	String oBank = request.getParameter("bank");
 	String oPay = request.getParameter("pay");
+	
+	String usePnt = request.getParameter("use_pnt");
 	
 	String jsql0 = "SET SQL_SAFE_UPDATES = 0";
 	PreparedStatement pstmt0 = con.prepareStatement(jsql0);
@@ -124,13 +126,20 @@ try {
 	pstmt7.setString(12, oMassage);
 	pstmt7.executeUpdate();
 	
-	String jsql8 = "UPDATE member SET m_reserves = m_reserves + ? WHERE m_id = ?";
-	PreparedStatement pstmt8 = con.prepareStatement(jsql8);
-	pstmt8.setString(1, reserves);
-	pstmt8.setString(2, sid);
-	pstmt8.executeUpdate();
-
-
+	if(usePnt == null){
+		String jsql8 = "UPDATE member SET m_reserves = m_reserves + ? WHERE m_id = ?";
+		PreparedStatement pstmt8 = con.prepareStatement(jsql8);
+		pstmt8.setString(1, reserves);
+		pstmt8.setString(2, sid);
+		pstmt8.executeUpdate();
+	}else{
+		String jsql8 = "UPDATE member SET m_reserves = m_reserves + ? - ? WHERE m_id = ?";
+		PreparedStatement pstmt8 = con.prepareStatement(jsql8);
+		pstmt8.setString(1, reserves);
+		pstmt8.setString(2, usePnt);
+		pstmt8.setString(3, sid);
+		pstmt8.executeUpdate();
+	}
 } catch (Exception e) {
 	out.println(e);
 }
