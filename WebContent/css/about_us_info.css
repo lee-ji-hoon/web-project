@@ -14,7 +14,7 @@ a{text-decoration: none;}
 
 #header .logo{float: left; padding-top: 30px;}
 #header .logo a{     
-    display: block;
+	 display: block;
      width: 200px; 
      height: 70px; 
      background : url('../img/logo.png') no-repeat left top; 
