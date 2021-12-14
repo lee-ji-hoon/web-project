@@ -21,9 +21,17 @@
 		pstmt.setString(1, ct_no);
 
 		pstmt.executeUpdate();
+		
+		String jsql2 = "delete from temp_cart_t where ct_no=?";
+		PreparedStatement pstmt2 = con.prepareStatement(jsql2);
+		pstmt2.setString(1, ct_no);
+
+		pstmt2.executeUpdate();
 
 	
 	%>
+	<br>
+	<br>
 	<br>
 	<br>
 	<center>
@@ -31,8 +39,10 @@
 	<p>
 		상품 주문이 완료되었습니다.<br>
 		<br> 주문하신 상품은 주문 완료 후 2일 이내에 배송될 예정입니다.<br>
-		<br> 남서울 멀티쇼핑몰(주)을 이용해 주셔서 감사합니다!
+		<br> 아쿠아 플래닛(주)을 이용해 주셔서 감사합니다!
 	</p>
+	<br>
+	<br>
 	</center>
 <%
  } catch (Exception e) {

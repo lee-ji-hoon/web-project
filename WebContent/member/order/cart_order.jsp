@@ -1,262 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
+<link rel="stylesheet" type="text/css" href="../../css/style-cart.css?v123123">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script language="javascript" src="../../js/js_package.js?v1221233">
-	
-</script>
-
-<script language="javascript">
-	function goPopup() {
-		var pop = window.open("../join/juso_popup.jsp", "pop",
-				"width=570,height=420, scrollbars=yes, resizable=yes");
-	}
-
-	function jusoCallBack(roadFullAddr) {
-		$("#Addr").val(roadFullAddr);
-	}
-
-	function goPopup_() {
-		var pop = window.open("../join/juso_popup.jsp", "pop",
-				"width=570,height=420, scrollbars=yes, resizable=yes");
-	}
-
-	function jusoCallBack(roadFullAddr) {
-		$("#Addr_").val(roadFullAddr);
-	}
-	
-	/* 적립금 사용 */
-	function stringSplit(strData, strIndex){ // script 용 explode 함수
-        var stringList = new Array();
-        while(strData.indexOf(strIndex) != -1){
-         stringList[stringList.length] = strData.substring(0, strData.indexOf(strIndex));
-         strData = strData.substring(strData.indexOf(strIndex)+(strIndex.length), strData.length);
-        }
-        stringList[stringList.length] = strData;
-        return stringList;
-       }
-
-       function reserveUse(){// 적립금 사용 적용 스크립트
-        var frm=document.frm;
-        var reserve_use = frm.reserve_use.value;
-        var total_price = frm.total_price.value;
-        
-        if(reserve_use != ""){
-
-         if(reserve_use != "" && !Check_Num(reserve_use)){
-          alert("<?=$___SHOWTEXT['적립금은숫자만가능합니다']?>");
-          bt_cancle_reserve();
-          return false;
-         }else{
-          reserve_use = eval(reserve_use);
-          total_price = eval(total_price);
-         }
-
-         if(reserve_use > <?=$mem_info->reserve?>){
-          alert("<?=$___SHOWTEXT['사용가능액보다많습니다']?>");
-          bt_cancle_reserve();
-          return false;
-         }else if(reserve_use > total_price){
-          alert("<?=$___SHOWTEXT['주문금액보다많습니다']?>");
-          bt_cancle_reserve();
-          return false;
-         }else if(reserve_use > <?=$oper_info->reserve_max?>){
-          alert("<?=$___SHOWTEXT['최대사용적립금보다큽니다']?> <?=number_format($oper_info->reserve_max)?><?=$___SHOWTEXT['원이하사용가능합니다']?>");
-          bt_cancle_reserve();
-          return false;
-         }
-        }
-
-        if(document.getElementById('reserv_use').value=='Y'){
-         document.getElementById('s_reserve_use').value=eval(reserve_use);
-        }else{
-         reserve_use='0';
-        }
-        
-        var df_price =eval(document.getElementById('default_price').value);
-        var cp_price =eval(document.getElementById('s_coupon_price').value);
-        document.getElementById('total_price').value=df_price-cp_price-eval(reserve_use);
-        return true;
-       }
-
-       function bt_reserveUse(){ // 버튼 누른 적립금 사용
-        var frm=document.frm;
-        var reserve_use = frm.reserve_use.value;
-        var total_price = frm.total_price.value;
-
-        if(reserve_use < <?=$oper_info->reserve_min?>){
-         alert("<?=$___SHOWTEXT['최소사용적립금보다작습니다']?> <?=number_format($oper_info->reserve_min)?><?=$___SHOWTEXT['원이상사용가능합니다']?>");
-         bt_cancle_reserve();
-         return false;
-        }
-
-        document.getElementById('reserv_use').value='Y';
-        document.getElementById('reserv_btn_ok').src='/images/but_point_ok_chk.gif';
-        reserveUse();
-       }
-
-       function bt_cancle_reserve(){ // 버튼 누른 적립금 취소
-        document.getElementById('reserv_use').value='N';
-        document.getElementById('s_reserve_use').value='0';
-        document.getElementById('reserve_use').value='0';
-        document.getElementById('reserv_btn_ok').src='/images/but_point_ok.gif';
-
-        reserveUse();
-       }
-</script>
-
-<style>
-div#backbody {
-	background-color: #f5f5f0;
-	font-size: 13pt;
-	min-width: 1480px;
-	width: 100%;
-	padding: 50px 0;
-}
-
-#frame {
-	width: 80%;
-	margin: 0 auto;
-	padding: 50px 50px;
-	background-color: #fff;
-}
-
-#frame2 {
-	border-bottom: solid 1px #e0e0e0;
-	padding: 20px 0;
-}
-
-.home {
-	float: right;
-	clear: both;
-}
-
-table.calculation1 {
-	clear: both;
-	border: solid 1px #e0e0eb;
-	border-collapse: collapse;
-	background-color: #f5f5f0;
-	width: 100%;
-	font-size: 10pt;
-}
-
-table.calculation1 th {
-	border: solid 1px #e0e0eb;
-	padding: 10px 0;
-	text-align: center;
-}
-
-table.calculation1 td {
-	border: solid 1px #e0e0eb;
-	text-align: center;
-}
-
-table.calcualtion2 {
-	border: solid 1px #e0e0eb;
-	border-collapse: collapse;
-	background-color: #f5f5f0;
-	width: 100%;
-	font-size: 10pt;
-}
-
-table.calcualtion2 th {
-	border: solid 1px #e0e0eb;
-	text-align: center;
-}
-
-table.calcualtion2 td {
-	border: solid 1px #e0e0eb;
-	text-align: center;
-}
-
-.price {
-	font-size: 20pt;
-	font-weight: bold;
-}
-
-.lifont {
-	font-size: 10pt;
-	color: gray;
-}
-
-.delivery {
-	border: solid 1px gray;
-	border-collapse: collapse;
-	width: 100%;
-	font-size: 10pt;
-}
-
-table.delivery th, td {
-	border: solid 1px #e0e0eb;
-	padding: 12px 10px;
-}
-
-.deliverytd {
-	font-size: 10pt;
-	background-color: #f5f5f0;
-}
-
-.payArea {
-	height: 218px;
-	position: relative;
-	padding: 0 245px 0 0;
-	border: 1px solid #777;
-	color: #353535;
-	line-height: 1.5;
-}
-
-.payment {
-	border-right: solid 1px gray;
-	float: left;
-	width: 100%;
-	height: 100%;
-}
-
-.total {
-	float: right;
-	width: 240px;
-	margin: 0 -240px 0 0;
-	text-align: right;
-	background: #fbfafa;
-	font-size: 11pt;
-}
-
-.btn {
-	border: none;
-	color: white;
-	padding: 5px 10px;
-	font-size: 13px;
-	cursor: pointer;
-	border-radius: 5px;
-}
-
-.default {
-	background-color: #264d73;
-	border: solid 1px gray;
-	color: #fff;
-}
-
-.default:hover {
-	background: #ddd;
-}
-
-.backBtn {
-	background: #fff;
-	border: solid 1px gray;
-}
-
-.btnfloat {
-	float: left;
-}
-
-.btnfloat2 {
-	float: right;
-}
-
-.clearboth {
-	clear: both;
-}
-</style>
+<script language="javascript" src="../../js/order.js?v12233"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -276,6 +23,7 @@ try { //
 	Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 
 	String ct_no = session.getId();
+	
 	String jsql = "select * from cart where ct_no = ? ";
 	PreparedStatement pstmt = con.prepareStatement(jsql);
 	pstmt.setString(1, ct_no);
@@ -302,7 +50,7 @@ if (!rs.next() && !rs7.next()) {
 		<form name="form" method="Post" action="cart_order_ok.jsp">
 			<div id="frame2">
 				<span style="font-size: 16pt; font-weight: bold;">장바구니</span>
-				<span class="home">홈 > 장바구니</span>
+				<span class="home">홈 > 장바구니 > 구매하기</span>
 				<span></span>
 			</div>
 			<br />
@@ -464,6 +212,7 @@ if (!rs.next() && !rs7.next()) {
 							</td>
 						</tr>
 					</tbody>
+					
 					<%
 					}
 					double total_reserves = total_reserves_p + total_reserves_t;
@@ -526,8 +275,8 @@ if (!rs.next() && !rs7.next()) {
 				emailSelected[3] = "selected";
 			}
 			%>
-			<br /> <br />
-			<!-- 구매자 정보 -->
+			<br/><br/>
+			<!-- 배송자 정보 -->
 			<span style="font-size: 12pt; display: inline-block; padding-bottom: 10px;">&nbsp;구매자정보</span>
 			<table class="delivery">
 				<thead>
@@ -556,11 +305,9 @@ if (!rs.next() && !rs7.next()) {
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[0]%>" style="border:none" readonly>
-							-
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[1]%>" style="border:none" readonly>
-							-
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[2]%>" style="border:none" readonly>
+							<input type="text" size="3" maxlength="4" value="<%=phoneArr[0]%>" style="border:none" readonly>-
+							<input type="text" size="4" maxlength="4" value="<%=phoneArr[1]%>" style="border:none" readonly>-
+							<input type="text" size="4" maxlength="4" value="<%=phoneArr[2]%>" style="border:none" readonly>
 						</td>
 					</tr>
 				</thead>
@@ -645,38 +392,23 @@ if (!rs.next() && !rs7.next()) {
 							<textarea rows="5" cols="100" name="massage"></textarea>
 						</td>
 					</tr>
-					<tr>
-						<td class="deliverytd">
-							적립금 사용&nbsp;
-							<span style="color: red;">*</span>
-						</td>
-						<td>
-							<input type="text" name="reserves_use" value="<%=reserves%>" />
-							<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup();">적용</button>
-
-							<span style="font-size: 10pt; color: gray;">
-								&nbsp;
-								<p>
-									<c:set var="reserves" value="<%=reserves%>" />
-									최대
-									<fmt:formatNumber type="number" pattern="0" value="${ ((reserves*10) - ((reserves*10)%1)) * (1/10)} " />
-									원
-								</p>
-							</span>
-						</td>
-						<input type="hidden" name="reserves" value="<%=total_reserves%>" />
-					</tr>
 				</thead>
 			</table>
-			<br /> <br />
-
+			<br/><br/>
+			<input type="hidden" name="reserves" value="<%=total_reserves%>">
 			<!-- 결제 예정 금액 테이블 -->
 			<table class="calcualtion2">
 				<tr>
-					<th>총 상품 금액</th>
-					<th>총 배송비</th>
-					<th>적립금 사용</th>
-					<th style="width: 650px; padding: 22px 0;">
+					<th width=290px;>총 상품 금액</th>
+					<th width=290px;>총 배송비</th>
+					<th width=290px;>적립금 사용<br>
+						<span style="font-size: 9pt; color: gray;">
+							<span>사용가능 포인트 :</span>
+							<span name="left_pnt"><%=reserves%>p</span>
+							<span margin-left:10px;"><input type="checkbox" id="chk_use" onclick="chkPoint(<%=real_total%>,<%=reserves%>,10,10)">전체 사용</span>
+						</span>				
+					</th>
+					<th style="width: 450px; padding: 22px 0;">
 						<span>결제예정금액</span>
 					</th>
 				</tr>
@@ -694,16 +426,15 @@ if (!rs.next() && !rs7.next()) {
 					</td>
 					<td>
 						-
-						<span class="price"><%=reserves%></span>
-						원
+						<span> <input type="number" name="use_pnt" id="use_pnt" min="10" max="<%=real_total%>" onchange="changePoint(<%=real_total%>,<%=reserves%>,10,10)"></span> p 
+      					<span> ( 남은포인트 : </span><span name="left_pnt" id="left_pnt"><%=reserves%></span>p )
 					</td>
 					<td>
-						=
 						<span class="price">
-							<input type="hidden" name="pay" value="<%=real_total%>" />
-							<fmt:formatNumber value="<%=real_total%>" type="number" />
-						</span>
-						원
+							<span class="bold txt_red" id="result_pnt_show"><fmt:formatNumber value="<%=real_total%>" type="number" /></span>
+							<input type="hidden" style="border:none; text-align:right;" id="result_pnt" name="pay" value="<%=real_total%>"/>
+						</span>원
+						
 					</td>
 				</tr>
 			</table>
@@ -768,18 +499,19 @@ if (!rs.next() && !rs7.next()) {
 						<br>
 					</div>
 				</div>
+				
 				<div class="total">
 					<span style="display: inline-block; padding: 20px 10px;">최종 카드결제 금액</span>
-					<br />
+					<br/>
 					<span style="font-size: 25pt; font-weight: bold; padding: 0px 10px;">
-						<fmt:formatNumber value="<%=real_total%>" type="number" />
+						<span class="bold txt_red" id="result_pnt_main_show"><fmt:formatNumber value="<%=real_total%>" type="number" /></span>원
 					</span>
-					<br> <br>
+					<br/><br/>
 					<input type="button" OnClick="check_val()" class="btn default" style="width: 90%; height: 60px; margin-right: 10px; font-size: 21px;" value="결제하기" />
 				</div>
 			</div>
 
-			<br> <br>
+			<br><br>
 
 			<!-- 안내 -->
 			<div style="border: solid 1px #e0e0eb; padding: 10px 0; font-size: 12pt; background-color: #f5f5f0; padding-left: 10pt;">무이자 할부 안내</div>
