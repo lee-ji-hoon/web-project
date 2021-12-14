@@ -3,11 +3,12 @@
 
 <html lang="en">
 <%@ include file="../../layout/header.jsp"%>
+<jsp:include page="layout/popup.jsp"/>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/aqua.css?cxz">
+    <link rel="stylesheet" href="css/aqua.css?cxz12312312">
     <script src="js/gnb.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/main.js"></script>
@@ -133,7 +134,7 @@
 <footer id="footer">
         <div class="inner">
             <div class="box logo">
-                <div class="logo_footer"><a href="#"><img src="img/logo-light-220x32.png" alt=""></a></div>
+                <div class="logo_footer"><a href="#">아쿠아플라넷</a></div>
             </div>
             <div class="box contact">
                 <p><i class="fas fa-phone-alt"></i><span class="txt">32-326-9500 (단체문의 : 032-326-9503)</span></p>
