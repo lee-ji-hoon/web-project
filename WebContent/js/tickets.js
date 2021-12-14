@@ -249,45 +249,63 @@ function need_login() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 장바구니 및 즉시 구매하기
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function direct_ticket_order(){  //  "구매하기 버튼 클릭시"
-	if (confirm('해당 상품을 구매하시겠습니까?')) {	
-			var str1=ticket.amount_adult.value;
+
+function direct_ticket_order() {  //  "구매하기 버튼 클릭시"
+	swal({
+	  title: "즉시 구매",
+	  text: "해당 상품을 구매하시겠습니까?",
+	  icon: "info",
+	  buttons: {
+		text: "예",	
+		cancel: "아니요",
+	 },
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	  if (willDelete) {
+		var str1=ticket.amount_adult.value;
 			var str2=ticket.amount_teen.value;
 			var str3=ticket.amount_child.value;
 			var frm = document.ticket;
 			frm.action = "../order/cart_t_in.jsp";
 			frm.submit();
-	}
-	else {
-		document.ticket.reset();
-	}
-}
-function add_to_cart() {
-	if (confirm('해당 상품을 장바구니에 추가하겠습니까?')) {
-			var str1=ticket.amount_adult.value;
-			var str2=ticket.amount_teen.value;
-			var str3=ticket.amount_child.value;
-			var frm = document.ticket;
-			frm.action = "../order/cart_t_in.jsp";
-			frm.submit();
-	}
-	else {
-		document.ticket.reset();
-	}
+	  } else {
+	    swal.close();
+	  }
+	});
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 즉시 구매하기  클릭 시
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function direct_ticket_order()        //  "즉시구매하기" 버튼을 클릭시 호출
-{
-	var str1=ticket.amount_adult.value;
-	var str2=ticket.amount_teen.value;
-	var str3=ticket.amount_child.value;
-	var frm = document.ticket;
-	frm.action = "../order/direct_ticket_order.jsp";
-	frm.submit();
+function add_to_cart() {
+	swal({
+	  title: "장바구니 추가",
+	  text: "장바구니에 추가 됐습니다. 이동하시겠습니까?",
+	  icon: "success",
+	  buttons: {
+	  text: "예",	
+	  cancel: "아니요",
+	 },
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	  if (willDelete) {
+			var str1=ticket.amount_adult.value;
+			var str2=ticket.amount_teen.value;
+			var str3=ticket.amount_child.value;
+			var frm = document.ticket;
+			frm.action = "../order/cart_t_in.jsp";
+			frm.submit();
+	  } else {
+			var str1=ticket.amount_adult.value;
+			var str2=ticket.amount_teen.value;
+			var str3=ticket.amount_child.value;
+			var frm = document.ticket;
+			frm.action = "../order/cart_t_in_temp.jsp";
+			frm.submit();
+	  }
+	});
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  cart_order.jsp 및 direct_product_order.jsp 내에서 사용되는 자바스크립트 코드의 시작부
