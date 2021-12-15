@@ -426,11 +426,11 @@
 								<td colspan=3 width=474>
 									<select name="bank">
 										<option value="0" selected>다음 중 선택</option>
-										<option value="우리은행">우리은행 ( 324-01-123400 / (주)aqua)</option>
-										<option value="국민은행">국민은행 ( 011-02-300481 / (주)aqua)</option>
-										<option value="외환은행">외환은행 ( 327-56-333002 / (주)aqua)</option>
-										<option value="신한은행">신한은행 ( 987-25-202099 / (주)aqua)</option>
-										<option value="하나은행">하나은행 ( 698-00-222176 / (주)aqua)</option>
+										<option value="우리은행 (1241-295-1500) (주)aqua">우리은행 (1241-295-1500) / (주)aqua</option>
+										<option value="국민은행 (0291-022-2517) (주)aqua">국민은행 (0291-022-2517) / (주)aqua</option>
+										<option value="외환은행 (322-246-21402) (주)aqua">외환은행 (322-246-21402) / (주)aqua</option>
+										<option value="신한은행 (757-215-2099) (주)aqua">신한은행 (757-215-2099) / (주)aqua</option>
+										<option value="하나은행 (628-0220-2211) (주)aqua">하나은행 (628-0220-2211) / (주)aqua</option>
 									</select>
 									<font size=1 color=#4b89DC>(카드 or 무통장입금 중 택일!)</font>
 								</td>
