@@ -130,7 +130,7 @@
 						<tr id = 'review_list_content_line' height = 130>
 							<td>
 								<a href = "../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
-									<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=80px
+									<img src="../../img/tickets/<%=p_id%>.jpeg" border=0 width=80px
 								height=96px>
 								</a>
 							</td>
