@@ -2,6 +2,7 @@
 <%@ page import="java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../layout/header.jsp"%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <link rel="stylesheet" href="../../css/style-favorite.css">
 <link rel="stylesheet" href="../../css/style-index.css">
@@ -49,7 +50,7 @@
 				정글존
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="default" />
+				<input type="radio" name="compList" value="default" checked/>
 				전체보기
 			</div>
 			<br>
@@ -195,4 +196,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-<script type="text/javascript" src="../../js/categories.js"></script>
+<script type="text/javascript" src="../../js/categories.js?1v1213"></script>
