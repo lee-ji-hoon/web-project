@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %>
 <%@ include file="../../layout/mypage_header.jsp"%>
-<link rel="stylesheet" type="text/css" href="../../css/table_style_ver2.css">
+<link rel="stylesheet" type="text/css" href="../../css/table_style_ver2.css?a">
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";

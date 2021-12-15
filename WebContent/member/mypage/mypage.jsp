@@ -93,7 +93,7 @@ try {
 		</tr>
 		<tr>
 			<th>적립금</th>
-			<td><%=reserves %>원</td>
+			<td><i class="fas fa-coins"></i> &nbsp;&nbsp;<%=reserves %>원</td>
 		</tr>
     </table>
 	<p>
