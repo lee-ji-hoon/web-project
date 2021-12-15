@@ -63,7 +63,7 @@ try {
 					<!-- 이미지 -->
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="../../img/tickets/<%=t_id%>.jpg" width="500" height="200">
+							<img src="../../img/tickets/<%=t_id%>.jpeg" width="500" height="200">
 						</div>
 					</div>
 				</div>
