@@ -62,9 +62,6 @@ try {
 
 %>
 <center>
-	<font  size='6'>
-		<b> 수정 완료 </b>
-	</font>
 
 	<table style="font-size:10pt;font-family:맑은 고딕" class="detail">
 	<tr>
