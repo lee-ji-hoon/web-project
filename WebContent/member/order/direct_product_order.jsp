@@ -333,9 +333,9 @@
 			<!-- 결제 예정 금액 테이블 -->
 			<table class="calcualtion2">
 				<tr>
-					<th width=290px;>총 상품 금액</th>
-					<th width=290px;>총 배송비</th>
-					<th width=290px;>적립금 사용<br>
+					<th width=280px;>총 상품 금액</th>
+					<th width=280px;>총 배송비</th>
+					<th width=310px;>적립금 사용<br>
 						<span style="font-size: 9pt; color: gray;">
 							<span>사용가능 포인트 :</span>
 							<span name="left_pnt"><%=reserves%>p</span>
