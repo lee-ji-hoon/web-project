@@ -153,7 +153,7 @@
 			<span style="font-size: 12pt; display: inline-block; padding-bottom: 10px;">&nbsp;결제정보</span>
 			<table class="delivery">
 				<thead>
-					<%if(ord_bank == null){ %>
+					<%if(ord_bank.equals("")){ %>
 					<tr>
 						<td class="deliverytd">
 							카드번호&nbsp;
