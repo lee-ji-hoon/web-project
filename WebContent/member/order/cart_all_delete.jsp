@@ -30,24 +30,25 @@
 
 		pstmt2.executeUpdate();
 		
-		String jsql3 = "SELECT * FROM order_info ORDER BY ord_no DESC LIMIT 1";
-		PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-		ResultSet rs3 = pstmt3.executeQuery();
-		rs3.next();
-
-		String ord_date = rs3.getString("ord_date");
-		String ord_receiver = rs3.getString("ord_receiver");
-		String ord_rcv_phone = rs3.getString("ord_rcv_phone");
-		String ord_rcv_address = rs3.getString("ord_rcv_address");
-		String ord_pay = rs3.getString("ord_pay");
-		String ord_bank = rs3.getString("ord_bank");
-		String ord_card_no = rs3.getString("ord_card_no");
-		String ord_card_pass = rs3.getString("ord_card_pass");
-		String ord_message = rs3.getString("ord_message");
-		String ord_email = rs3.getString("m_email");
 
 		if (case_no != null) //  (1) 주문완료로 인한 장바구니 비우기 수행하고 난 후의 주문완료 메시지 출력
 		{ //   orderOK.jsp의 107행 참조
+			
+			String jsql3 = "SELECT * FROM order_info ORDER BY ord_no DESC LIMIT 1";
+			PreparedStatement pstmt3 = con.prepareStatement(jsql3);
+			ResultSet rs3 = pstmt3.executeQuery();
+			rs3.next();
+
+			String ord_date = rs3.getString("ord_date");
+			String ord_receiver = rs3.getString("ord_receiver");
+			String ord_rcv_phone = rs3.getString("ord_rcv_phone");
+			String ord_rcv_address = rs3.getString("ord_rcv_address");
+			String ord_pay = rs3.getString("ord_pay");
+			String ord_bank = rs3.getString("ord_bank");
+			String ord_card_no = rs3.getString("ord_card_no");
+			String ord_card_pass = rs3.getString("ord_card_pass");
+			String ord_message = rs3.getString("ord_message");
+			String ord_email = rs3.getString("m_email");
 	%>
 	<div id="backbody">
 		<div id="frame">
