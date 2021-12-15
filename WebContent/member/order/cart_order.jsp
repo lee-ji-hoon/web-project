@@ -11,6 +11,7 @@
 			$("#domainName").val($(this).val());
 		});
 	});
+	
 </script>
 
 <%
@@ -38,11 +39,11 @@ try { //
 %>
 
 <%
-if (!rs.next() && !rs7.next()) {
+	if (!rs.next() && !rs7.next()) {
 %>
-장바구니가 비었습니다.
+	장바구니가 비었습니다.
 <%
-} else {
+	} else {
 %>
 
 <div id="backbody">
@@ -90,6 +91,8 @@ if (!rs.next() && !rs7.next()) {
 					double reserves_t = 0;
 					double total_reserves_p = 0;
 					double total_reserves_t = 0;
+					int delivery = 2500;
+					int delivery_total = 0;
 
 					while (rs2.next()) {
 						String p_id = rs2.getString("p_id");
@@ -107,10 +110,13 @@ if (!rs.next() && !rs7.next()) {
 
 						int amount = p_price * ct_qty;
 						total = total + amount;
+						delivery_total = delivery_total + delivery;
 						reserves_p = total * 0.005;
 						total_reserves_p = total_reserves_p + reserves_p;
-						real_total = total + 2500;
+						real_total = total + delivery_total;
+						
 					%>
+		
 					<c:set var="reserves_p" value="<%=reserves_p%>" />
 
 					<tbody>
@@ -134,7 +140,7 @@ if (!rs.next() && !rs7.next()) {
 								<fmt:formatNumber type="number" pattern="0" value="${ ((reserves_p*10) - ((reserves_p*10)%1)) * (1/10)} " />
 								원
 							<td>기본배송</td>
-							<td>2,500원</td>
+							<td>2,500 원</td>
 							<td>
 								<span></span>
 								<fmt:formatNumber value="<%=amount%>" type="number" />
@@ -188,11 +194,11 @@ if (!rs.next() && !rs7.next()) {
 							<td>
 								<span style="padding-left: 10px;">
 									성인 :
-									<fmt:formatNumber value="<%=t_price_adult%>" type="number" />
+									<fmt:formatNumber value="<%=t_price_adult%>" type="number" /> 원
 									<br> 청소년 :
-									<fmt:formatNumber value="<%=t_price_teen%>" type="number" />
+									<fmt:formatNumber value="<%=t_price_teen%>" type="number" /> 원
 									<br> 어린이 :
-									<fmt:formatNumber value="<%=t_price_child%>" type="number" />
+									<fmt:formatNumber value="<%=t_price_child%>" type="number" /> 원
 								</span>
 							</td>
 							<td style="width: 80px;">
@@ -204,7 +210,7 @@ if (!rs.next() && !rs7.next()) {
 								<fmt:formatNumber type="number" pattern="0" value="${ ((reserves_t*10) - ((reserves_t*10)%1)) * (1/10)} " />
 								원
 							<td>이메일 발송</td>
-							<td>2,500원</td>
+							<td>0 원 </td>
 							<td>
 								<span></span>
 								<fmt:formatNumber value="<%=amount_t%>" type="number" />
@@ -228,7 +234,7 @@ if (!rs.next() && !rs7.next()) {
 									<fmt:formatNumber value="<%=total%>" type="number" />
 								</span>
 								+
-								<span>배송비 2,500 = 합계</span>
+								<span>배송비 <fmt:formatNumber value="<%=delivery_total%>" type="number" /> = 합계</span>
 								&nbsp;
 								<span style="font-weight: bold; font-size: 16px;">
 									<fmt:formatNumber value="<%=real_total%>" type="number" />
@@ -280,7 +286,6 @@ if (!rs.next() && !rs7.next()) {
 			<span style="font-size: 12pt; display: inline-block; padding-bottom: 10px;">&nbsp;구매자정보</span>
 			<table class="delivery">
 				<thead>
-
 					<tr>
 						<td class="deliverytd">
 							보내시는 분&nbsp;
@@ -322,10 +327,10 @@ if (!rs.next() && !rs7.next()) {
 						<td>
 							<input type="radio" name="bb" checked />
 							<label>회원정보와 동일</label>
-							<input type="radio" name="bb" />
+							<input type="radio" onclick="test();" name="bb" />
 							<label>새로운 배송지</label>
 							&nbsp;
-							<button tpye="button" style="background-color: #fff; cursor: pointer; border-width: 0px;"></button>
+							<button type="button" style="background-color: #fff; cursor: pointer; border-width: 0px;"></button>
 						</td>
 					</tr>
 					<tr>
@@ -399,9 +404,9 @@ if (!rs.next() && !rs7.next()) {
 			<!-- 결제 예정 금액 테이블 -->
 			<table class="calcualtion2">
 				<tr>
-					<th width=290px;>총 상품 금액</th>
-					<th width=290px;>총 배송비</th>
-					<th width=290px;>적립금 사용<br>
+					<th width=280px;>총 상품 금액</th>
+					<th width=280px;>총 배송비</th>
+					<th width=310px;;>적립금 사용<br>
 						<span style="font-size: 9pt; color: gray;">
 							<span>사용가능 포인트 :</span>
 							<span name="left_pnt"><%=reserves%>p</span>
@@ -421,7 +426,7 @@ if (!rs.next() && !rs7.next()) {
 					</td>
 					<td>
 						+
-						<span class="price">2,500</span>
+						<span class="price"><fmt:formatNumber value="<%=delivery_total%>" type="number" /></span>
 						원
 					</td>
 					<td>
