@@ -45,6 +45,7 @@
 		while (rs.next()) {
 			
 			String ord_date = rs.getString("ord_date");
+			String ord_date2 = ord_date.substring(0,13);
 			int ord_no = rs.getInt("ord_no");
 			
 			String jsql2 = "select p_id from order_product where ord_no = ?";
@@ -83,7 +84,7 @@
 						</td>
 						<td style = "text-align : center;">
 							<a>
-								<%=ord_date%>
+								<%=ord_date2%>
 							</a>
 						</td>
 						<td id = 'review_write_btn'>
@@ -140,7 +141,7 @@
 							</td>
 							<td style = "text-align : center;">
 								<a>
-									<%= ord_date %>
+									<%= ord_date2 %>
 								</a>
 							</td>
 							<td id = 'review_write_btn'>

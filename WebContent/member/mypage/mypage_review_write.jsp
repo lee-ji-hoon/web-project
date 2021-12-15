@@ -110,7 +110,7 @@
 				<tr>
 					<td id = 'mypage_r_in_title'>리뷰</td>
 					<td>
-						<textarea name="r_content" rows="10" cols="40" placeholder="200자 내로 작성해주세요."></textarea>
+						<textarea name="r_content" rows="10" cols="40" placeholder="200자 내로 작성해주세요." style="resize : none;"></textarea>
 					</td>
 				</tr>
 			
