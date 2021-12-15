@@ -3,7 +3,7 @@
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="../../css/style-cart.css?v123123">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script language="javascript" src="../../js/order.js?v1123"></script>
+<script language="javascript" src="../../js/order.js?v123>"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
