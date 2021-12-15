@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %>
 <%@ include file="../../layout/mypage_header.jsp"%>
-<link rel="stylesheet" type="text/css" href="../../css/style-table.css?v=123">
+<link rel="stylesheet" type="text/css" href="../../css/table_style_ver2.css?abcd">
 <!--  menu list 시작  -->
     <section id="menu">
 		 <ul class="hbox-menu">
@@ -45,14 +45,13 @@ try {
 %>
 
 	<center>
-	<font  size='6'>
-		<b>[<%=sid %>님의 상세 정보] </b>
-	</font>
 	<p>
-		<table border="2" cellpadding="10"
-		style="font-size: 10pt; font-family: 맑은 고딕" class="detail">
+		<table class="detail">
 		<tr>
-			<th>ID</th>
+			<th colspan="2" class="table_title"><%=sid %>님의 회원 정보</th>
+		</tr>
+		<tr>
+			<th>아이디</th>
 			<td><%=id%></td>
 		</tr>
 		<tr>
@@ -99,8 +98,8 @@ try {
     </table>
 	<p>
 
-<a href="mypage_member_update.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">회원정보 수정</a>&nbsp;&nbsp;&nbsp;
-<a href="mypage_member_delete.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕">회원정보 탈퇴</a>
+<a href="mypage_member_update.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕; color : white; border : none;" class ="btn btn-large btn-primary">정보 수정</a>&nbsp;&nbsp;&nbsp;
+<a href="mypage_member_delete.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕; color : white; background-color : #CA4444; border : none;" class ="btn btn-large btn-primary">회원 탈퇴</a>
 			
 
 </center>

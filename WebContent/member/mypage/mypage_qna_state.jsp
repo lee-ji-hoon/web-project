@@ -14,8 +14,15 @@
 
 				Class.forName("org.gjt.mm.mysql.Driver");
 				Connection con = DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
+				Boolean state = Boolean.parseBoolean(request.getParameter("state"));
 				
-				String jsql2 = "SELECT * FROM qna where m_id = ? AND qna_answer_or_not = '1'";
+				String jsql = "SELECT * FROM qna where m_id = ? AND qna_answer_or_not = ?";
+				PreparedStatement pstmt = con.prepareStatement(jsql);
+				pstmt.setString(1, sid);
+				pstmt.setBoolean(2, state);
+				ResultSet rs = pstmt.executeQuery();
+				
+				String jsql2 = "SELECT * FROM qna where m_id = ? AND qna_answer_or_not = 1";
 				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 				pstmt2.setString(1, sid);
 				ResultSet rs2 = pstmt2.executeQuery();
@@ -48,6 +55,7 @@
 		    <li><a href="${pageContext.request.contextPath}/member/mypage/mypage_review.jsp">리뷰</a></li>
 	    </ul>
 	</section>
+	
 	<div align="center">
 	<ul class="mylist">
 		<li>
@@ -56,12 +64,12 @@
 			</a>
 		</li>
 		<li>
-			<a href="mypage_qna_state.jsp?state=true">
+			<a href="mypage_qna_state.jsp?state=1">
 				답변완료(<%=count2%>)
 			</a>
 		</li>
 		<li>
-			<a href="mypage_qna_state.jsp?state=false">
+			<a href="mypage_qna_state.jsp?state=0">
 				답변대기(<%=count3%>)
 			</a>
 		</li>
@@ -77,14 +85,9 @@
 				<td align=center width = 200>답변 여부</td>
 				<td align=center width = 150></td>
 			</tr>
-
-
-			
+					
 			<%
-				String jsql = "SELECT * FROM qna where m_id = ?";
-				PreparedStatement pstmt = con.prepareStatement(jsql);
-				pstmt.setString(1, sid);
-				ResultSet rs = pstmt.executeQuery();
+				
 
 				while (rs.next()) {
 					int qna_no1 = rs.getInt("qna_no");
