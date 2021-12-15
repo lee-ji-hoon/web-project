@@ -161,7 +161,7 @@ DecimalFormat dFormat = new DecimalFormat("###,###");		//숫자를 천단위 구
 						
 				%>
 				<tr>
-					<td><a href="../ticket/tickets_detail.jsp?t_id=<%=t_id%>"><img src="../../img/tickets/<%=t_id%>.jpg"width="50" height="50"></a></td>
+					<td><a href="../ticket/tickets_detail.jsp?t_id=<%=t_id%>"><img src="../../img/tickets/<%=t_id%>.jpeg"width="50" height="50"></a></td>
 					<td>
 						<a href="../ticket/tickets_detail.jsp?t_id=<%=t_id%>"style="color:black">
 							<%=t_name %> <br>

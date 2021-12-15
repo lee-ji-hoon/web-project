@@ -148,7 +148,23 @@ function check_val()             // 주문서의 미입력항목 부분을 체�
 		document.form.cardNo.focus();
 		return false;
 	}
-	document.form.submit();
+	swal({
+	  title: "구매하시겠습니까",
+	  text: "다시 확인을 원하시면 아니요를 눌러주세요",
+	  icon: "info",
+	  buttons: {
+		text: "예",	
+		cancel: "아니요",
+	 },
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	  if (willDelete) {
+		document.form.submit();
+	  } else {
+	    swal.close();
+	  }
+	});
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

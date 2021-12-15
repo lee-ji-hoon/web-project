@@ -3,7 +3,7 @@
 <%@ include file="../../layout/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="../../css/style-cart.css?v123123">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script language="javascript" src="../../js/order.js?v12233"></script>
+<script language="javascript" src="../../js/order.js?v1123"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -188,7 +188,7 @@ try { //
 					<tbody>
 						<tr style="height: 90x; background-color: #fff;">
 							<td style="border-left: none;">
-								<img style="width: 150px; height: 100px;" src="../../img/tickets/<%=t_id%>.jpg">
+								<img style="width: 150px; height: 100px;" src="../../img/tickets/<%=t_id%>.jpeg">
 							</td>
 							<td style="text-align: center; padding-left: 10px; border-left: none; font-weight: bold;"><%=t_name%></td>
 							<td>
