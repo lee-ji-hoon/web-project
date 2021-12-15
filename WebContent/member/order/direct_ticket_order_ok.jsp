@@ -6,21 +6,6 @@
 
 <%@ page import="java.sql.*"%>
 
-<style type="text/css">
-a:link {
-	text-decoration: none;
-	color: black;
-}
-a:visited {
-	text-decoration: none;
-	color: black;
-}
-a:hover {
-	text-decoration: underline;
-	color: gray;
-}
-</style>
-
 <%
 try {
 	String DB_URL = "jdbc:mysql://localhost:3306/aqua_project";
@@ -71,33 +56,30 @@ try {
 	else
 		o_num = 1; 
 
-	String jsql2 = "select p_id, ct_qty from temp_cart where ct_no = ?";
-	PreparedStatement pstmt2 = con.prepareStatement(jsql2);
-	pstmt2.setString(1, ct_no);
+	String jsql5 = "select t_id, ct_qty_a, ct_qty_t, ct_qty_c from temp_cart_t where ct_no = ?";
+	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
+	pstmt5.setString(1, ct_no);
 
-	ResultSet rs2 = pstmt2.executeQuery();
+	ResultSet rs5 = pstmt5.executeQuery();
 
 	
-	rs2.next();
-	
-	String p_id = rs2.getString("p_id");
-	int ct_qty = rs2.getInt("ct_qty");
+	while (rs5.next()) 
+	{
+		String t_id = rs5.getString("t_id"); 
+		int ct_qty_a = rs5.getInt("ct_qty_a");
+		int ct_qty_t = rs5.getInt("ct_qty_t");
+		int ct_qty_c = rs5.getInt("ct_qty_c");
 
-	String jsql3 = "INSERT INTO order_product (ord_no, p_id, ord_qty) VALUES (?,?,?)";
-	PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-	pstmt3.setString(1, Integer.toString(o_num));
-	pstmt3.setString(2, p_id);
-	pstmt3.setInt(3, ct_qty);
+		String jsql6 = "INSERT INTO order_product (ord_no, p_id, ord_qty_a, ord_qty_t, ord_qty_c) VALUES (?,?,?,?,?)";
+		PreparedStatement pstmt6 = con.prepareStatement(jsql6);
+		pstmt6.setString(1, Integer.toString(o_num));
+		pstmt6.setString(2, t_id);
+		pstmt6.setInt(3, ct_qty_a);
+		pstmt6.setInt(4, ct_qty_t);
+		pstmt6.setInt(5, ct_qty_c);
 
-	pstmt3.executeUpdate();
-		
-	String jsql4 = "UPDATE product SET p_stock = p_stock - ? WHERE p_id = ? ";
-	PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-	pstmt4.setInt(1, ct_qty);
-	pstmt4.setString(2, p_id);
-	pstmt4.executeUpdate();
-	
-	
+		pstmt6.executeUpdate();
+	}
 	String jsql7 = "INSERT INTO order_info (ord_no, m_id, ord_date, ord_receiver, ord_rcv_address, ord_rcv_phone, ord_pay, ord_bank, ord_card_no, ord_card_pass, m_email, ord_message)  VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	java.util.Date date = new java.util.Date();
 	String oDate = date.toLocaleString();
@@ -115,7 +97,6 @@ try {
 	pstmt7.setString(10, oCardPass);
 	pstmt7.setString(11, oEmail);
 	pstmt7.setString(12, oMassage);
-
 	pstmt7.executeUpdate();
 	
 	if(usePnt == null){

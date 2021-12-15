@@ -328,7 +328,7 @@ try {
 		<tr>
 			<td class="p_img" colspan=2 align="center">
 				<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
-					<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=250px height=200px>
+					<img src="../../img/tickets/<%=p_id%>.jpeg" border=0 width=250px height=200px>
 				</a>
 
 			</td>
