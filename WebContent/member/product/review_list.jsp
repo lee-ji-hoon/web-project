@@ -44,7 +44,6 @@
 					</tr>
 					<%
 					String p_name = rs.getString("p_name");
-					String p_id2 = rs.getString("p_id");
 					
 					String jsql3 = "SELECT * FROM review where r_product = ?";
 					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
@@ -98,43 +97,42 @@
 				<%
 					rs2.next();
 					String t_name = rs2.getString("t_name");
-					String t_id2 = rs2.getString("t_id");
 					
-					String jsql3 = "SELECT * FROM review where r_product = ?";
-					PreparedStatement pstmt3 = con.prepareStatement(jsql3);
-					pstmt3.setString(1, t_name);
-					ResultSet rs3 = pstmt3.executeQuery();
+					String jsql4 = "SELECT * FROM review where r_product = ?";
+					PreparedStatement pstmt4 = con.prepareStatement(jsql4);
+					pstmt4.setString(1, t_name);
+					ResultSet rs4 = pstmt4.executeQuery();
 					
-					while(rs3.next()){
-						String r_writer = rs3.getString("r_writer");
-						String r_product = rs3.getString("r_product");
-						String r_date = rs3.getString("r_date");
-						String d_satisfy = rs3.getString("d_satisfy");
-						String p_satisfy = rs3.getString("p_satisfy");
-						String r_content = rs3.getString("r_content");
+					while(rs4.next()){
+						String r_writer2 = rs4.getString("r_writer");
+						String r_product2 = rs4.getString("r_product");
+						String r_date2 = rs4.getString("r_date");
+						String d_satisfy2 = rs4.getString("d_satisfy");
+						String p_satisfy2 = rs4.getString("p_satisfy");
+						String r_content2 = rs4.getString("r_content");
 					
 			%>
 						<tr id = 'review_p_list_content_line'>
 							<td>
-								<%=r_date%>
+								<%=r_date2%>
 							</td>
 							<td>
-								<%=r_writer%>
+								<%=r_writer2%>
 							</td>
 							<td>
-								<%=r_product%>
+								<%=r_product2%>
 							</td>
 							<td>
-								<%=d_satisfy%>
+								<%=d_satisfy2%>
 							</td>
 							<td>
-								<%=p_satisfy%>
+								<%=p_satisfy2%>
 							</td>
 						</tr>
 						<tr id = 'review_p_list_content_down_line'>
 							<td width="100"><b>후기 내용</b></td>
 							<td colspan="4" align="left"  height = 20 style=" text-overflow:ellipsis; overflow:hidden">
-								<%=r_content%>
+								<%=r_content2%>
 							</td>
 						</tr>
 					<%
