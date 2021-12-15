@@ -48,20 +48,18 @@
 }
 
 /* 마이 페이지 리뷰 작성 */ 
-
-#mypage_r_in_table{
-	border : 2px solid black
+#mypage_r_in_table tr{
+	border-bottom : 1px solid #ccc;
 }
+
 #mypage_r_in_title{
 	font-weight : bold;
-	background : #ececec;
 	width : 150px;
 	height : 50px;
-	text-align : center;
+	text-align : left;
 }
 #mypage_r_in_table td{
-	text-align : center;
-	border : 1px solid black;
+	text-align : left;
 	padding : 10px;
 }
 #mypage_r_in_table textarea{
@@ -72,6 +70,7 @@
 	vertical-align: middle;
 	width : 200px;
 	height : 30px;
+	padding : 10px;
 }
 #mypage_r_in_btn{
 	font-size : 13pt;

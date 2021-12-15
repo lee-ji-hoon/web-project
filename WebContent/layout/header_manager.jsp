@@ -63,6 +63,7 @@ String manager_id = (String) session.getAttribute("manager_id");
 
 </head>
 
+
 <body>
 
 	<header id="header">
