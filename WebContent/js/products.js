@@ -210,7 +210,6 @@ function direct_product_order() {  //  "구매하기 버튼 클릭시"
 	    swal.close();
 	  }
 	});
-	
 }
 
 function add_to_cart() {

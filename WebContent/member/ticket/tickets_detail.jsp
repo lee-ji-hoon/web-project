@@ -3,6 +3,7 @@
 <%@ page import="java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../layout/header.jsp"%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="../css/style-product.css">
 <link rel="stylesheet" type="text/css"
 	href="../../css/review_style.css?aa">
@@ -289,4 +290,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-<script type="text/javascript" src="../../js/tickets.js?aa"></script>
+<script type="text/javascript" src="../../js/tickets.js?123a123123a"></script>

@@ -146,7 +146,8 @@ String sid = (String) session.getAttribute("sid");
 									</c:otherwise>
 								</c:choose>
 
-							</ul></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
