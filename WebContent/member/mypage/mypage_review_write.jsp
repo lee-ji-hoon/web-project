@@ -4,7 +4,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="../../layout/mypage_header.jsp"%>
-<link rel="stylesheet" type="text/css" href="../../css/review_style.css?abc">
+<link rel="stylesheet" type="text/css" href="../../css/review_style.css?abcd">
 	<%
 	Date nowTime = new Date();
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
@@ -22,7 +22,7 @@
 	</section>
 	<div align = "center">
 	<br>
-		<h3>aa</h3>
+		<h4>고객님의 소중한 리뷰를 남겨주세요.</h4>
 	<br>
 	<%
 	try {
@@ -48,7 +48,7 @@
 		
 		%>
 		<form method="post" action="mypage_review_write_result.jsp">
-			<table id = 'mypage_r_in_table'border="2" cellpadding="10" style="font-size: 10pt; font-family: 맑은 고딕">
+			<table id = 'mypage_r_in_table' style="font-size: 10pt; font-family: 맑은 고딕">
 		<%
 		if(rs.next()){
 			String p_name = rs.getString("p_name");
