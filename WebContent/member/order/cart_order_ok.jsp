@@ -140,11 +140,11 @@ try {
 		pstmt8.setString(3, sid);
 		pstmt8.executeUpdate();
 	}
+	response.sendRedirect("cart_all_delete.jsp?case=1.jsp"); //  forward 액션태그를 사용해도 동일함
 } catch (Exception e) {
 	out.println(e);
 }
 %>
-<jsp:forward page="cart_all_delete.jsp?case=1.jsp" />
 <%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>
