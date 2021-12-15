@@ -150,3 +150,16 @@ function check_val()             // 주문서의 미입력항목 부분을 체�
 	}
 	document.form.submit();
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  새로운 배송지 클릭 및 회원정보와 동일 일 때 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function test() {
+	document.getElementById("receiver").value = '';
+	document.getElementById("rcvAddress").value = '';
+	document.getElementById("phone1").value = '';
+	document.getElementById("phone2").value = '';
+	document.getElementById("phone3").value = '';
+	document.getElementById("phone3").value = '';
+}
