@@ -63,8 +63,9 @@
 					</td>
 				</tr>
 				<tr id = 'abu_qna_subtitle_line'>
-					<td colspan ="2">
-						<textarea name="qna_content" rows="15" cols="90" placeholder=" 내용을 적어주세요." style = "align:center;"></textarea>
+					<td colspan ="2" valign="middle" align="center">
+					<br>
+						<textarea name="qna_content" rows="15" cols="90" placeholder=" 내용을 적어주세요." style = "align:center; resize : none"></textarea>
 					</td>
 				</tr>
 			</table>
