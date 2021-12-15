@@ -2,7 +2,7 @@
 <%@ page import="java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../../layout/header.jsp"%>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="../../css/style-favorite.css">
 <link rel="stylesheet" href="../../css/style-index.css">
 <link rel="stylesheet" href="../../css/style-common.css">
@@ -37,11 +37,11 @@
 <div class="frame">
 	<header>
 		<div id="header-first">
-			<form id="headerSearchForm" method="POST" action="<%=request.getContextPath()%>/product?cmd=search">
-				<button class="headerSearchForm-btn">
+			<form id="headerSearchForm" method="POST" action="<%=request.getContextPath()%>/member/product/goods_group_search.jsp">
+				<button class="headerSearchForm-btn" onClick="keyword_check();">
 					<i class="tiny material-icons">search</i>
 				</button>
-				<input name="keyword" placeholder="상품명으로 검색" class="headerSearchForm-input" />
+				<input name="keyword" placeholder="상품명으로 검색" class="headerSearchForm-input" value="" />
 			</form>
 	</header>
 	<!-- main 타이틀 시작 -->
