@@ -148,5 +148,34 @@ function check_val()             // 주문서의 미입력항목 부분을 체�
 		document.form.cardNo.focus();
 		return false;
 	}
-	document.form.submit();
+	swal({
+	  title: "구매하시겠습니까",
+	  text: "다시 확인을 원하시면 아니요를 눌러주세요",
+	  icon: "info",
+	  buttons: {
+		text: "예",	
+		cancel: "아니요",
+	 },
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	  if (willDelete) {
+		document.form.submit();
+	  } else {
+	    swal.close();
+	  }
+	});
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  새로운 배송지 클릭 및 회원정보와 동일 일 때 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function test() {
+	document.getElementById("receiver").value = '';
+	document.getElementById("rcvAddress").value = '';
+	document.getElementById("phone1").value = '';
+	document.getElementById("phone2").value = '';
+	document.getElementById("phone3").value = '';
+	document.getElementById("phone3").value = '';
 }

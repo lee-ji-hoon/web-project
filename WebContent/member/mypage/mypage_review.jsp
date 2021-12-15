@@ -45,6 +45,7 @@
 		while (rs.next()) {
 			
 			String ord_date = rs.getString("ord_date");
+			String ord_date2 = ord_date.substring(0,13);
 			int ord_no = rs.getInt("ord_no");
 			
 			String jsql2 = "select p_id from order_product where ord_no = ?";
@@ -83,7 +84,7 @@
 						</td>
 						<td style = "text-align : center;">
 							<a>
-								<%=ord_date%>
+								<%=ord_date2%>
 							</a>
 						</td>
 						<td id = 'review_write_btn'>
@@ -129,7 +130,7 @@
 						<tr id = 'review_list_content_line' height = 130>
 							<td>
 								<a href = "../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
-									<img src="../../img/tickets/<%=p_id%>.jpg" border=0 width=80px
+									<img src="../../img/tickets/<%=p_id%>.jpeg" border=0 width=80px
 								height=96px>
 								</a>
 							</td>
@@ -140,7 +141,7 @@
 							</td>
 							<td style = "text-align : center;">
 								<a>
-									<%= ord_date %>
+									<%= ord_date2 %>
 								</a>
 							</td>
 							<td id = 'review_write_btn'>

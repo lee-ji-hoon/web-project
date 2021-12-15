@@ -303,9 +303,10 @@ try {
 					<td width="200">후기 내용</td>
 				</tr>
 				<%
-				String jsql2 = "SELECT * FROM review WHERE r_category = ? order by r_no desc limit 5";
+				String jsql2 = "SELECT * FROM review WHERE r_category = ? AND r_product = ? order by r_no desc limit 5";
 				PreparedStatement pstmt2 = con.prepareStatement(jsql2);
 				pstmt2.setString(1, product);
+				pstmt2.setString(2, p_name);
 
 				ResultSet rs2 = pstmt2.executeQuery();
 				while (rs2.next()) {

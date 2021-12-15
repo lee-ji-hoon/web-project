@@ -10,8 +10,12 @@
 				<td colspan = "3" width = "700">QnA</td>
 			</tr>
 			<tr>
-				<td colspan='2' style = "border-top : none;">
+				<td colspan='3' style = "border-top : none;">
 					<input id = "mp_qna_detail_list_btn" type="button" value = "목록 보기" onClick="location.href='mypage_qna.jsp'">
+				</td>
+			</tr>
+			<tr>
+				<td colspan='3' style = "border-top : none;">
 				</td>
 			</tr>
 			<%

@@ -15,7 +15,7 @@
 			<h4 class="title">aqua planet 세일 공지</h4>
 			<div class="cont">
 				<p>
-					<img src="${pageContext.request.contextPath}/img/popup.jpg" width=500 height=500 usemap="#popup"
+					<img src="${pageContext.request.contextPath}/img/popup.jpg" width=400 height=500 usemap="#popup"
 						alt="event page">
 				</p>
 			</div>
