@@ -108,7 +108,7 @@ background-size: cover; padding-top : 280px; text-align: center;
 #parade{padding: 50px 0;}
 #parade .tab{position: relative; padding: 15px 0; text-align: center;}
 
-#parade .tab .title{ margin: -100px 0; display: block;  padding: 30px 10px; font: bold 60px '맑은고딕'; text-align: center; color: #ffffff; }
+#parade .tab .title{ margin: -100px 0; display: block;  padding: 35px 10px; font: bold 60px '맑은고딕'; text-align: center; color: #ffffff; }
 #parade .tab>li>.pannel{
     position: absolute; left: 100px; top: 60px; 
     width: 1000px; height: 450px;
