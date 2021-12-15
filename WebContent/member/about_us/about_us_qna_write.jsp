@@ -15,7 +15,7 @@
 			<table border = "0">
 				
 				<tr id = 'abu_qna_info_title' align=center>
-					<td colspan ="2" width = 800>궁금하신 점을 적어주시면 성심성의 껏 답변해드리겠습니다.</td>
+					<td colspan ="2" width = 800 height = 80>궁금하신 점을 적어주시면 성심성의 껏 답변해드리겠습니다.</td>
 				</tr>
 				<tr id = 'abu_qna_title_under' >
 					<td colspan = "2">
