@@ -58,7 +58,7 @@ try {
 <center>
 	<ul class="mylist">
 		<li style="background-color: #d3d3d3">
-			<a href="manager_order.jsp">
+			<a href="manager_order_select .jsp">
 				전체보기(<%=sum%>)
 			</a>
 		</li>
@@ -276,14 +276,14 @@ try {
 		<tr>
 			<td class="p_img" colspan=2 align="center">
 				<div>
-					<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
-						<img src="../../img/product/<%=p_id%>.jpg" width=250px height=200px>
+					<a href="../../member/product/goods_select.jsp?p_id=<%=p_id%>">
+						<img src="../../img/product/<%=p_id%>.jpg"  border=0 width= 75px; height= 100px>
 					</a>
 				</div>
 
 			</td>
 			<th colspan=3>
-				<a href="../product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a>
+				<a href="../../member/product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a>
 			</th>
 			<td colspan=2>
 				<fmt:formatNumber value="<%=p_price%>" />
@@ -327,13 +327,13 @@ try {
 	<tbody>
 		<tr>
 			<td class="p_img" colspan=2 align="center">
-				<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
-					<img src="../../img/tickets/<%=p_id%>.jpeg" border=0 width=250px height=200px>
+				<a href="../../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
+					<img src="../../img/tickets/<%=p_id%>.jpeg" border=0  width= 75px; height= 100px>
 				</a>
 
 			</td>
 			<th colspan=3>
-				<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a>
+				<a href="../../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a>
 			</th>
 			<td colspan=2>
 				성인 :

@@ -122,7 +122,7 @@ try { //
 					<tbody>
 						<tr style="height: 90x; background-color: #fff;">
 							<td style="border-left: none;">
-								<img style="width: 150px; height: 100px;" src="../../img/product/<%=p_id%>.jpg">
+								<img style="width: 75px; height: 100px;" src="../../img/product/<%=p_id%>.jpg">
 							</td>
 							<td style="text-align: center; padding-left: 10px; border-left: none; font-weight: bold;"><%=p_name%></td>
 							<td>
@@ -188,7 +188,7 @@ try { //
 					<tbody>
 						<tr style="height: 90x; background-color: #fff;">
 							<td style="border-left: none;">
-								<img style="width: 150px; height: 100px;" src="../../img/tickets/<%=t_id%>.jpeg">
+								<img style="width: 75px; height: 100px;" src="../../img/tickets/<%=t_id%>.jpeg">
 							</td>
 							<td style="text-align: center; padding-left: 10px; border-left: none; font-weight: bold;"><%=t_name%></td>
 							<td>
