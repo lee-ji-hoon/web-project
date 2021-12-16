@@ -12,6 +12,15 @@
 		});
 	});
 	
+	function goPopup() {
+		var pop = window.open("../join/juso_popup.jsp", "pop",
+				"width=570,height=420, scrollbars=yes, resizable=yes");
+	}
+
+	function jusoCallBack(roadFullAddr) {
+		$("#Addr").val(roadFullAddr);
+	}
+	
 </script>
 
 <%
@@ -45,7 +54,7 @@ try { //
 <%
 	} else {
 %>
-
+<input type=hidden name=ct_no value=<%=ct_no%>/>
 <div id="backbody">
 	<div id="frame">
 		<form name="form" method="Post" action="cart_order_ok.jsp">
@@ -292,7 +301,7 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" value="<%=name%>" style="border:none" readonly />
+							<%=name%>
 						</td>
 					</tr>
 					<tr>
@@ -301,7 +310,7 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" step="margin-bottom: 10px;" id="Addr" size="50" value="<%=address%>" style="border:none" readonly>
+							<%=address%>
 						</td>
 					</tr>
 					<tr>
@@ -310,9 +319,7 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" size="3" maxlength="4" value="<%=phoneArr[0]%>" style="border:none" readonly>-
-							<input type="text" size="4" maxlength="4" value="<%=phoneArr[1]%>" style="border:none" readonly>-
-							<input type="text" size="4" maxlength="4" value="<%=phoneArr[2]%>" style="border:none" readonly>
+							<%=phone %>
 						</td>
 					</tr>
 				</thead>
@@ -348,9 +355,9 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" step="margin-bottom: 10px;" id="Addr_" size="50" name="rcvAddress" value="<%=address%>">
+							<input type="text" step="margin-bottom: 10px;" id="Addr" size="50" name="rcvAddress" value="<%=address %>" />
 							&nbsp;&nbsp;
-							<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup_()";>우편번호 찾기</button>
+							<!--<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup()";>우편번호 찾기</button> -->
 						</td>
 					</tr>
 					<tr>
