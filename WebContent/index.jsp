@@ -94,11 +94,11 @@
         <h2 class="title">아쿠아플라넷</h2>
         <p class="txt">아쿠아플라넷의 자세한 정보를 확인하실 수 있습니다.</p>
             <div class="box">
-                <div class="pic"><img src="img/5.jpg" alt=""></div>
+                <div class="pic"><img src="" alt=""></div>
                 <div class="info">
                     <strong>이용요금 안내</strong>
                     <p>입장권 및 이용안내 서비스 안내입니다.</p>
-                    <a href="#" class="btn"><span>더보기</span></a>
+                    <a href="html/about_us_cost.jsp" class="btn"><span>더보기</span></a>
                 </div>
             </div>
             <div class="box">
@@ -106,15 +106,15 @@
                 <div class="info">
                     <strong>프로그램 안내</strong>
                     <p>아쿠아리움 프로그램 안내 입니다.</p>
-                    <a href="#" class="btn"><span>더보기</span></a>
+                    <a href="html/themeA.jsp" class="btn"><span>더보기</span></a>
                 </div>
             </div>
             <div class="box">
-                <div class="pic"><img src="img/img.jpg" alt=""></div>
+                <div class="pic"><img src="" alt=""></div>
                 <div class="info">
                     <strong>EVENT</strong>
                     <p>아쿠아플라넷의 다양한 이벤트를 경험해 보세요.</p>
-                    <a href="#" class="btn"><span>더보기</span></a>
+                    <a href="${pageContext.request.contextPath}/member/product/goods_group.jsp" class="btn"><span>더보기</span></a>
                 </div>
             </div>
             

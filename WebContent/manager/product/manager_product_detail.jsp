@@ -124,7 +124,9 @@ try {
 </div>
 <!-- 상단 박스 끝 -->
 
-
+	<div id="detail-img-text-box">
+		<img src="../../img/product/<%=p_id%>_description.jpg">
+	</div>
 </div>
 </body>
 <%

@@ -38,6 +38,11 @@ try {
 	PreparedStatement pstmt5 = con.prepareStatement(jsql5);
 	pstmt5.setString(1, sid);
 	ResultSet rs5 = pstmt5.executeQuery();
+	
+	String jsql9 = "SELECT * FROM member WHERE m_id = ?";
+	PreparedStatement pstmt9 = con.prepareStatement(jsql9);
+	pstmt9.setString(1, sid);
+	ResultSet rs9 = pstmt9.executeQuery();
 
 	int count2 = 0;
 	int count3 = 0;
@@ -133,56 +138,93 @@ try {
 	<br>
 	<p>
 		<%
-		while (rs.next()) {
-			String m_id = rs.getString("m_id");
-			int ord_no = rs.getInt("ord_no");
-			String ord_date = rs.getString("ord_date");
-			String ord_receiver = rs.getString("ord_receiver");
-			String ord_rcv_address = rs.getString("ord_rcv_address");
-			String ord_rcv_phone = rs.getString("ord_rcv_phone");
-			String ord_pay = rs.getString("ord_pay");
-			String ord_bank = rs.getString("ord_bank");
-			String ord_card_no = rs.getString("ord_card_no");
-			String ord_card_pass = rs.getString("ord_card_pass");
-			String ord_state = rs.getString("ord_state");
+		while (rs9.next()) {
+			String address = rs9.getString("m_address");
+			String phone = rs9.getString("m_phone");
+			while (rs.next()) {
+				String m_id = rs.getString("m_id");
+				int ord_no = rs.getInt("ord_no");
+				String ord_date = rs.getString("ord_date");
+				String ord_receiver = rs.getString("ord_receiver");
+				String ord_rcv_address = rs.getString("ord_rcv_address");
+				String ord_rcv_phone = rs.getString("ord_rcv_phone");
+				String ord_pay = rs.getString("ord_pay");
+				String ord_bank = rs.getString("ord_bank");
+				String ord_card_no = rs.getString("ord_card_no");
+				String ord_card_pass = rs.getString("ord_card_pass");
+				String ord_state = rs.getString("ord_state");
+				String ord_email = rs.getString("m_email");
+				String ord_message = rs.getString("ord_message");
 		%>
 	
-	<table border="2" width="1000px;">
+	<table border="2" width="1200px">
 		주문번호:
 		<%=ord_no%>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="#4B89DC">
-						배송자 정보 </font></th>
+				<th colspan="12" style="font-size: 16px">
+					<font color="#4B89DC"> 구매자 정보 </font>
+				</th>
 			</tr>
 		</thead>
 		<thead>
 			<tr>
 				<th>주문자 아이디</th>
 				<th>주문번호</th>
-				<th>주문일자</th>
-				<th>수령자</th>
-				<th>수령자 주소</th>
-				<th>수령자 번호</th>
-				<th>가격</th>
-				<th>결제 은행</th>
-				<th>카드 번호</th>
-				<th>카드 비밀번호</th>
-				<th><b>[배송상태]</b></th>
-				<th><b>[수정]</b></th>
+				<th colspan="2">주문일자</th>
+				<th colspan="2">휴대폰 번호</th>
+				<th colspan="4">주소</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<th><%=m_id%></th>
 				<td><%=ord_no%></td>
-				<td><%=ord_date%></td>
+				<td colspan="2"><%=ord_date%></td>
+				<td colspan="2"><%=phone%></td>
+				<td colspan="4"><%=address%></td>
+			</tr>
+		</tbody>
+
+		<thead>
+			<tr>
+				<td colspan="12">&nbsp</td>
+			</tr>
+		</thead>
+
+		<thead>
+			<tr>
+				<th colspan="12" style="font-size: 16px">
+					<font color="#4B89DC"> 수령인 정보 </font>
+				</th>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th>수령자</th>
+				<th width="350px">수령자 주소</th>
+				<th width="150px;">수령자 번호</th>
+				<th>가격</th>
+				<th width=100px>이메일</th>
+				<th width=100px>배송요청사항</th>
+				<th width=100px>결제 은행</th>
+				<th width=100px>카드 번호</th>
+				<th width=100px>카드 비밀번호</th>
+				<th width=150px>
+					<b>[배송상태]</b>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
 				<td><%=ord_receiver%></td>
 				<td><%=ord_rcv_address%></td>
 				<td><%=ord_rcv_phone%></td>
 				<td>
 					<fmt:formatNumber value="<%=ord_pay%>" />
 				</td>
+				<td><%=ord_email%></td>
+				<td><%=ord_message%></td>
 				<%
 				if (ord_card_no.equals("")) {
 				%>
@@ -214,9 +256,6 @@ try {
 				<%
 				}
 				%>
-				<td align=center>
-					<a href="manager_order_select.jsp?ord_no=<%=ord_no%>">상세보기</a>
-				</td>
 			</tr>
 		</tbody>
 		<%
@@ -227,19 +266,20 @@ try {
 		%>
 		<thead>
 			<tr>
-				<td colspan="13">&nbsp</td>
+				<td colspan="12">&nbsp</td>
 			</tr>
 		</thead>
 		<thead>
 			<tr>
-				<th colspan="13" style="font-size: 16px"><font color="#4B89DC">
-						주문목록 </font></th>
+				<th colspan="12" style="font-size: 16px">
+					<font color="#4B89DC"> 주문목록 </font>
+				</th>
 			</tr>
 		</thead>
 		<p>
 		<thead>
 			<tr>
-				<th colspan=3 style="padding: 0px">상품 이미지</th>
+				<th colspan=2 style="padding: 0px">상품 이미지</th>
 				<th colspan=3>상품 이름</th>
 				<th colspan=2>상품 가격</th>
 				<th colspan=2>수량</th>
@@ -254,7 +294,7 @@ try {
 			int ord_no2 = rs6.getInt("ord_no");
 			int ord_qty = rs6.getInt("ord_qty");
 
-			String jsql7 = "SELECT p_price,p_name FROM product WHERE p_id = ?";
+			String jsql7 = "SELECT p_price, p_name FROM product WHERE p_id = ?";
 			PreparedStatement pstmt7 = con.prepareStatement(jsql7);
 			pstmt7.setString(1, p_id);
 			ResultSet rs7 = pstmt7.executeQuery();
@@ -272,7 +312,7 @@ try {
 		%>
 		<tbody>
 			<tr>
-				<td class="p_img" colspan=3 align="center">
+				<td class="p_img" colspan=2 align="center">
 					<div>
 						<a href="../product/goods_select.jsp?p_id=<%=p_id%>">
 							<img src="../../img/product/<%=p_id%>.jpg" width=250px height=200px>
@@ -280,8 +320,9 @@ try {
 					</div>
 
 				</td>
-				<th colspan=3><a
-						href="../product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a></th>
+				<th colspan=3>
+					<a href="../product/goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a>
+				</th>
 				<td colspan=2>
 					<fmt:formatNumber value="<%=p_price%>" />
 					원
@@ -320,27 +361,29 @@ try {
 
 		t_sum = t_a_sum + t_t_sum + t_c_sum;
 		%>
-		
+
 		<tbody>
 			<tr>
-				<td class="p_img" colspan=3 align="center">
+				<td class="p_img" colspan=2 align="center">
 					<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>">
-						<img src="../../img/tickets/<%=p_id%>.jpeg" border=0 width=250px
-							height=200px>
+						<img src="../../img/tickets/<%=p_id%>.jpeg" border=0 width=250px height=200px>
 					</a>
 
 				</td>
-				<th colspan=3><a
-						href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a></th>
+				<th colspan=3>
+					<a href="../ticket/tickets_detail.jsp?t_id=<%=p_id%>"><%=p_name%></a>
+				</th>
 				<td colspan=2>
-					성인 : <fmt:formatNumber value="<%=t_price_adult%>" />원<br>
-					청소년 : <fmt:formatNumber value="<%=t_price_teen%>" />원<br>
-					어린이 : <fmt:formatNumber value="<%=t_price_child%>" />원
+					성인 :
+					<fmt:formatNumber value="<%=t_price_adult%>" />
+					원<br> 청소년 :
+					<fmt:formatNumber value="<%=t_price_teen%>" />
+					원<br> 어린이 :
+					<fmt:formatNumber value="<%=t_price_child%>" />
+					원
 				</td>
 				<td colspan=2>
-					성인(<%=ord_qty_a %>)<br>
-					청소년(<%=ord_qty_t %>)<br>
-					어린이(<%=ord_qty_c %>)
+					성인(<%=ord_qty_a%>)<br> 청소년(<%=ord_qty_t%>)<br> 어린이(<%=ord_qty_c%>)
 				</td>
 				<td colspan=2>
 					<fmt:formatNumber value="<%=t_sum%>" />
@@ -350,7 +393,7 @@ try {
 		</tbody>
 		<%
 		} // rs6
-
+		}
 		}
 		}
 		%>

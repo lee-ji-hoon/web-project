@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %>
 <%@ include file="../../layout/mypage_header.jsp"%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../../css/table_style_ver2.css?abcd">
 <!--  menu list 시작  -->
     <section id="menu">
@@ -98,8 +99,8 @@ try {
     </table>
 	<p>
 
-<a href="mypage_member_update.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕; color : white; border : none;" class ="btn btn-large btn-primary">정보 수정</a>&nbsp;&nbsp;&nbsp;
-<a href="mypage_member_delete.jsp?id=<%=id%>" style="font-size:10pt;font-family:맑은 고딕; color : white; background-color : #CA4444; border : none;" class ="btn btn-large btn-primary">회원 탈퇴</a>
+<button type="button" style="font-size:10pt;font-family:맑은 고딕; color : white; border : none;" class ="btn btn-large btn-primary" onclick="member_update()">정보 수정</button>&nbsp;&nbsp;&nbsp;
+<button type="button" style="font-size:10pt;font-family:맑은 고딕; color : white; background-color : #CA4444; border : none;" class ="btn btn-large btn-primary" onclick="member_delete()">회원 탈퇴</button>
 			
 
 </center>
@@ -111,4 +112,5 @@ out.println(e);
 %>
 </body>
 <%@ include file="../../layout/footer.jsp"%>
+<script type="text/javascript" src="../../js/mypage.js?v123123"></script>
 </html>
