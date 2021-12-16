@@ -56,12 +56,10 @@
 				<span style="font-size: 14pt; font-weight: bold;">성공적으로 구매가 됐습니다. 아래의 결제 정보를 확인해주세요</span>
 			</div>
 			<%
-			// 구매자 정보
-			String myid = (String) session.getAttribute("sid"); // 로그인했었던 주문자 정보(즉, 아이디)를 받아옮
 
-			String jsql4 = "select m_name, m_phone, m_address, m_email, m_reserves from member where m_id = ?";
+			String jsql4 = "select * from member where m_id = ?";
 			PreparedStatement pstmt4 = con.prepareStatement(jsql4);
-			pstmt4.setString(1, myid);
+			pstmt4.setString(1, sid);
 
 			ResultSet rs4 = pstmt4.executeQuery();
 			rs4.next();

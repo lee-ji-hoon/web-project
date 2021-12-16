@@ -166,8 +166,8 @@ try {
 					<select name="ord_state">
 					
 				        <option value="입금확인중">입금확인중</option>
-		        		<option value="배송준비">배송준비</option>
-				        <option value="배송시작">배송출발 </option>
+		        		<option value="배송준비중">배송준비중</option>
+				        <option value="배송시작">배송시작 </option>
 				        <option value="배송완료">배송완료 </option>
 		         	</select>
 				</td>

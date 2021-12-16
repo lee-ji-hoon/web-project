@@ -118,7 +118,7 @@
 					<tbody>
 						<tr style="height: 90x; background-color: #fff;">
 							<td style="border-left: none;">
-								<img style="width: 150px; height: 100px;" src="../../img/product/<%=p_id%>.jpg">
+								<img style="width: 75px; height: 100px;" src="../../img/product/<%=p_id%>.jpg">
 							</td>
 							<td style="text-align: center; padding-left: 10px; border-left: none; font-weight: bold;"><%=p_name%></td>
 							<td>
@@ -279,7 +279,7 @@
 						<td>
 							<input type="text" step="margin-bottom: 10px;" id="Addr_" size="50" name="rcvAddress" value="<%=address%>">
 							&nbsp;&nbsp;
-							<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup_()";>우편번호 찾기</button>
+							<!--<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup_()";>우편번호 찾기</button> -->
 						</td>
 					</tr>
 					<tr>
