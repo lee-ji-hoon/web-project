@@ -262,19 +262,11 @@ body{
 	padding: 60px 0;
 }
 
-#gallery .inner {
-}
 
 #gallery .gallery_title {
-	font: 40px '맑은 고딕';
+	font: 30px '맑은 고딕';
 	color: #454545;
 	padding: 8px 0;
-}
-
-#gallery .gallery_txt {
-	font: 20px '맑은 고딕';
-	color: #9d9d9d;
-	padding: 0 50px;
 }
 
 #gallery .box {
