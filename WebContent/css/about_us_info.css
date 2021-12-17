@@ -78,7 +78,7 @@ background-size: 100%; padding : 150px 0 0 ; text-align: center; opacity: 0.9;
 #visual .slide .right i{font-size: 70px; color: rgba(255, 255, 255, 0.9); float: right; padding: 80px 250px;  text-shadow: 0 0 10px rgba(0,0,0,0.5); }
 
 
-#visual .msg h2{font: bold 58px '맑은 고딕'; color: white;  padding : 50px 0 0 ; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+#visual .msg h2{font: bold 50px '맑은 고딕'; color: white;  padding : 50px 0 0 ; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
 #visual .msg p{font: 20px '맑은 고딕'; color: white; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
 
 

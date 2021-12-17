@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%@ include file="../../layout/header.jsp"%>
-<link rel="stylesheet" type="text/css" href="../../css/style-cart.css?v123123">
+<link rel="stylesheet" type="text/css" href="../../css/style-cart.css?v123">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script language="javascript" src="../../js/order.js?v123>"></script>
+<script language="javascript" src="../../js/order.js?v1111>"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -301,25 +301,44 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
+							<input type="hidden" name="sender_name" id="sender_name" value="<%=name%>"/>
 							<%=name%>
 						</td>
 					</tr>
+					
 					<tr>
 						<td class="deliverytd">
 							주소&nbsp;
 							<span style="color: red;">*</span>
 						</td>
 						<td>
+							<input type="hidden" name="sender_address" id="sender_address" value="<%=address%>"/>
 							<%=address%>
 						</td>
 					</tr>
+					
 					<tr>
 						<td class="deliverytd">
 							휴대전화&nbsp;
 							<span style="color: red;">*</span>
 						</td>
 						<td>
+							<input type="hidden" name="sender_phone" id="sender_phone0" value="<%=phoneArr[0]%>"/>
+							<input type="hidden" name="sender_phone" id="sender_phone1" value="<%=phoneArr[1]%>"/>
+							<input type="hidden" name="sender_phone" id="sender_phone2" value="<%=phoneArr[2]%>"/>
 							<%=phone %>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="deliverytd">
+							이메일주소&nbsp;
+							<span style="color: red;">*</span>
+						</td>
+						<td>
+							<input type="hidden" value="<%=emailArr[0]%>" name="email1" id="sender_email1">
+							<input type="hidden" value="<%=emailArr[1]%>" name="email2" id="sender_email2">
+							<%=email%>
 						</td>
 					</tr>
 				</thead>
@@ -332,12 +351,9 @@ try { //
 					<tr>
 						<td class="deliverytd">배송지 선택</td>
 						<td>
-							<input type="radio" name="bb" checked />
+							<input type="checkbox" name="chk" id="chk" onclick="check(this)">
 							<label>회원정보와 동일</label>
-							<input type="radio" onclick="test();" name="bb" />
-							<label>새로운 배송지</label>
 							&nbsp;
-							<button type="button" style="background-color: #fff; cursor: pointer; border-width: 0px;"></button>
 						</td>
 					</tr>
 					<tr>
@@ -346,7 +362,7 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" name="receiver" value="<%=name%>" />
+							<input type="text" name="receiver" id="receiver" value="" />
 						</td>
 					</tr>
 					<tr>
@@ -355,7 +371,7 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" step="margin-bottom: 10px;" id="Addr" size="50" name="rcvAddress" value="<%=address %>" />
+							<input type="text" step="margin-bottom: 10px;" size="50" name="rcvAddress" id="rcvAddress" value="" />
 							&nbsp;&nbsp;
 							<!--<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup()";>우편번호 찾기</button> -->
 						</td>
@@ -366,11 +382,11 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[0]%>" name="phone1">
+							<input type="text" size="10" maxlength="3" value="" name="phone1" id="phone1">
 							-
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[1]%>" name="phone2">
+							<input type="text" size="10" maxlength="4" value="" name="phone2" id="phone2">
 							-
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[2]%>" name="phone3">
+							<input type="text" size="10" maxlength="4" value="" name="phone3" id="phone3">
 						</td>
 					</tr>
 					<tr>
@@ -379,17 +395,17 @@ try { //
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" value=<%=emailArr[0]%> name="email1">
+							<input type="text" value="" name="email1" id="email1">
 							@
-							<input id="domainName" type="text" value="<%=emailArr[1]%>" name="email2">
+							<input id="domainName" type="text" value="" name="email2">
 							&nbsp;
 							<select id="emailChoice" style="height: 20px;">
 								<option>-이메일 선택-</option>
 								<option>직접입력</option>
-								<option <%=emailSelected[0]%>>naver.com</option>
-								<option <%=emailSelected[1]%>>google.com</option>
-								<option <%=emailSelected[2]%>>daum.net</option>
-								<option <%=emailSelected[3]%>>nate.com</option>
+								<option>naver.com</option>
+								<option>google.com</option>
+								<option>daum.net</option>
+								<option>nate.com</option>
 							</select>
 							<span style="font-size: 10pt; color: gray;">
 								<p>
@@ -401,7 +417,7 @@ try { //
 					<tr>
 						<td class="deliverytd">배송메세지</td>
 						<td>
-							<textarea rows="5" cols="100" name="massage"></textarea>
+							<textarea style="resize:none;" rows="5" cols="100" name="massage"></textarea>
 						</td>
 					</tr>
 				</thead>
@@ -456,11 +472,8 @@ try { //
 			<div class="payArea">
 				<div class="payment">
 					<div style="padding: 18px 10px; font-size: 10pt; border-bottom: solid 1px #e0e0eb;">
-						<input type="radio" name="cardradio" checked />
-						<label>카드결제</label>
-						&nbsp;&nbsp;
-						<input type="radio" name="cardradio" />
-						<label>무통장 결제</label>
+
+						<label>결제 방법을 작성해주세요.</label>
 						&nbsp;&nbsp;
 					</div>
 					<div align="left">
@@ -503,7 +516,6 @@ try { //
 										<option value="하나은행 (628-0220-2211) (주)aqua">하나은행 (628-0220-2211) / (주)aqua</option>
 									</select>
 									<font size=1 color=#4b89DC>(카드 or 무통장입금 중 택일!)</font>
-								</td>
 								</td>
 							</tr>
 						</table>
