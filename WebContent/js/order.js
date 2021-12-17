@@ -171,11 +171,37 @@ function check_val()             // 주문서의 미입력항목 부분을 체�
 //  새로운 배송지 클릭 및 회원정보와 동일 일 때 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function test() {
-	document.getElementById("receiver").value = '';
-	document.getElementById("rcvAddress").value = '';
-	document.getElementById("phone1").value = '';
-	document.getElementById("phone2").value = '';
-	document.getElementById("phone3").value = '';
-	document.getElementById("phone3").value = '';
-}
+document.getElementById("chk").addEventListener("click", check, false);
+    function check() {
+        var n = document.getElementById("chk");
+        if(n.checked){
+            document.getElementById("receiver").value =
+                document.getElementById('sender_name').value;
+
+            document.getElementById("rcvAddress").value =
+                document.getElementById('sender_address').value;
+
+			document.getElementById("phone1").value =
+                document.getElementById('sender_phone0').value;
+
+			document.getElementById("phone2").value =
+                document.getElementById('sender_phone1').value;
+
+			document.getElementById("phone3").value =
+                document.getElementById('sender_phone2').value;
+
+			document.getElementById("email1").value =
+                document.getElementById('sender_email1').value;
+
+			document.getElementById("domainName").value =
+                document.getElementById('sender_email2').value;
+        } else {
+            document.getElementById("receiver").value = "";
+            document.getElementById("rcvAddress").value = "";
+			document.getElementById("phone1").value = "";
+			document.getElementById("phone2").value = "";
+			document.getElementById("phone3").value = "";
+			document.getElementById("email1").value = "";
+			document.getElementById("domainName").value = "";
+        }
+    }

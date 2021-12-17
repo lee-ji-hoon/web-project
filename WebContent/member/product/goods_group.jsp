@@ -50,7 +50,7 @@
 				정글존
 			</div>
 			<div class=" custom-checkbox favor-content">
-				<input type="radio" name="compList" value="default" checked/>
+				<input type="radio" name="compList" value="default"/>
 				전체보기
 			</div>
 			<br>
