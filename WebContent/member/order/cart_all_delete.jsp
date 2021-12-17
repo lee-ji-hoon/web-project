@@ -32,7 +32,7 @@
 		
 
 		if (case_no != null) //  (1) 주문완료로 인한 장바구니 비우기 수행하고 난 후의 주문완료 메시지 출력
-		{ //   orderOK.jsp의 107행 참조
+		{ 
 			
 			String jsql3 = "SELECT * FROM order_info ORDER BY ord_no DESC LIMIT 1";
 			PreparedStatement pstmt3 = con.prepareStatement(jsql3);
@@ -202,7 +202,7 @@
 	<%
 	} else //  (2) 주문과 상관없이 장바구니 비우기를 수행한 경우의 출력
 	{
-	response.sendRedirect("cart_show.jsp"); //   <jsp:forward page="showCart.jsp"/>와 같은 의미임
+	response.sendRedirect("cart_show.jsp");
 	%>
 
 	<%
