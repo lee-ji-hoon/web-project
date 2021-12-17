@@ -4,8 +4,8 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function category_top() {
-	if (categorys.compList.value = null) {
-		alert('검색어를 입력하세요'); //경고창 띄움 
+	if (categorys.compList.value == "") {
+		swal('상품 옵션을 선택 후 클릭해주세요'); //경고창 띄움 
 	}
 	else if (categorys.compList.value == "default") {
 		var str = categorys.compList.value;
