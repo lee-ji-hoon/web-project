@@ -196,4 +196,4 @@ out.println(e);
 }
 %>
 <%@ include file="../../layout/footer.jsp"%>
-<script type="text/javascript" src="../../js/categories.js?1v1213"></script>
+<script type="text/javascript" src="../../js/categories.js?1131"></script>
