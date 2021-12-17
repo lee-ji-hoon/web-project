@@ -34,8 +34,8 @@
     
     <section id="about" class="content">
         <div class="inner">
-           <h2 class="about_title">ㅡ AQUARIUM</h2>
-            <p class="about_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>
+           <h2 class="about_title">ㅡ JUNGLE ZONE</h2>
+            <p class="about_txt">다양한 동물들을 가까이에서 만나 볼 수 있는 정글존</p>
             <div class="box"></div>
             <div class="box">
                 <h2 class="title">PLAY THEME ZONE</h2>
@@ -50,8 +50,8 @@
        
     <section id="gallery" class="content">
         <div class="inner">
-            <h2 class="gallery_title">ㅡ AQUARIUM</h2>
-            <p class="gallery_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>  
+            <h2 class="gallery_title">ㅡ 어떤 친구들이 살고 있을까요?</h2>
+            <p class="gallery_txt"></p>  
             <div class="box">
                 <div class="pic"><img src="../img/theme/thm3-1.png" alt=""></div>
                 <div class="info">

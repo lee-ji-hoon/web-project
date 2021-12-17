@@ -53,8 +53,8 @@
        
     <section id="gallery" class="content">
         <div class="inner">
-            <h2 class="title">ㅡ 어떤 친구들이 살고 있을까요?</h2>
-            <p class="txt"></p>  
+            <h2 class="gallery_title">ㅡ 어떤 친구들이 살고 있을까요?</h2>
+            <p class="gallery_txt"></p>  
             <div class="box">
                 <div class="pic"><img src="../img/theme/thm1-1.png" alt=""></div>
                 <div class="info">

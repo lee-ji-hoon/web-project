@@ -259,20 +259,14 @@ a {
 	padding: 60px 0;
 }
 
-#gallery .inner {
-	
-}
 
-#gallery .title {
+#gallery .gallery_title {
 	font: 30px '맑은 고딕';
 	color: #454545;
 	padding: 8px 0;
 }
 
-#gallery .txt {
-	font: 18px;
-	color: #9d9d9d
-}
+
 
 #gallery .box {
 	float: left;
