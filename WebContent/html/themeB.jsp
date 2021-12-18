@@ -35,8 +35,8 @@
     
      <section id="about" class="content">
         <div class="inner">
-           <h2 class="about_title">ㅡ AQUARIUM</h2>
-            <p class="about_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>
+           <h2 class="about_title">ㅡ REPTILE ZONE</h2>
+            <p class="about_txt">다양한 뱀과 도마뱀이 있는 파충류관</p>
             <div class="box"></div>
             <div class="box">
                 <h2 class="title">PLAY THEME ZONE</h2>
@@ -51,8 +51,8 @@
        
     <section id="gallery" class="content">
         <div class="inner">
-            <h2 class="gallery_title">ㅡ AQUARIUM</h2>
-            <p class="gallery_txt">다양한 바닷속 친구들이 가득한 아쿠아리움</p>  
+            <h2 class="gallery_title">ㅡ 어떤 친구들이 살고 있을까요?</h2>
+            <p class="gallery_txt"></p>  
             <div class="box">
                 <div class="pic"><img src="../img/theme/thm2-1.png" alt=""></div>
                 <div class="info">
@@ -80,7 +80,7 @@
             <div class="box">
                 <div class="pic"><img src="../img/theme/thm2-5.png" alt=""></div>
                 <div class="info">
-                    <strong class="gallery_title">헤르만 육지거북</strong>
+                    <strong class="gallery_title">토케이 게코</strong>
                 </div>
             </div>            
             <div class="box">
