@@ -38,7 +38,7 @@
     <section id="road" class="content">
         <div class="inner">
            <h2 class="about_title">ㅡ ABOUT PLAY</h2>
-            <p class="about_txt">즐거움이 가득한 플레이 아쿠아리움 부천</p>
+            <p class="about_txt">즐거움이 가득한 아쿠아플라넷</p>
             <div class="box"></div>
         </div>
     </section>   
