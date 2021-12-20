@@ -26,7 +26,7 @@ try {
 		pstmt.setString(1, p_id);
 		
 		pstmt.executeUpdate();
-		response.sendRedirect("cart_show.jsp");    //   <jsp:forward page="showCart.jsp"/>와 같은 의미임
+		response.sendRedirect("mypage_cart.jsp");    //   <jsp:forward page="showCart.jsp"/>와 같은 의미임
 	}
 	else{
 		String jsql2 = "delete from cart_t where t_id=?";   

@@ -169,7 +169,7 @@ try {
 		</thead>
 		<thead>
 			<tr>
-				<th>주문자 아이디</th>
+				<th width="150px">주문 아이디</th>
 				<th>주문번호</th>
 				<th colspan="2">주문일자</th>
 				<th colspan="2">휴대폰 번호</th>
@@ -201,15 +201,15 @@ try {
 		</thead>
 		<thead>
 			<tr>
-				<th>수령자</th>
+				<th width="100px">수령자</th>
 				<th width="350px">수령자 주소</th>
 				<th width="150px;">수령자 번호</th>
 				<th>가격</th>
 				<th width=100px>이메일</th>
-				<th width=100px>배송요청사항</th>
+				<th width=120px>배송요청사항</th>
 				<th width=100px>결제 은행</th>
-				<th width=100px>카드 번호</th>
-				<th width=100px>카드 비밀번호</th>
+				<th width=120px>카드 번호</th>
+				<th width=120px>카드 비밀번호</th>
 				<th width=150px>
 					<b>[배송상태]</b>
 				</th>
