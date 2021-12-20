@@ -78,7 +78,7 @@ background-size: 100%; padding : 150px 0 0 ; text-align: center; opacity: 0.9;
 #visual .slide .right i{font-size: 70px; color: rgba(255, 255, 255, 0.9); float: right; padding: 80px 250px;  text-shadow: 0 0 10px rgba(0,0,0,0.5); }
 
 
-#visual .msg h2{font: bold 58px '맑은 고딕'; color: white;  padding : 50px 0 0 ; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+#visual .msg h2{font: bold 50px '맑은 고딕'; color: white;  padding : 50px 0 0 ; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
 #visual .msg p{font: 20px '맑은 고딕'; color: white; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
 
 
@@ -121,7 +121,7 @@ background-size: 100%; padding : 150px 0 0 ; text-align: center; opacity: 0.9;
 
 
 #promotion .box .txt{font: 50px '맑은 고딕'; color: #6f6f6f; text-align: center;}
-#promotion .box .txt_1{font: bold 18px '맑은 고딕'; padding: 30px 0; color: #454545; text-align: center;}
+#promotion .box .txt_1{font: bold 18px '맑은 고딕'; padding: 10px 0; color: #454545; text-align: center;}
 
 #promotion .box .txt_2{font: 18px '맑은 고딕'; color: rgba(20, 20, 20, 0.74); text-align: center;}
 #promotion .box .txt i{font-size: 2px; color: rgb(33, 155, 132);line-height: 3.;} 

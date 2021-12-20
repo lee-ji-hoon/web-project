@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/about_us_info.css?sdf">
+    <link rel="stylesheet" href="../css/about_us_info.css?sd11f">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/gnb.js"></script>
@@ -38,7 +38,7 @@
     <section id="road" class="content">
         <div class="inner">
            <h2 class="about_title">ㅡ ABOUT PLAY</h2>
-            <p class="about_txt">즐거움이 가득한 플레이 아쿠아리움 부천</p>
+            <p class="about_txt">즐거움이 가득한 아쿠아플라넷</p>
             <div class="box"></div>
         </div>
     </section>   

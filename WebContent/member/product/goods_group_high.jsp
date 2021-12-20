@@ -124,7 +124,7 @@
 					<li>
 						<img src="../../img/product/<%=p_id%>.jpg" height="50px" width="50px">
 				</a>
-				&nbsp
+				&nbsp;
 				<a href="goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a>
 				</a>
 			</li>
@@ -148,7 +148,7 @@
 					<li>
 						<img src="../../img/product/<%=p_id%>.jpg" height="50px" width="50px">
 				</a>
-				&nbsp
+				&nbsp;
 				<a href="goods_select.jsp?p_id=<%=p_id%>"><%=p_name%></a>
 				</a>
 			</li>
@@ -174,6 +174,7 @@
 				String p_category = rs.getString("p_category");
 				String p_description = rs.getString("p_description");
 				String p_option = rs.getString("p_option");
+				
 			%>
 			<div class="favor-prd-box">
 				<a class="favor-link-prod" href="goods_select.jsp?p_id=<%=p_id%>"></a>

@@ -222,34 +222,50 @@
 			<span style="font-size: 12pt; display: inline-block; padding-bottom: 10px;">&nbsp;구매자정보</span>
 			<table class="delivery">
 				<thead>
-
 					<tr>
 						<td class="deliverytd">
 							보내시는 분&nbsp;
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" value="<%=name%>" style="border:none" readonly />
+							<input type="hidden" name="sender_name" id="sender_name" value="<%=name%>"/>
+							<%=name%>
 						</td>
 					</tr>
+					
 					<tr>
 						<td class="deliverytd">
 							주소&nbsp;
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" step="margin-bottom: 10px;" id="Addr" size="50" value="<%=address%>" style="border:none" readonly>
+							<input type="hidden" name="sender_address" id="sender_address" value="<%=address%>"/>
+							<%=address%>
 						</td>
 					</tr>
+					
 					<tr>
 						<td class="deliverytd">
 							휴대전화&nbsp;
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" size="3" maxlength="4" value="<%=phoneArr[0]%>" style="border:none" readonly>-
-							<input type="text" size="4" maxlength="4" value="<%=phoneArr[1]%>" style="border:none" readonly>-
-							<input type="text" size="4" maxlength="4" value="<%=phoneArr[2]%>" style="border:none" readonly>
+							<input type="hidden" name="sender_phone" id="sender_phone0" value="<%=phoneArr[0]%>"/>
+							<input type="hidden" name="sender_phone" id="sender_phone1" value="<%=phoneArr[1]%>"/>
+							<input type="hidden" name="sender_phone" id="sender_phone2" value="<%=phoneArr[2]%>"/>
+							<%=phone %>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="deliverytd">
+							이메일주소&nbsp;
+							<span style="color: red;">*</span>
+						</td>
+						<td>
+							<input type="hidden" value="<%=emailArr[0]%>" name="email1" id="sender_email1">
+							<input type="hidden" value="<%=emailArr[1]%>" name="email2" id="sender_email2">
+							<%=email%>
 						</td>
 					</tr>
 				</thead>
@@ -262,12 +278,9 @@
 					<tr>
 						<td class="deliverytd">배송지 선택</td>
 						<td>
-							<input type="radio" name="bb" checked />
+							<input type="checkbox" name="chk" id="chk" onclick="check(this)">
 							<label>회원정보와 동일</label>
-							<input type="radio" name="bb" />
-							<label>새로운 배송지</label>
 							&nbsp;
-							<button tpye="button" style="background-color: #fff; cursor: pointer; border-width: 0px;"></button>
 						</td>
 					</tr>
 					<tr>
@@ -276,7 +289,7 @@
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" name="receiver" value="<%=name%>" />
+							<input type="text" name="receiver" id="receiver" value="" />
 						</td>
 					</tr>
 					<tr>
@@ -285,9 +298,9 @@
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" step="margin-bottom: 10px;" id="Addr_" size="50" name="rcvAddress" value="<%=address%>">
+							<input type="text" step="margin-bottom: 10px;" size="50" name="rcvAddress" id="rcvAddress" value="" />
 							&nbsp;&nbsp;
-							<!--<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup_()";>우편번호 찾기</button> -->
+							<!--<button type="button" style="padding: 5px; cursor: pointer; margin-bottom: 10px; background-color: #fff; border-width: 1px;" onclick="goPopup()";>우편번호 찾기</button> -->
 						</td>
 					</tr>
 					<tr>
@@ -296,11 +309,11 @@
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[0]%>" name="phone1">
+							<input type="text" size="10" maxlength="3" value="" name="phone1" id="phone1">
 							-
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[1]%>" name="phone2">
+							<input type="text" size="10" maxlength="4" value="" name="phone2" id="phone2">
 							-
-							<input type="text" size="10" maxlength="4" value="<%=phoneArr[2]%>" name="phone3">
+							<input type="text" size="10" maxlength="4" value="" name="phone3" id="phone3">
 						</td>
 					</tr>
 					<tr>
@@ -309,17 +322,17 @@
 							<span style="color: red;">*</span>
 						</td>
 						<td>
-							<input type="text" value=<%=emailArr[0]%> name="email1">
+							<input type="text" value="" name="email1" id="email1">
 							@
-							<input id="domainName" type="text" value="<%=emailArr[1]%>" name="email2">
+							<input id="domainName" type="text" value="" name="email2">
 							&nbsp;
 							<select id="emailChoice" style="height: 20px;">
 								<option>-이메일 선택-</option>
 								<option>직접입력</option>
-								<option <%=emailSelected[0]%>>naver.com</option>
-								<option <%=emailSelected[1]%>>google.com</option>
-								<option <%=emailSelected[2]%>>daum.net</option>
-								<option <%=emailSelected[3]%>>nate.com</option>
+								<option>naver.com</option>
+								<option>google.com</option>
+								<option>daum.net</option>
+								<option>nate.com</option>
 							</select>
 							<span style="font-size: 10pt; color: gray;">
 								<p>
@@ -331,7 +344,7 @@
 					<tr>
 						<td class="deliverytd">배송메세지</td>
 						<td>
-							<textarea rows="5" cols="100" name="massage"></textarea>
+							<textarea style="resize:none;" rows="5" cols="100" name="massage"></textarea>
 						</td>
 					</tr>
 				</thead>
@@ -386,11 +399,8 @@
 			<div class="payArea">
 				<div class="payment">
 					<div style="padding: 18px 10px; font-size: 10pt; border-bottom: solid 1px #e0e0eb;">
-						<input type="radio" name="cardradio" checked />
-						<label>카드결제</label>
-						&nbsp;&nbsp;
-						<input type="radio" name="cardradio" />
-						<label>무통장 결제</label>
+
+						<label>결제 방법을 작성해주세요.</label>
 						&nbsp;&nbsp;
 					</div>
 					<div align="left">

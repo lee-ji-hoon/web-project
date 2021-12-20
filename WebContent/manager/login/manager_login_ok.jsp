@@ -44,7 +44,7 @@
 		        로그인 페이지로 돌아가시려면 
 		 	    <a href="manager_login.jsp">여기</a>를 클릭하시고, <p>
 		 	    메인 페이지로 돌아가시려면
-			    <a href="index.html">여기</a>를 클릭하세요!
+			    <a href="../../index.jsp">여기</a>를 클릭하세요!
 		   </font>              
 <%       
           }     
