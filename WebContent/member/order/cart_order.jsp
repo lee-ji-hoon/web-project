@@ -189,7 +189,7 @@ try { //
 						int amount_t = (t_price_adult * ct_qty_a) + (t_price_teen * ct_qty_t) + (t_price_child * ct_qty_c);
 						reserves_t = amount_t * 0.005;
 						total = total + amount_t;
-						real_total = total + 2500;
+						real_total = total + delivery_total;
 
 						total_reserves_t = total_reserves_t + reserves_t;
 					%>
