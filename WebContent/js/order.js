@@ -88,6 +88,16 @@ function changePoint(amt, pnt, min, unit) {
 
 function check_val()             // 주문서의 미입력항목 부분을 체크하는 자바스크립트 함수
 {
+	if (document.form.receiver.value == "") {
+		swal("주문자 이름은 반드시 기입을 해야 합니다. ");
+		document.form.receiver.focus();
+		return false;
+	}
+	if (document.form.rcvAddress.value == "") {
+		swal("주문자 주소를 반드시 기입을 해야 합니다. ");
+		document.form.rcvAddress.focus();
+		return false;
+	}
 	if (document.form.phone1.value == "") {
 		swal("주문자 전화번호는 반드시 기입을 해야 합니다. ");
 		document.form.phone1.focus();
