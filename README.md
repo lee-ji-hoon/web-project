@@ -15,6 +15,7 @@
 - GRANT ALL PRIVILEGES ON aqua_project.* TO aqua@'%' WITH GRANT OPTION;
 
 <hr/>
+
 #### 발표 및 결과
 - 전체적으로 호평을 받음
 
