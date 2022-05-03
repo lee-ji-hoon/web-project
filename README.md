@@ -9,14 +9,7 @@
 
 [Google Slide](https://docs.google.com/presentation/d/15bp-2_KZqczlp6ChnL7P3oLJJ_exQXeeWt2LdA4jSrA/edit?usp=sharing)
 
-[ERD]()
-
-[FlowChart]()
-
-### Spring Initializr 시작 세팅 
-![image](https://user-images.githubusercontent.com/53300830/152991455-f48272b1-a1b2-4267-aa0f-2948daa15546.png)
-
-### MYSQL // h2
+### MYSQL
 - CREATE DATABASE aqua_project;
 - CREATE USER aqua@'%' IDENTIFIED BY '1234';
 - GRANT ALL PRIVILEGES ON aqua_project.* TO aqua@'%' WITH GRANT OPTION;
