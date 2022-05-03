@@ -9,7 +9,7 @@
 
 [Google Slide](https://docs.google.com/presentation/d/15bp-2_KZqczlp6ChnL7P3oLJJ_exQXeeWt2LdA4jSrA/edit?usp=sharing)
 
-### MYSQL 세팅
+#### MYSQL 세팅
 - CREATE DATABASE aqua_project;
 - CREATE USER aqua@'%' IDENTIFIED BY '1234';
 - GRANT ALL PRIVILEGES ON aqua_project.* TO aqua@'%' WITH GRANT OPTION;
@@ -19,5 +19,5 @@
 #### 발표 및 결과
 - 전체적으로 호평을 받음
 
-### 시연 영상
+#### 시연 영상
 https://drive.google.com/file/d/1TgBFGQccRbGfChBX7X6W9wUi9PB2Agn-/view
