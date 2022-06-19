@@ -19,5 +19,8 @@
 #### 발표 및 결과
 - 전체적으로 호평을 받음
 
+<!--
 #### 시연 영상
 https://drive.google.com/file/d/1TgBFGQccRbGfChBX7X6W9wUi9PB2Agn-/view
+-->
+
